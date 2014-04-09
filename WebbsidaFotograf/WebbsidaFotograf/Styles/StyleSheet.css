@@ -1,0 +1,29 @@
+﻿body {
+}
+
+header{
+    height:200px;
+    background-color:lightgreen;
+}
+nav{
+    float:right;
+}
+aside{
+    float:right;
+    padding-top:200px;
+    margin-top:50px;
+}
+footer{
+    text-align:center;
+    background-color:lightgreen;
+    height:50px;
+}
+.AboutText{
+    width:50%;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+#ProfilePicture{
+    width:200px;
+}
