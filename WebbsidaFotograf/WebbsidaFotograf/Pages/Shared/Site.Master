@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebbsidaFotograf.Pages.Shared.Site" ViewStateMode="Disabled"%>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"> 
+        <link href="../../Styles/StyleSheet.css" rel="stylesheet" />
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+
+    <header>
+        <h1>Header - Put image here!</h1>
+    </header>
+    <form id="form1" runat="server">
+        <nav>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Pages/Home.aspx">Hem</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Pages/Gallery.aspx">Galleri</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Pages/About.aspx">Om mig</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Pages/Contact.aspx">Kontakt</asp:HyperLink>
+        </nav>
+    <div>
+        <asp:ContentPlaceHolder ID="MainContentPlaceholder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <script src="../../Javascript/JavaScript1.js"></script>
+</body>
+</html>

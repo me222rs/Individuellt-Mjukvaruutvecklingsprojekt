@@ -1,20 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="WebbsidaFotograf.Pages.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="WebbsidaFotograf.Pages.Home" MasterPageFile="~/Pages/Shared/Site.Master" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Mikael Edberg - Hem</title>
-    <link href="../Styles/StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
-    <header>
-        <h1>Header- put image here!</h1>
-    </header>
-    <form id="form1" runat="server">
+    <h2>Blogg</h2>
+    <p>Här ska några blogginlägg ligga.</p>
+
+    
+
+
+    <p>Skriv gärna en kommentar och gilla sidan!</p>
+    
+
+    <div class="fb-like" data-href="http://localhost:2257/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <div>
-
+    <div class="fb-comments" data-href="http://localhost:2257/Pages/Home.aspx" data-numposts="5" data-colorscheme="light"></div>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>

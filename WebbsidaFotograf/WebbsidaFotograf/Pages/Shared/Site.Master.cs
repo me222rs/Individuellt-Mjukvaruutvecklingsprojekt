@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebbsidaFotograf.Model;
 
-namespace WebbsidaFotograf.Pages
+namespace WebbsidaFotograf.Pages.Shared
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

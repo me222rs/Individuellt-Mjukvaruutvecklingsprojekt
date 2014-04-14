@@ -1,30 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="WebbsidaFotograf.Pages.About" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="WebbsidaFotograf.Pages.About" MasterPageFile="~/Pages/Shared/Site.Master"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Mikael Edberg - Om mig</title>
-    <link href="../Styles/StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
-    <header>
-        <h1>Header - Put image here!</h1>
-    </header>
-    <form id="form1" runat="server">
     <div>
-        <nav>
-            <asp:HyperLink ID="Home" runat="server" NavigateUrl="~/Pages/Home.aspx">Hem</asp:HyperLink>
-            <asp:HyperLink ID="Gallery" runat="server" NavigateUrl="~/Pages/Gallery.aspx">Galleri</asp:HyperLink>
-            <asp:HyperLink ID="AboutMe" runat="server" NavigateUrl="~/Pages/About.aspx">Om mig</asp:HyperLink>
-            <asp:HyperLink ID="Contact" runat="server" NavigateUrl="~/Pages/Contact.aspx">Kontakt</asp:HyperLink>
-        </nav>
         <aside>
             <p>Slideshow</p>
         </aside>
             <div class="AboutText">
             <h2>Vem är jag?</h2>
-                <asp:Image ID="ProfilePicture" runat="server" ImageUrl="../Content/ProfilePics/Me.png"/>
+                <asp:Image ID="ProfilePicture" runat="server" width="200px" ImageUrl="../Content/ProfilePics/Me.png"/>
             <p>
                 Jag heter Mikael Edberg och är en hobbyfotograf som helst fotograferar djur, natur och landskap. 
                 För två år sedan började jag fotografera när jag upptäckte att jag hade en systemkamera som i stort 
@@ -44,10 +27,9 @@
                 använder den mest till landskap.
             </p>
         </div>
+        <div class="fb-like" data-href="http://localhost:2257/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </div>
-    </form>
     <footer>
         <p>Copyright Mikael Edberg</p>
     </footer>
-</body>
-</html>
+</asp:Content>

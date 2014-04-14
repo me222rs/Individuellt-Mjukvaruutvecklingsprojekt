@@ -58,7 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\ProfilePics\Me.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Javascript\JavaScript1.js" />
     <Content Include="Pages\About.aspx" />
+    <Content Include="Pages\AdminPages\AdminLogIn.aspx" />
+    <Content Include="Pages\CategoryPages\Animals.aspx" />
+    <Content Include="Pages\CategoryPages\Landscape.aspx" />
+    <Content Include="Pages\CategoryPages\Other.aspx" />
     <Content Include="Pages\Contact.aspx" />
     <Content Include="Pages\Gallery.aspx" />
     <Content Include="Pages\Home.aspx" />
@@ -66,12 +72,45 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Service.cs" />
     <Compile Include="Pages\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminPages\AdminLogIn.aspx.cs">
+      <DependentUpon>AdminLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminPages\AdminLogIn.aspx.designer.cs">
+      <DependentUpon>AdminLogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoryPages\Animals.aspx.cs">
+      <DependentUpon>Animals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CategoryPages\Animals.aspx.designer.cs">
+      <DependentUpon>Animals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoryPages\Landscape.aspx.cs">
+      <DependentUpon>Landscape.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CategoryPages\Landscape.aspx.designer.cs">
+      <DependentUpon>Landscape.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoryPages\Other.aspx.cs">
+      <DependentUpon>Other.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CategoryPages\Other.aspx.designer.cs">
+      <DependentUpon>Other.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -94,9 +133,17 @@
     <Compile Include="Pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Shared\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\Shared\Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,10 +152,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app_infrastructure\" />
     <Folder Include="Content\GalleryPics\" />
     <Folder Include="Content\GalleryThumbs\" />
     <Folder Include="Content\Icons\" />
-    <Folder Include="Javascript\" />
     <Folder Include="Model\DAL\" />
   </ItemGroup>
   <PropertyGroup>

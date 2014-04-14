@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebbsidaFotograf.Pages {
+namespace WebbsidaFotograf.Pages.CategoryPages {
     
     
-    public partial class Home {
+    public partial class Other {
     }
 }
