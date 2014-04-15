@@ -26,6 +26,9 @@
         <asp:ContentPlaceHolder ID="MainContentPlaceholder" runat="server">
         
         </asp:ContentPlaceHolder>
+        <footer>
+            <p>Copyright - Mikael Edberg</p>
+        </footer>
     </div>
     </form>
     <script src="../../Javascript/JavaScript1.js"></script>

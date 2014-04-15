@@ -5,7 +5,7 @@
     <asp:FileUpload ID="FileUpload1" runat="server" />
     <asp:Button ID="Upload" runat="server" Text="Ladda upp" OnClick="Upload_Click"/>
     <p>
-        <asp:Image ID="BigImage" runat="server" />
+        <asp:Image ID="BigImage" runat="server"/>
         <asp:LinkButton ID="Delete" runat="server" OnClick="Delete_Click">Radera</asp:LinkButton>
     </p>
     <div id="ThumbNails">

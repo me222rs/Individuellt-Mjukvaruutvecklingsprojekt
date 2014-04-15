@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h2>Kategorier</h2>
-    <asp:HyperLink ID="Landscape" runat="server" NavigateUrl="~/Pages/CategoryPages/Landscape.aspx">Landscape</asp:HyperLink>
-    <asp:HyperLink ID="Animals" runat="server" NavigateUrl="~/Pages/CategoryPages/Animals.aspx">Animals</asp:HyperLink>
-    <asp:HyperLink ID="Other" runat="server" NavigateUrl="~/Pages/CategoryPages/Other.aspx">Other</asp:HyperLink>
+    <div id="CategoryLinks">
+        <asp:HyperLink ID="Landscape" class="CategoryLink" runat="server" NavigateUrl="~/Pages/CategoryPages/Landscape.aspx">Landscape</asp:HyperLink>
+        <asp:HyperLink ID="Animals" class="CategoryLink" runat="server" NavigateUrl="~/Pages/CategoryPages/Animals.aspx">Animals</asp:HyperLink>
+        <asp:HyperLink ID="Other" class="CategoryLink" runat="server" NavigateUrl="~/Pages/CategoryPages/Other.aspx">Other</asp:HyperLink>
+    </div>
 </asp:Content>

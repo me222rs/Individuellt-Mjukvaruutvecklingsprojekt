@@ -54,9 +54,13 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         {
             //"~/Content/GalleryThumbs/" + "Penguins.jpg"
             string filePath = Server.MapPath(BigImage.ImageUrl);
-            if (System.IO.File.Exists(filePath))
+            string name = Request.QueryString["name"];
+            string thumbPath = Server.MapPath("~/Content/GalleryThumbs/" + name);
+
+            if (File.Exists(filePath) && File.Exists(thumbPath))
             {
-                System.IO.File.Delete(filePath);
+                File.Delete(filePath);
+                File.Delete(thumbPath);
             }
             Response.Redirect("Animals.aspx");
         }
