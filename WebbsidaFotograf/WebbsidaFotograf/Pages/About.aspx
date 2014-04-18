@@ -29,7 +29,4 @@
         </div>
         <div class="fb-like" data-href="http://localhost:2257/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </div>
-    <footer>
-        <p>Copyright Mikael Edberg</p>
-    </footer>
 </asp:Content>

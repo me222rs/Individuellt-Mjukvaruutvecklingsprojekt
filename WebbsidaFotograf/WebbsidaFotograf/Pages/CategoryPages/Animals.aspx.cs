@@ -12,9 +12,39 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 {
     public partial class Animals : System.Web.UI.Page
     {
+
+        public bool HasMessage
+        {
+            get
+            {
+                return Session["SuccessMessage"] != null;
+            }
+        }
+
+        private string SuccessMessage
+        {
+            get
+            {
+
+                var message = Session["SuccessMessage"] as string;
+                Session.Remove("SuccessMessage");
+                return message;
+            }
+            set
+            {
+                Session["SuccessMessage"] = value;
+            }
+        }
+
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HasMessage)
+            {
+                Success.Visible = true;
+                Success.Text = SuccessMessage;
+            }
+
             var image = Request.QueryString["name"];
             BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
 
@@ -32,9 +62,12 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 
                 Service hej = new Service();
                 var name = Service.SaveImage(stream, fileName);
+
+                SuccessMessage = String.Format("Uppladdning av {0} lyckades", fileName);
                 Response.Redirect("Animals.aspx?name=" + name);
 
             }
+
 
         }
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -62,6 +95,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 File.Delete(filePath);
                 File.Delete(thumbPath);
             }
+            SuccessMessage = String.Format("Borttagningen av {0} lyckades", name);
             Response.Redirect("Animals.aspx");
         }
     }

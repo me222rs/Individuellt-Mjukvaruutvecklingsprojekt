@@ -3,10 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <p>Ladda upp en bild i denna kategorin.</p>
     <asp:FileUpload ID="FileUpload1" runat="server" />
+    <asp:RequiredFieldValidator ID="UploadValidator" runat="server" ErrorMessage="Du måste välja en bild att ladda upp!" ControlToValidate="FileUpload1" Display="Dynamic"></asp:RequiredFieldValidator>
+    
     <asp:Button ID="Upload" runat="server" Text="Ladda upp" OnClick="Upload_Click"/>
+    <p><asp:Label ID="Success" runat="server" Text=""></asp:Label></p>
     <p>
+        
         <asp:Image ID="BigImage" runat="server"/>
-        <asp:LinkButton ID="Delete" runat="server" OnClick="Delete_Click">Radera</asp:LinkButton>
+        <asp:LinkButton ID="Delete" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
     </p>
     <div id="ThumbNails">
             

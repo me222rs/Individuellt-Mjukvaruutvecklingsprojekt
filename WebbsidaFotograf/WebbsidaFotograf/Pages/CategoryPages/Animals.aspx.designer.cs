@@ -22,6 +22,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
+        /// UploadValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UploadValidator;
+        
+        /// <summary>
         /// Upload control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Upload;
+        
+        /// <summary>
+        /// Success control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Success;
         
         /// <summary>
         /// BigImage control.

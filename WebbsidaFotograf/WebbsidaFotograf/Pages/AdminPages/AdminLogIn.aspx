@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <p>Logga in som admin.</p>
         <asp:Login ID="Login1" runat="server"></asp:Login>
     </div>
     </form>
