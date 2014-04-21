@@ -5,12 +5,23 @@ using System.Web;
 using System.IO;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using WebbsidaFotograf.Model.DAL;
 
 namespace WebbsidaFotograf.Model
 {
     public class Service
     {
+
+        private AdminLogin AdminLogin
+            {
+                get
+                {
+                    return _adminLogin ?? (_adminLogin = new AdminLogin());
+                }
+            }
+
         #region PFields
+        private static AdminLogin _adminLogin;
         private static Regex ApprovedExtentions;
         private static string PhysicalUploadedImagesPath;
         private static string PhysicalUploadedImagesThumbNailPath;
@@ -91,5 +102,10 @@ namespace WebbsidaFotograf.Model
             return fileName;
         }
         #endregion
+
+        public bool UserLogin(string userName, string password)
+        {
+            return AdminLogin.UserLogin(userName, password);
+        }
     }
 }

@@ -76,6 +76,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\DAL\AdminLogin.cs" />
     <Compile Include="Model\RoleActions.cs" />
     <Compile Include="Model\Service.cs" />
     <Compile Include="Pages\About.aspx.cs">
@@ -165,7 +166,6 @@
     <Folder Include="Content\GalleryPics\" />
     <Folder Include="Content\GalleryThumbs\" />
     <Folder Include="Content\Icons\" />
-    <Folder Include="Model\DAL\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
