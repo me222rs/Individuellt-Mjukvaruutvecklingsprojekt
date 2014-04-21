@@ -11,7 +11,7 @@ namespace WebbsidaFotograf.Model
 {
     public class Service
     {
-
+        public bool IsAdmin { get; set; }
         private AdminLogin AdminLogin
             {
                 get

@@ -10,7 +10,7 @@ namespace WebbsidaFotograf.Pages.AdminPages
 {
     public partial class AdminLogIn : System.Web.UI.Page
     {
-        public bool IsAdmin { get; set; }
+        
         private Service _service;
         private Service Service
         {
@@ -34,7 +34,8 @@ namespace WebbsidaFotograf.Pages.AdminPages
             if ((result))
             {
                 e.Authenticated = true;
-                IsAdmin = true;
+                //Service.IsAdmin = true;
+                Session["IsAdmin"] = true;
                 Response.Redirect("../Home.aspx");
             }
             else

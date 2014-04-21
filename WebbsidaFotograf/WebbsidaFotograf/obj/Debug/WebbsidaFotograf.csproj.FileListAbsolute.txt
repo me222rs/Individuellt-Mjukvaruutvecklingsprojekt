@@ -8,3 +8,8 @@ C:\Users\me222rs\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\Webbsi
 C:\Users\me222rs\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\obj\Debug\WebbsidaFotograf.csprojResolveAssemblyReference.cache
 C:\Users\me222rs\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\obj\Debug\WebbsidaFotograf.dll
 C:\Users\me222rs\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\obj\Debug\WebbsidaFotograf.pdb
+C:\Users\Mikael\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\bin\WebbsidaFotograf.dll
+C:\Users\Mikael\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\bin\WebbsidaFotograf.pdb
+C:\Users\Mikael\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\obj\Debug\WebbsidaFotograf.csprojResolveAssemblyReference.cache
+C:\Users\Mikael\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\obj\Debug\WebbsidaFotograf.dll
+C:\Users\Mikael\Documents\GitHub\Individuellt-Mjukvaruutvecklingsprojekt\WebbsidaFotograf\WebbsidaFotograf\obj\Debug\WebbsidaFotograf.pdb
