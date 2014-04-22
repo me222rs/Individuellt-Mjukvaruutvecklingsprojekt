@@ -20,7 +20,16 @@ namespace WebbsidaFotograf.Model
                 }
             }
 
+        private ImageDAL ImageDAL
+        {
+            get
+            {
+                return _imageDAL ?? (_imageDAL = new ImageDAL());
+            }
+        }
+
         #region PFields
+        private static ImageDAL _imageDAL;
         private static AdminLogin _adminLogin;
         private static Regex ApprovedExtentions;
         private static string PhysicalUploadedImagesPath;
@@ -74,6 +83,7 @@ namespace WebbsidaFotograf.Model
         #region Save Image
         public static string SaveImage(Stream stream, string fileName)
         {
+            
             var image = System.Drawing.Image.FromStream(stream);
 
             if (IsValidImage(image))
@@ -96,6 +106,8 @@ namespace WebbsidaFotograf.Model
                 image.Save(Path.Combine(PhysicalUploadedImagesPath, fileName));
                 var thumbnail = image.GetThumbnailImage(60, 45, null, System.IntPtr.Zero);
                 thumbnail.Save(Path.Combine(PhysicalUploadedImagesThumbNailPath, fileName));
+                //ImageDAL.InsertImageInfo();
+
             }
 
 

@@ -49,6 +49,42 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         protected global::System.Web.UI.WebControls.Button Upload;
         
         /// <summary>
+        /// DescriptionLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DescriptionLabel;
+        
+        /// <summary>
+        /// DescriptionTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DescriptionTextBox;
+        
+        /// <summary>
+        /// TagLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TagLabel;
+        
+        /// <summary>
+        /// TagTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TagTextBox;
+        
+        /// <summary>
         /// Success control.
         /// </summary>
         /// <remarks>
@@ -74,6 +110,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image BigImage;
+        
+        /// <summary>
+        /// fbdiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fbdiv;
         
         /// <summary>
         /// Repeater1 control.

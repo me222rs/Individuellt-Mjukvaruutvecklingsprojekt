@@ -58,6 +58,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             var image = Request.QueryString["name"];
             BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
 
+            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"];
+
         }
         #endregion
 
@@ -66,9 +68,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         {
             if (FileUpload1.HasFile)
             {
-
+                ImageProps imageProps = new ImageProps();
+                
+                
                 string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
                 var stream = FileUpload1.FileContent;
+
+                //imageProps.ImageName = fileName;
+                //imageProps.Description = DescriptionTextBox.Text;
+
 
                 Service hej = new Service();
                 var name = Service.SaveImage(stream, fileName);
