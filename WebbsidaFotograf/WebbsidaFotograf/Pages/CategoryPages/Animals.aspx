@@ -8,11 +8,12 @@
     
     <asp:Button ID="Upload" runat="server" Text="Ladda upp" OnClick="Upload_Click"/>
     <p><asp:Label ID="Success" runat="server" Text=""></asp:Label></p>
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
         </asp:PlaceHolder>
     <p>
         
         <asp:Image ID="BigImage" runat="server"/>
-        <asp:LinkButton ID="Delete" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
+        
     </p>
     <div id="ThumbNails">
             

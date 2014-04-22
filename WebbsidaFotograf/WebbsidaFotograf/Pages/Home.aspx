@@ -2,10 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <asp:Label ID="loggedIn" runat="server" Text="Inloggad som admin." Visible="False"></asp:Label>
+    <asp:Button ID="Button1" runat="server" Text="Logga ut" CausesValidation="False" OnClick="Button1_Click" />
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="AdminPages/AdminLogIn.aspx" >Logga in</asp:HyperLink>
     <div id="BlogContent">
     <h2>Blogg</h2>
     <p>Här ska några blogginlägg ligga.</p>
-
+    
     
 
     </div>

@@ -22,11 +22,22 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool admin = Convert.ToBoolean(Session["IsAdmin"]);
             //Session["IsAdmin"] = true;
-            if (Convert.ToBoolean(Session["IsAdmin"] = true)) 
+            if (admin == true)
             {
                 loggedIn.Visible = true;
             }
+            else 
+            {
+                loggedIn.Visible = false;
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["IsAdmin"] = false;
+            Response.Redirect("Home.aspx");
         }
     }
 }

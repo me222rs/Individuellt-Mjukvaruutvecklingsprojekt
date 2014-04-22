@@ -39,9 +39,14 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(Session["IsAdmin"] = true))
+            bool admin = Convert.ToBoolean(Session["IsAdmin"]);
+            if (admin == true)
             {
                 PlaceHolder1.Visible = true;
+            }
+            else
+            {
+                PlaceHolder1.Visible = false;
             }
 
             if (HasMessage)
