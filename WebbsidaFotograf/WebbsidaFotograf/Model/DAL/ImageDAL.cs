@@ -50,5 +50,55 @@ namespace WebbsidaFotograf.Model.DAL
                 }
             }
         }
+
+        public void SaveImage(ImageProps image) 
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.AddImageInfo", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@ImageName", SqlDbType.VarChar, 50).Value = image.ImageName;
+                    //cmd.Parameters.Add("@Description", SqlDbType.VarChar, 200).Value = image.Description;
+
+                    //cmd.Parameters.Add("@ImageID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    //image.ImageID = (int)cmd.Parameters["@ImageID"].Value;
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
+                }
+            }
+        }
+
+        public void DeleteImage(ImageProps image)
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.DeleteImageByFileName", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@ImageName", SqlDbType.VarChar, 50).Value = image.ImageName;
+                    
+
+                    
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
+                }
+            }
+        }
     }
 }

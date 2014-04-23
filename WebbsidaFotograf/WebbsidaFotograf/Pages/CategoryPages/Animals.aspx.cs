@@ -12,6 +12,11 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 {
     public partial class Animals : System.Web.UI.Page
     {
+        private ImageProps _image;
+        private ImageProps ImageProps
+        {
+            get { return _image ?? (_image = new ImageProps()); }
+        }
 
         public bool HasMessage
         {
@@ -68,21 +73,25 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         {
             if (FileUpload1.HasFile)
             {
-                ImageProps imageProps = new ImageProps();
+                //ImageProps imageProps = new ImageProps();
                 
                 
                 string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
                 var stream = FileUpload1.FileContent;
-
+                
                 //imageProps.ImageName = fileName;
                 //imageProps.Description = DescriptionTextBox.Text;
+                var image = ImageProps;
+                image.Description = DescriptionTextBox.Text;
+                image.ImageName = fileName;
 
+                Service service = new Service();
+                ImageProps.SaveImage(stream, fileName);
+                //service.SaveImage(image);
 
-                Service hej = new Service();
-                var name = Service.SaveImage(stream, fileName);
 
                 SuccessMessage = String.Format("Uppladdning av {0} lyckades", fileName);
-                Response.Redirect("Animals.aspx?name=" + name);
+                Response.Redirect("Animals.aspx?name=" + fileName);
 
             }
 
@@ -98,7 +107,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 
         public IEnumerable<string> Repeater1_GetData()
         {
-            return Service.GetImageNames();
+            return ImageProps.GetImageNames();
         }
 
         protected void Delete_Click(object sender, EventArgs e)
@@ -107,6 +116,11 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             string filePath = Server.MapPath(BigImage.ImageUrl);
             string name = Request.QueryString["name"];
             string thumbPath = Server.MapPath("~/Content/GalleryThumbs/" + name);
+
+            Service service = new Service();
+            var image = ImageProps;
+            image.ImageName = name;
+            service.DeleteImage(image);
 
             if (File.Exists(filePath) && File.Exists(thumbPath))
             {
