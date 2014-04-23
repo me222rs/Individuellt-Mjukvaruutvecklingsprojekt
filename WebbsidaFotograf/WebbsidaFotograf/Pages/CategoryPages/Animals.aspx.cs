@@ -18,6 +18,12 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             get { return _image ?? (_image = new ImageProps()); }
         }
 
+        private Service _service;
+        private Service Service
+        {
+            get { return _service ?? (_service = new Service()); }
+        }
+
         public bool HasMessage
         {
             get
@@ -54,20 +60,36 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 PlaceHolder1.Visible = false;
             }
 
+            
+
             if (HasMessage)
             {
                 Success.Visible = true;
                 Success.Text = SuccessMessage;
             }
-
+            ImageProps imageProps = new ImageProps();
             var image = Request.QueryString["name"];
             BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
 
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"];
+            ImageProps.ImageName = image;
+            if (image == null)
+            {
 
+            }
+            else
+            {
+                GetDescriptionByImageName(image);
+                DescriptionLabel.Text = ImageProps.Description;
+            }
+            
         }
         #endregion
 
+        public string GetDescriptionByImageName(string image) 
+        {
+            return Service.GetDescriptionByImageName(image);
+        }
         
         protected void Upload_Click(object sender, EventArgs e)
         {
@@ -78,7 +100,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 
                 string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
                 var stream = FileUpload1.FileContent;
-                
+                string description = DescriptionTextBox.Text;
                 //imageProps.ImageName = fileName;
                 //imageProps.Description = DescriptionTextBox.Text;
                 var image = ImageProps;
@@ -86,7 +108,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 image.ImageName = fileName;
 
                 Service service = new Service();
-                ImageProps.SaveImage(stream, fileName);
+                ImageProps.SaveImage(stream, fileName, description);
                 //service.SaveImage(image);
 
 
@@ -130,5 +152,12 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             SuccessMessage = String.Format("Borttagningen av {0} lyckades", name);
             Response.Redirect("Animals.aspx");
         }
+
+        //protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
+        //{
+
+        //}
+
+
     }
 }

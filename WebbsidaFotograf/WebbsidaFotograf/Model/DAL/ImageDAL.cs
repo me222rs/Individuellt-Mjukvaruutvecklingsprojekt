@@ -61,7 +61,7 @@ namespace WebbsidaFotograf.Model.DAL
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@ImageName", SqlDbType.VarChar, 50).Value = image.ImageName;
-                    //cmd.Parameters.Add("@Description", SqlDbType.VarChar, 200).Value = image.Description;
+                    cmd.Parameters.Add("@Description", SqlDbType.VarChar, 200).Value = image.Description;
 
                     //cmd.Parameters.Add("@ImageID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
 
@@ -99,6 +99,33 @@ namespace WebbsidaFotograf.Model.DAL
                     throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
                 }
             }
+        }
+
+        public string GetDescriptionByImageName(string image) 
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.GetDescriptionByImageName", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    ImageProps imageProps = new ImageProps();
+                    
+                    cmd.Parameters.Add("@ImageName", SqlDbType.VarChar, 50).Value = image;
+
+                    cmd.Parameters.Add("@Description", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    imageProps.Description = (string)cmd.Parameters["@Description"].Value;
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
+                }
+            }
+            return null;
         }
     }
 }

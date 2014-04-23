@@ -48,5 +48,10 @@ namespace WebbsidaFotograf.Model
         {
             return AdminLogin.UserLogin(userName, password);
         }
+
+        public string GetDescriptionByImageName(string image) 
+        {
+            return ImageDAL.GetDescriptionByImageName(image);
+        }
     }
 }

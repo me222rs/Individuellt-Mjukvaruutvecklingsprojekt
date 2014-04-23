@@ -21,17 +21,32 @@
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
         </asp:PlaceHolder>
     <p>
-        
+
+<%--        <asp:ListView ID="ListView1" runat="server" 
+            ItemType="WebbsidaFotograf.Model.ImageProps"
+            SelectMethod="ListView1_GetData" 
+            DataKeyNames="imageDescription" 
+            >
+
+            <ItemTemplate>
+                <td>
+                    <%# Item.Description%>
+                </td>
+            </ItemTemplate>
+        </asp:ListView>--%>
         <asp:Image ID="BigImage" runat="server"/>
 
     <br />
 
     </p>
+
     <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/CategoryPages/Animals.aspx" data-numposts="5" data-colorscheme="light"></div>
     <div id="ThumbNails">
             
         <p>
-            <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound" ItemType="System.String" SelectMethod="Repeater1_GetData" >
+            <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound" 
+                ItemType="System.String" 
+                SelectMethod="Repeater1_GetData" >
                 <ItemTemplate>
                         <asp:HyperLink ID="HyperLink1" runat="server"  
                            ImageUrl='<%# "~/Content/GalleryThumbs/" + Item %>'
