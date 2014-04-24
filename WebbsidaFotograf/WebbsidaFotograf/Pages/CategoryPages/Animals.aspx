@@ -21,19 +21,44 @@
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
         </asp:PlaceHolder>
     <p>
-
-<%--        <asp:ListView ID="ListView1" runat="server" 
-            ItemType="WebbsidaFotograf.Model.ImageProps"
-            SelectMethod="ListView1_GetData" 
-            DataKeyNames="imageDescription" 
-            >
-
+        
+<%--         <asp:ListView ID="DescListView" runat="server" 
+            ItemType="WebbsidaFotograf.Model.ImageProps" 
+            SelectMethod="DescListView_GetData">
+            <LayoutTemplate>
+                <div class="descTable">
+                    <table>
+                        <tr>
+                            <td>
+                                ImageID
+                            </td>
+                            <td>
+                                ImageName
+                            </td>
+                            <td>
+                                Description
+                            </td>
+                        </tr>
+                        <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                    </table>
+                </div>
+            </LayoutTemplate>
             <ItemTemplate>
-                <td>
-                    <%# Item.Description%>
-                </td>
+                <tr>
+                    <td>
+                        <%#: Item.ImageID %>
+                    </td>
+                    <td>
+                        <asp:ImageButton ID="Image1" runat="server" NavigateUrl='<%# "?name=" + Item.ImageName %>' ImageUrl='<%# "~/Content/GalleryThumbs/" + Item.ImageName %>' OnClick="Image1_Click"/>  
+                        <%#: Item.ImageName %>
+                    </td>
+                    <td>
+                        <%#: Item.Description %>
+                    </td>
+                </tr>
             </ItemTemplate>
         </asp:ListView>--%>
+
         <asp:Image ID="BigImage" runat="server"/>
 
     <br />

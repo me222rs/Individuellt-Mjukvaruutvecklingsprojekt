@@ -6,6 +6,8 @@ using System.Web.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 
+
+
 namespace WebbsidaFotograf.Model.DAL
 {
     public class ImageDAL
@@ -107,25 +109,91 @@ namespace WebbsidaFotograf.Model.DAL
             {
                 try
                 {
+                    ImageProps imageProps = new ImageProps();
+                    imageProps.ImageName = image;
                     SqlCommand cmd = new SqlCommand("appSchema.GetDescriptionByImageName", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    ImageProps imageProps = new ImageProps();
-                    
-                    cmd.Parameters.Add("@ImageName", SqlDbType.VarChar, 50).Value = image;
-
-                    cmd.Parameters.Add("@Description", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@ImageName", image);
 
                     conn.Open();
-                    cmd.ExecuteNonQuery();
-                    imageProps.Description = (string)cmd.Parameters["@Description"].Value;
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            //var imageName = reader.GetOrdinal("ImageName");
+                            var description = reader.GetOrdinal("Description");
+                            //ImageProps imageProps = new ImageProps();
+                            //return new ImageProps
+                            //{
+                            //ImageName = reader.GetString(imageName),
+                             string hej = reader.GetString(description);
+
+                             imageProps.Description = hej;
+                             return hej;
+                            
+
+                            //};
+                        }
+                        return null;
+                        //___________________________________________________________________________
+                        //ImageProps imageProps = new ImageProps();
+
+                        //cmd.Parameters.Add("@ImageName", SqlDbType.VarChar, 50).Value = image;
+
+                        //cmd.Parameters.Add("@Description", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+
+                        //conn.Open();
+                        //cmd.ExecuteNonQuery();
+                        //imageProps.Description = (string)cmd.Parameters["@Description"].Value;
+                    }
                 }
                 catch
                 {
                     throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
                 }
             }
-            return null;
+             //return null;
+        }
+
+        public IEnumerable<ImageProps> GetImages()
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var images = new List<ImageProps>(100);
+
+                    var cmd = new SqlCommand("appSchema.GetImages", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        var imageIDIndex = reader.GetOrdinal("ImageID");
+                        var imageName = reader.GetOrdinal("ImageName");
+                        var description = reader.GetOrdinal("Description");
+
+                        while (reader.Read())
+                        {
+                            images.Add(new ImageProps
+                            {
+                                ImageID = reader.GetInt32(imageIDIndex),
+                                ImageName = reader.GetString(imageName),
+                                Description = reader.GetString(description)
+                            });
+                        }
+                    }
+                    images.TrimExcess();
+                    return images;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
         }
     }
 }

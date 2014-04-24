@@ -72,6 +72,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
 
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"];
+
             ImageProps.ImageName = image;
             if (image == null)
             {
@@ -80,7 +81,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             else
             {
                 GetDescriptionByImageName(image);
-                DescriptionLabel.Text = ImageProps.Description;
+                //DescriptionTextBox.Text = ImageProps.Description;
             }
             
         }
@@ -152,6 +153,23 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             SuccessMessage = String.Format("Borttagningen av {0} lyckades", name);
             Response.Redirect("Animals.aspx");
         }
+
+        // The return type can be changed to IEnumerable, however to support
+        // paging and sorting, the following parameters must be added:
+        //     int maximumRows
+        //     int startRowIndex
+        //     out int totalRowCount
+        //     string sortByExpression
+        public IEnumerable<WebbsidaFotograf.Model.ImageProps> DescListView_GetData()
+        {
+            return Service.GetImages();
+        }
+
+        //protected void Image1_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    var image = Request.QueryString["name"];
+        //    BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
+        //}
 
         //protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
         //{

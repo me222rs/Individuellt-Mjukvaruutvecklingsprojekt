@@ -53,5 +53,10 @@ namespace WebbsidaFotograf.Model
         {
             return ImageDAL.GetDescriptionByImageName(image);
         }
+
+        public IEnumerable<ImageProps> GetImages()
+        {
+            return ImageDAL.GetImages();
+        }
     }
 }
