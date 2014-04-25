@@ -12,6 +12,12 @@ namespace WebbsidaFotograf.Model.DAL
 {
     public class ImageDAL
     {
+        private ImageProps _image;
+        private ImageProps ImageProps
+        {
+            get { return _image ?? (_image = new ImageProps()); }
+        }
+
         private static string _connectionString;
 
         static ImageDAL() 
@@ -109,8 +115,8 @@ namespace WebbsidaFotograf.Model.DAL
             {
                 try
                 {
-                    ImageProps imageProps = new ImageProps();
-                    imageProps.ImageName = image;
+                    //ImageProps imageProps = new ImageProps();
+                    //imageProps.ImageName = image;
                     SqlCommand cmd = new SqlCommand("appSchema.GetDescriptionByImageName", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -129,9 +135,10 @@ namespace WebbsidaFotograf.Model.DAL
                             //{
                             //ImageName = reader.GetString(imageName),
                              string hej = reader.GetString(description);
-
-                             imageProps.Description = hej;
-                             return hej;
+                            ImageProps.Description = hej;
+                            
+                            return hej;
+                             //return hej;
                             
 
                             //};

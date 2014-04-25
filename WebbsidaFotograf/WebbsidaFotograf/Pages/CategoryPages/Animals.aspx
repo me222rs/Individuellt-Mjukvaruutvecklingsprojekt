@@ -21,8 +21,10 @@
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
         </asp:PlaceHolder>
     <p>
+
+        <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
         
-<%--         <asp:ListView ID="DescListView" runat="server" 
+         <%--<asp:ListView ID="DescListView" runat="server" 
             ItemType="WebbsidaFotograf.Model.ImageProps" 
             SelectMethod="DescListView_GetData">
             <LayoutTemplate>
@@ -49,7 +51,7 @@
                         <%#: Item.ImageID %>
                     </td>
                     <td>
-                        <asp:ImageButton ID="Image1" runat="server" NavigateUrl='<%# "?name=" + Item.ImageName %>' ImageUrl='<%# "~/Content/GalleryThumbs/" + Item.ImageName %>' OnClick="Image1_Click"/>  
+                        <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# "~/Content/GalleryThumbs/" + Item.ImageName %>' OnClick="Image1_Click"/>  
                         <%#: Item.ImageName %>
                     </td>
                     <td>

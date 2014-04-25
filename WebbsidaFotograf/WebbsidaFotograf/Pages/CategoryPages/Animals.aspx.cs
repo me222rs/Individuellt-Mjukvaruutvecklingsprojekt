@@ -81,7 +81,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             else
             {
                 GetDescriptionByImageName(image);
-                //DescriptionTextBox.Text = ImageProps.Description;
+                DescriptionLiteral.Text = ImageProps.Description;
             }
             
         }
