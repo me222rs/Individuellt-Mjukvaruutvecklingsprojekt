@@ -62,7 +62,11 @@
         </asp:ListView>--%>
 
         <asp:Image ID="BigImage" runat="server"/>
-
+        <br />
+        <asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>
+        <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="false">
+        <asp:Label ID="ImageTags" runat="server" Visible="true" Text="Här kommer taggarna ligga!"></asp:Label>
+        </asp:PlaceHolder>
     <br />
 
     </p>

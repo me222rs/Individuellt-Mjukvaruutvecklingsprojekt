@@ -28,7 +28,16 @@ namespace WebbsidaFotograf.Model
             }
         }
 
+        private TagsDAL TagsDAL
+        {
+            get
+            {
+                return _tagsDAL ?? (_tagsDAL = new TagsDAL());
+            }
+        }
+
         #region PFields
+        private static TagsDAL _tagsDAL;
         private static ImageDAL _imageDAL;
         private static AdminLogin _adminLogin;
         #endregion
@@ -57,6 +66,11 @@ namespace WebbsidaFotograf.Model
         public IEnumerable<ImageProps> GetImages()
         {
             return ImageDAL.GetImages();
+        }
+
+        public string GetTagsByImageName(string image)
+        {
+            return TagsDAL.GetTagsByImageName(image);
         }
     }
 }

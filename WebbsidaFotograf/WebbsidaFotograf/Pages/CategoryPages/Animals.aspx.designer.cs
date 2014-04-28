@@ -121,6 +121,33 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         protected global::System.Web.UI.WebControls.Image BigImage;
         
         /// <summary>
+        /// ShowTags control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ShowTags;
+        
+        /// <summary>
+        /// PlaceHolder2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder2;
+        
+        /// <summary>
+        /// ImageTags control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ImageTags;
+        
+        /// <summary>
         /// fbdiv control.
         /// </summary>
         /// <remarks>

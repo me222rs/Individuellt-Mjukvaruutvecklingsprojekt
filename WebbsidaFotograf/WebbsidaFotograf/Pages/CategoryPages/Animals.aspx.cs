@@ -18,6 +18,12 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             get { return _image ?? (_image = new ImageProps()); }
         }
 
+        private Tags _tags;
+        private Tags Tags
+        {
+            get { return _tags ?? (_tags = new Tags()); }
+        }
+
         private Service _service;
         private Service Service
         {
@@ -111,6 +117,10 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 Service service = new Service();
                 ImageProps.SaveImage(stream, fileName, description);
                 //service.SaveImage(image);
+                string s = TagTextBox.Text;
+                string[] tags = s.Split(' ');
+
+
 
 
                 SuccessMessage = String.Format("Uppladdning av {0} lyckades", fileName);
@@ -163,6 +173,23 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         public IEnumerable<WebbsidaFotograf.Model.ImageProps> DescListView_GetData()
         {
             return Service.GetImages();
+        }
+
+        protected void ShowTags_Click(object sender, EventArgs e)
+        {
+            if (PlaceHolder2.Visible == false)
+            {
+                //Tags.Visible = true;
+                PlaceHolder2.Visible = true;
+                var image = Request.QueryString["name"];
+                Service.GetTagsByImageName(image);
+                ImageTags.Text = Tags.TagName;
+            }
+
+            else
+            {
+                ImageTags.Visible = false;
+            }
         }
 
         //protected void Image1_Click(object sender, ImageClickEventArgs e)

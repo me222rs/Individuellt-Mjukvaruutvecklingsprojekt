@@ -78,9 +78,11 @@
     </Compile>
     <Compile Include="Model\DAL\AdminLogin.cs" />
     <Compile Include="Model\DAL\ImageDAL.cs" />
+    <Compile Include="Model\DAL\TagsDAL.cs" />
     <Compile Include="Model\ImageProps.cs" />
     <Compile Include="Model\RoleActions.cs" />
     <Compile Include="Model\Service.cs" />
+    <Compile Include="Model\Tags.cs" />
     <Compile Include="Pages\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
