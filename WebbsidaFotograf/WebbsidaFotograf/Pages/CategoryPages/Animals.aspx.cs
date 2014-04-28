@@ -86,8 +86,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             }
             else
             {
-                GetDescriptionByImageName(image);
-                DescriptionLiteral.Text = ImageProps.Description;
+                string desc = GetDescriptionByImageName(image);
+                DescriptionLiteral.Text = desc;
             }
             
         }
@@ -95,7 +95,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 
         public string GetDescriptionByImageName(string image) 
         {
-            return Service.GetDescriptionByImageName(image);
+            var desc = Service.GetDescriptionByImageName(image);
+            return desc;
         }
         
         protected void Upload_Click(object sender, EventArgs e)
