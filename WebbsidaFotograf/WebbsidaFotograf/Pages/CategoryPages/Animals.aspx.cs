@@ -87,7 +87,9 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             else
             {
                 string desc = GetDescriptionByImageName(image);
+                string tags = GetTagsByImageName(image);
                 DescriptionLiteral.Text = desc;
+                ImageTags.Text = tags;
             }
             
         }
@@ -97,6 +99,12 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         {
             var desc = Service.GetDescriptionByImageName(image);
             return desc;
+        }
+
+        public string GetTagsByImageName(string image)
+        {
+            var tags = Service.GetTagsByImageName(image);
+            return tags;
         }
         
         protected void Upload_Click(object sender, EventArgs e)
@@ -155,6 +163,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             var image = ImageProps;
             image.ImageName = name;
             service.DeleteImage(image);
+            
 
             if (File.Exists(filePath) && File.Exists(thumbPath))
             {

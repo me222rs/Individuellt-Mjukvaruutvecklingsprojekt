@@ -70,7 +70,7 @@ namespace WebbsidaFotograf.Model
 
         public string GetTagsByImageName(string image)
         {
-            return TagsDAL.GetTagsByImageName(image);
+            return ImageDAL.GetTagsByImageName(image);
         }
     }
 }

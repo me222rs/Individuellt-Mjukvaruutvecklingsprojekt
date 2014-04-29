@@ -17,6 +17,8 @@ namespace WebbsidaFotograf.Model
 
         public string Description { get; set; }
 
+        public string Tags { get; set; }
+
         private Service Service 
         { 
             get 
@@ -88,8 +90,9 @@ namespace WebbsidaFotograf.Model
         #region Save Image
         public static string SaveImage(Stream stream, string fileName, string description)
         {
-            
+            //fileName = Path.GetRandomFileName();
             var image = System.Drawing.Image.FromStream(stream);
+            //var name = Path.GetRandomFileName();
 
             if (IsValidImage(image))
             {
@@ -100,6 +103,7 @@ namespace WebbsidaFotograf.Model
                     var extention = Path.GetExtension(fileName);
                     //Hämtar ut filnamnet, alltså det som står innan .jpg
                     var imageName = Path.GetFileNameWithoutExtension(fileName);
+                    imageName = Path.GetRandomFileName();
 
                     do
                     {

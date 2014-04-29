@@ -1,6 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Animals.aspx.cs" Inherits="WebbsidaFotograf.Pages.CategoryPages.Animals" MasterPageFile="~/Pages/Shared/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <asp:Label ID="SearchLabel" runat="server" Text="Sök efter bild"></asp:Label>
+    <asp:TextBox ID="SearchTextBox" runat="server"></asp:TextBox>
+
     <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
     <p>Ladda upp en bild i denna kategorin.</p>
     <asp:FileUpload ID="FileUpload1" runat="server" />
@@ -13,7 +16,7 @@
     <asp:Label ID="DescriptionLabel" runat="server" Text="Beskrivning"></asp:Label>
     <asp:TextBox ID="DescriptionTextBox" runat="server"></asp:TextBox>
 <br />
-    <asp:Label ID="TagLabel" runat="server" Text="Taggar"></asp:Label>
+    <asp:Label ID="TagLabel" runat="server" Text="Lägg till taggar, separera varje tagg med ,"></asp:Label>
     <asp:TextBox ID="TagTextBox" runat="server"></asp:TextBox>
 
 
@@ -21,9 +24,9 @@
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
         </asp:PlaceHolder>
     <p>
-
-        <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
         
+        <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
+        <br />
          <%--<asp:ListView ID="DescListView" runat="server" 
             ItemType="WebbsidaFotograf.Model.ImageProps" 
             SelectMethod="DescListView_GetData">
@@ -64,7 +67,7 @@
         <asp:Image ID="BigImage" runat="server"/>
         <br />
         <asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>
-        <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="false">
+        <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="true">
         <asp:Label ID="ImageTags" runat="server" Visible="true" Text="Här kommer taggarna ligga!"></asp:Label>
         </asp:PlaceHolder>
     <br />
