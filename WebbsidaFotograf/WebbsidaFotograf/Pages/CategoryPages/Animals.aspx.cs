@@ -117,6 +117,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
                 var stream = FileUpload1.FileContent;
                 string description = DescriptionTextBox.Text;
+                string tags = TagTextBox.Text;
                 //imageProps.ImageName = fileName;
                 //imageProps.Description = DescriptionTextBox.Text;
                 var image = ImageProps;
@@ -124,10 +125,10 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 image.ImageName = fileName;
 
                 Service service = new Service();
-                ImageProps.SaveImage(stream, fileName, description);
+                ImageProps.SaveImage(stream, fileName, description, tags);
                 //service.SaveImage(image);
-                string s = TagTextBox.Text;
-                string[] tags = s.Split(' ');
+                //string s = TagTextBox.Text;
+                //string[] tags = s.Split(' ');
 
 
 
@@ -200,6 +201,14 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             {
                 ImageTags.Visible = false;
             }
+        }
+
+        protected void UpdateDescription_Click(object sender, EventArgs e)
+        {
+            var image = Request.QueryString["name"];
+            var description = UpdateDescriptionTextBox.Text;
+            Service.UpdateDescription(image, description);
+            Response.Redirect(Request.RawUrl);
         }
 
         //protected void Image1_Click(object sender, ImageClickEventArgs e)

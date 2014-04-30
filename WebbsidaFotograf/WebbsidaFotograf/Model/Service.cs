@@ -72,5 +72,10 @@ namespace WebbsidaFotograf.Model
         {
             return ImageDAL.GetTagsByImageName(image);
         }
+
+        public void UpdateDescription(string image, string description)
+        {
+            ImageDAL.UpdateDescription(image, description);
+        }
     }
 }

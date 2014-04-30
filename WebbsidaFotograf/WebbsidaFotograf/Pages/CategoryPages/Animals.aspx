@@ -15,6 +15,7 @@
 <br />
     <asp:Label ID="DescriptionLabel" runat="server" Text="Beskrivning"></asp:Label>
     <asp:TextBox ID="DescriptionTextBox" runat="server"></asp:TextBox>
+    
 <br />
     <asp:Label ID="TagLabel" runat="server" Text="Lägg till taggar, separera varje tagg med ,"></asp:Label>
     <asp:TextBox ID="TagTextBox" runat="server"></asp:TextBox>
@@ -22,8 +23,12 @@
 
     <p><asp:Label ID="Success" runat="server" Text=""></asp:Label></p>
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
+        <br />
+        <asp:LinkButton ID="UpdateDescription" runat="server" OnClick="UpdateDescription_Click" CausesValidation="false">Uppdatera Beskrivning</asp:LinkButton>
+        <br />
+        <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
         </asp:PlaceHolder>
-    <p>
+    <p id="ImageInfos">
         
         <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
         <br />

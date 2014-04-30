@@ -88,7 +88,7 @@ namespace WebbsidaFotograf.Model
         }
 
         #region Save Image
-        public static string SaveImage(Stream stream, string fileName, string description)
+        public static string SaveImage(Stream stream, string fileName, string description, string tags)
         {
             //fileName = Path.GetRandomFileName();
             var image = System.Drawing.Image.FromStream(stream);
@@ -114,6 +114,7 @@ namespace WebbsidaFotograf.Model
                 ImageProps imageProps = new ImageProps();
                 imageProps.ImageName = fileName;
                 imageProps.Description = description;
+                imageProps.Tags = tags;
                 Service service = new Service();
                 service.SaveImage(imageProps);
                 image.Save(Path.Combine(PhysicalUploadedImagesPath, fileName));

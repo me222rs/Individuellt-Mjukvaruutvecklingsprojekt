@@ -70,6 +70,7 @@ namespace WebbsidaFotograf.Model.DAL
 
                     cmd.Parameters.Add("@ImageName", SqlDbType.VarChar, 50).Value = image.ImageName;
                     cmd.Parameters.Add("@Description", SqlDbType.VarChar, 200).Value = image.Description;
+                    cmd.Parameters.Add("@Tags", SqlDbType.VarChar, 200).Value = image.Tags;
 
                     //cmd.Parameters.Add("@ImageID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
 
@@ -257,6 +258,41 @@ namespace WebbsidaFotograf.Model.DAL
                 }
             }
             //return null;
+        }
+        public void UpdateDescription(string image, string description)
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.UpdateDescription", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@ImageName", image);
+                    cmd.Parameters.AddWithValue("@Description", description);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    //using (SqlDataReader reader = cmd.ExecuteReader())
+                    //{
+                    //    if (reader.Read())
+                    //    {
+                    //        var desc = reader.GetOrdinal("Description");
+
+                    //        string hej = reader.GetString(desc);
+                    //        ImageProps.Description = hej;
+
+                    //        return hej;
+                    //    }
+                    //    return null;
+                    //}
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
+                }
+            }
         }
     }
 }
