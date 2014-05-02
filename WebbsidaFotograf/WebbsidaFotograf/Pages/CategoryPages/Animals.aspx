@@ -69,7 +69,7 @@
             </ItemTemplate>
         </asp:ListView>--%>
 
-        <asp:Image ID="BigImage" runat="server"/>
+        <asp:Image ID="BigImage" runat="server" Height="600px"/>
         <br />
         <asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>
         <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="true">

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebbsidaFotograf.Model;
+using System.Security.Cryptography;
 
 namespace WebbsidaFotograf.Pages.AdminPages
 {
