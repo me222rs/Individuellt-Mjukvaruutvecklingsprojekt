@@ -20,6 +20,15 @@ namespace WebbsidaFotograf.Model
                 }
             }
 
+        private BlogDAL BlogDAL
+        {
+            get
+            {
+                return _blogDAL ?? (_blogDAL = new BlogDAL());
+            }
+        }
+
+
         private ImageDAL ImageDAL
         {
             get
@@ -37,6 +46,7 @@ namespace WebbsidaFotograf.Model
         }
 
         #region PFields
+        private static BlogDAL _blogDAL;
         private static TagsDAL _tagsDAL;
         private static ImageDAL _imageDAL;
         private static AdminLogin _adminLogin;
@@ -76,6 +86,16 @@ namespace WebbsidaFotograf.Model
         public void UpdateDescription(string image, string description)
         {
             ImageDAL.UpdateDescription(image, description);
+        }
+
+        public string CreateBlogPost(string title, string post) 
+        {
+            return BlogDAL.CreateBlogPost(title, post);
+        }
+
+        public IEnumerable<Blog> GetBlogPosts() 
+        {
+            return BlogDAL.GetBlogPosts();
         }
     }
 }

@@ -7,9 +7,77 @@
     <div id="BlogContent">
     <h2>Blogg</h2>
     <p>Här ska några blogginlägg ligga.</p>
-    
-    
+        <asp:HyperLink ID="CreateNewBlogPost" runat="server" NavigateUrl="~/Pages/CreateBlogPost.aspx">Skapa nytt blogginlägg</asp:HyperLink>
+    <div id="BlogpostDiv">
+        <asp:ListView ID="ListView1" runat="server"
+            ItemType="WebbsidaFotograf.Model.Blog"
+            SelectMethod="ListView1_GetData"
+            OnItemDataBound="ListView1_ItemDataBound">
 
+<%--            <LayoutTemplate>
+                <table>
+                    <tr>
+                        <td>
+                            ID
+                        </td>
+                        <td>
+                            Titel
+                        </td>
+                        <td>
+                            Post
+                        </td>
+                        <td>
+                            Datum
+                        </td>
+
+                    </tr>
+                    <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                </table>
+            </LayoutTemplate>--%>
+
+            <ItemTemplate>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl='<%# Eval("BlogPostID", "~/Pages/PostDetails.aspx?Id={0}") %>'><h2><%#: Item.Title %></h2></asp:HyperLink>
+                        
+                        <br />
+                        <%#: Item.Post %>
+                        <br />
+                        <h5><%#: Item.Date %></h5>
+                    </td>
+<%--                    <td>
+                        <%#: Item.Title %>
+                    </td>
+                    <td>
+                        <%#: Item.Post %>
+                    </td>
+                    <td>
+                        <%#: Item.Date %>
+                    </td>--%>
+                </tr>
+            </ItemTemplate>
+        </asp:ListView>
+        </div>
+<%--        <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound"
+            ItemType="WebbsidaFotograf.Model.Blog" 
+            SelectMethod="Repeater1_GetData" >
+            <ItemTemplate>
+                <tr>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Item.BlogPostID %>'></asp:Label>
+                    </td>
+                    <td>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Item.Title %>'></asp:Label>
+                    </td>
+                    <td>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Item.Post %>'></asp:Label>
+                    </td>
+                    <td>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Item.Date%>'></asp:Label>
+                    </td>
+                </tr>
+            </ItemTemplate>
+        </asp:Repeater>--%>
     </div>
     <p>Skriv gärna en kommentar och gilla sidan!</p>
     

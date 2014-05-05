@@ -47,3 +47,13 @@ p{
 #ThumbNails{
 
 }
+#BlogpostDiv{
+    width:800px;
+
+    background-color:lightblue;
+}
+#BlogpostHeaderDiv{
+    width:800px;
+    height:30px;
+    color:darkblue;
+}

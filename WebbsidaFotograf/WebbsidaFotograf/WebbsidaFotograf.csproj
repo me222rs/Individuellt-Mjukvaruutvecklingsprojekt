@@ -66,8 +66,10 @@
     <Content Include="Pages\CategoryPages\Landscape.aspx" />
     <Content Include="Pages\CategoryPages\Other.aspx" />
     <Content Include="Pages\Contact.aspx" />
+    <Content Include="Pages\CreateBlogPost.aspx" />
     <Content Include="Pages\Gallery.aspx" />
     <Content Include="Pages\Home.aspx" />
+    <Content Include="Pages\PostDetails.aspx" />
     <Content Include="Styles\StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -76,7 +78,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\Blog.cs" />
     <Compile Include="Model\DAL\AdminLogin.cs" />
+    <Compile Include="Model\DAL\BlogDAL.cs" />
     <Compile Include="Model\DAL\ImageDAL.cs" />
     <Compile Include="Model\DAL\TagsDAL.cs" />
     <Compile Include="Model\ImageProps.cs" />
@@ -125,6 +129,13 @@
     <Compile Include="Pages\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateBlogPost.aspx.cs">
+      <DependentUpon>CreateBlogPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CreateBlogPost.aspx.designer.cs">
+      <DependentUpon>CreateBlogPost.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Gallery.aspx.cs">
       <DependentUpon>Gallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,6 +149,13 @@
     </Compile>
     <Compile Include="Pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PostDetails.aspx.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PostDetails.aspx.designer.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

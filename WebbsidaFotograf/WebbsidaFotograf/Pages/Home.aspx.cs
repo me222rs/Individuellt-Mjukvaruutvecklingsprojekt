@@ -32,12 +32,43 @@ namespace WebbsidaFotograf.Pages
             {
                 loggedIn.Visible = false;
             }
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session["IsAdmin"] = false;
             Response.Redirect("Home.aspx");
+        }
+
+        // The return type can be changed to IEnumerable, however to support
+        // paging and sorting, the following parameters must be added:
+        //     int maximumRows
+        //     int startRowIndex
+        //     out int totalRowCount
+        //     string sortByExpression
+        public IEnumerable<WebbsidaFotograf.Model.Blog> ListView1_GetData()
+        {
+            return Service.GetBlogPosts();
+        }
+
+        protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+
+        }
+
+        //public IEnumerable<Blog> Repeater1_GetData()
+        //{
+        //    return Service.GetBlogPosts();
+        //}
+
+        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+                //var fileinfo = (FileInfo)e.Item.DataItem;
+            }
         }
     }
 }
