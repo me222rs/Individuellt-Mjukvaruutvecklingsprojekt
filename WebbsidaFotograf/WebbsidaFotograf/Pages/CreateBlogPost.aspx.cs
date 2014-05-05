@@ -34,6 +34,7 @@ namespace WebbsidaFotograf.Pages
             string title = BlogTitle.Text;
             string post = BlogContent.Text;
             Service.CreateBlogPost(title, post);
+            Response.Redirect("Home.aspx");
         }
     }
 }

@@ -36,6 +36,7 @@
             </LayoutTemplate>--%>
 
             <ItemTemplate>
+                <table class="BlogTable">
                 <tr>
                     <td>
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl='<%# Eval("BlogPostID", "~/Pages/PostDetails.aspx?Id={0}") %>'><h2><%#: Item.Title %></h2></asp:HyperLink>
@@ -55,6 +56,7 @@
                         <%#: Item.Date %>
                     </td>--%>
                 </tr>
+                    </table>
             </ItemTemplate>
         </asp:ListView>
         </div>

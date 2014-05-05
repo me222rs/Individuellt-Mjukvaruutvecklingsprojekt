@@ -11,7 +11,7 @@ namespace WebbsidaFotograf.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?Id=" + Request.QueryString["Id"];
         }
     }
 }
