@@ -2,10 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceholder" runat="server">
 
-    <asp:ListView ID="ListView1" runat="server"
+    <asp:ListView ID="ListView2" runat="server"
             ItemType="WebbsidaFotograf.Model.Blog"
-            SelectMethod="ListView1_GetData"
-            OnItemDataBound="ListView1_ItemDataBound">
+            SelectMethod="ListView2_GetData">
 
             <ItemTemplate>
                 <table class="BlogTable">

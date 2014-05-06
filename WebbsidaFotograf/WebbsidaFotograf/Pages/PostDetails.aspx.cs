@@ -23,19 +23,18 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //int id = Convert.ToInt32(Request.QueryString["Id"]);
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?Id=" + Request.QueryString["Id"];
         }
 
-        public Blog ListView1_GetData([QueryString]int postID)
+        public Blog ListView2_GetData([QueryString]int postID)
         {
-            
-            //postID = Convert.ToInt32(Request.QueryString["Id"]);
             return Service.GetBlogPostByID(postID);
         }
 
-        protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
-        {
+        //protected void ListView2_ItemDataBound(object sender, ListViewItemEventArgs e)
+        //{
 
-        }
+        //}
     }
 }

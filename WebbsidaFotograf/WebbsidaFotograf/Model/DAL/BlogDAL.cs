@@ -113,10 +113,10 @@ namespace WebbsidaFotograf.Model.DAL
                     {
                         if (reader.Read())
                         {
-                            var postIDIndex = reader.GetOrdinal("Titel");
-                            var titleIndex = reader.GetOrdinal("Land");
-                            var postIndex = reader.GetOrdinal("Produktionsar");
-                            var dateIndex = reader.GetOrdinal("Filmbolag");
+                            var postIDIndex = reader.GetOrdinal("BlogPostID");
+                            var titleIndex = reader.GetOrdinal("Title");
+                            var postIndex = reader.GetOrdinal("Post");
+                            var dateIndex = reader.GetOrdinal("Date");
 
                             return new Blog
                             {
