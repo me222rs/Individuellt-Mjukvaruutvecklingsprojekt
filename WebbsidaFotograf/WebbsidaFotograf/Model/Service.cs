@@ -97,5 +97,10 @@ namespace WebbsidaFotograf.Model
         {
             return BlogDAL.GetBlogPosts();
         }
+
+        public Blog GetBlogPostByID(int postID) 
+        {
+            return BlogDAL.GetBlogPostById(postID);
+        }
     }
 }

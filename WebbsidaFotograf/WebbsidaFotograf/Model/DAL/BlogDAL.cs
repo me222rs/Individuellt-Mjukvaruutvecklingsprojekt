@@ -95,6 +95,48 @@ namespace WebbsidaFotograf.Model.DAL
                 }
             }
         }
+        public Blog GetBlogPostById(int postID)
+        {
+            using (SqlConnection connection = CreateConnection())
+            {
+                try
+                {
+
+                    SqlCommand cmd = new SqlCommand("appSchema.GetBlogPostByID", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@BlogPostID", postID);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var postIDIndex = reader.GetOrdinal("Titel");
+                            var titleIndex = reader.GetOrdinal("Land");
+                            var postIndex = reader.GetOrdinal("Produktionsar");
+                            var dateIndex = reader.GetOrdinal("Filmbolag");
+
+                            return new Blog
+                            {
+                                BlogPostID = reader.GetInt32(postIDIndex),
+                                Title = reader.GetString(titleIndex),
+                                Post = reader.GetString(postIndex),
+                                Date = reader.GetDateTime(dateIndex),
+
+                            };
+                        }
+                    }
+                    return null;
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i data access layer.");
+                }
+            }
+
+        }
 
     }
 }
