@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebbsidaFotograf.Model;
 using System.Security.Cryptography;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace WebbsidaFotograf.Pages.AdminPages
 {
@@ -30,6 +33,9 @@ namespace WebbsidaFotograf.Pages.AdminPages
         {
             string userName = Login1.UserName;
             string password = Login1.Password;
+            //Kolla länken sedan
+            //http://stackoverflow.com/questions/4329909/hashing-passwords-with-md5-or-sha-256-c-sharp
+
 
             bool result = Service.UserLogin(userName, password);
             if ((result))
@@ -43,6 +49,18 @@ namespace WebbsidaFotograf.Pages.AdminPages
             {
                 e.Authenticated = false;
             }
+
+        }
+
+        private static string Encrypt(string password) 
+        {
+            using (var deriveBytes = new Rfc2898DeriveBytes(password, 20))
+            {
+                
+            }
+            
+
+            return password;
         }
 
 

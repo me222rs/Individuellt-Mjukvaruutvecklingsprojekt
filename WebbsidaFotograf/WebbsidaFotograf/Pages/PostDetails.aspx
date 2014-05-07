@@ -17,7 +17,7 @@
                         <br />
                         <h5><%#: Item.Date %></h5>
                         <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click">Ta bort</asp:LinkButton>
-                        <asp:LinkButton ID="UpdatePost" runat="server" OnClick="UpdatePost_Click">Redigera</asp:LinkButton>
+                        
                     </td>
                     
                 </tr>
