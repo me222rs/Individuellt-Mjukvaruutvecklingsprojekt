@@ -62,6 +62,11 @@ namespace WebbsidaFotograf.Model
             ImageDAL.DeleteImage(image);
         }
 
+        public void DeleteBlogPost(int? postID) 
+        {
+            BlogDAL.DeleteBlogPost(postID);
+        }
+
 
         public bool UserLogin(string userName, string password)
         {
@@ -98,9 +103,14 @@ namespace WebbsidaFotograf.Model
             return BlogDAL.GetBlogPosts();
         }
 
-        public Blog GetBlogPostByID(int postID) 
+        public Blog GetBlogPostByID(int? postID) 
         {
             return BlogDAL.GetBlogPostById(postID);
+        }
+
+        public void SaveChanges(Blog item) 
+        {
+            BlogDAL.UpdateBlogPost(item);
         }
     }
 }

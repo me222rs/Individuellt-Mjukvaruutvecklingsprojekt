@@ -95,7 +95,7 @@ namespace WebbsidaFotograf.Model.DAL
                 }
             }
         }
-        public Blog GetBlogPostById(int postID)
+        public Blog GetBlogPostById(int? postID)
         {
             using (SqlConnection connection = CreateConnection())
             {
@@ -137,6 +137,64 @@ namespace WebbsidaFotograf.Model.DAL
             }
 
         }
+
+        public void DeleteBlogPost(int? blog)
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.DeleteBlogPost", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@BlogPostID", SqlDbType.Int).Value = blog;
+
+
+
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
+                }
+            }
+        }
+
+        public void UpdateBlogPost(Blog item)
+        {
+            // Skapar och initierar ett anslutningsobjekt.
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.UpdateBlogPost", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Title", SqlDbType.VarChar, 50).Value = item.Title;
+                    cmd.Parameters.Add("@Post", SqlDbType.VarChar, 2000).Value = item.Post;
+
+
+                    cmd.Parameters.Add("@BlogPostID", SqlDbType.Int, 4).Value = item.BlogPostID;
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+
+                    // TODO: Implementera UpdateCustomer.
+
+                }
+                catch
+                {
+                    // Kastar ett eget undantag om ett undantag kastas.
+                    throw new ApplicationException("An error occured in the data access layer.");
+                }
+            }
+        }
+
 
     }
 }
