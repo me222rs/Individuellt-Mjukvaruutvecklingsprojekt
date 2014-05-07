@@ -22,6 +22,7 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Här Kollar jag om en admin är inloggad. Är admin inloggad så kommer det att finnas lite extra funktionalitet på sidan.
             bool admin = Convert.ToBoolean(Session["IsAdmin"]);
             //Session["IsAdmin"] = true;
             if (admin == true)
@@ -35,19 +36,21 @@ namespace WebbsidaFotograf.Pages
 
 
         }
-
+        /// <summary>
+        /// Loggar ut användaren genom att sätta IsAdmin till false
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session["IsAdmin"] = false;
             Response.Redirect("Home.aspx");
         }
 
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
+        /// <summary>
+        /// Denna metoden hämtar ut de olika bloggposterna från databasen.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<WebbsidaFotograf.Model.Blog> ListView1_GetData()
         {
             return Service.GetBlogPosts();
@@ -58,11 +61,7 @@ namespace WebbsidaFotograf.Pages
 
         }
 
-        //public IEnumerable<Blog> Repeater1_GetData()
-        //{
-        //    return Service.GetBlogPosts();
-        //}
-
+        
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)

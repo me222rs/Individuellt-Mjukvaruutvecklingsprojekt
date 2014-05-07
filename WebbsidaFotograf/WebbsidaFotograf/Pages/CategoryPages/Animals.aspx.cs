@@ -10,6 +10,7 @@ using WebbsidaFotograf.Model;
 
 namespace WebbsidaFotograf.Pages.CategoryPages
 {
+    #region Properties
     public partial class Animals : System.Web.UI.Page
     {
         private ImageProps _image;
@@ -52,7 +53,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 Session["SuccessMessage"] = value;
             }
         }
-
+    #endregion
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -94,6 +95,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             
         }
         #endregion
+
 
         public string GetDescriptionByImageName(string image) 
         {

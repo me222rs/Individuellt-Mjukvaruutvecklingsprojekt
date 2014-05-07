@@ -23,15 +23,21 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //int id = Convert.ToInt32(Request.QueryString["Id"]);
+            //Gör så att facebookkommentarerna läggs på en unik url för varje blogginlägg
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?Id=" + Request.QueryString["Id"];
         }
 
+        /// <summary>
+        /// Hämtar ut en querystring som innehåller ett id som skickas vidare till service klassen
+        /// </summary>
+        /// <param name="postID"></param>
+        /// <returns></returns>
         public Blog ListView2_GetData(int? postID)
         {
             postID = Convert.ToInt32(Request.QueryString["Id"]);
             return Service.GetBlogPostByID(postID);
         }
+
 
         protected void Delete_Click(object sender, EventArgs e)
         {
@@ -65,11 +71,6 @@ namespace WebbsidaFotograf.Pages
         {
             blogPostID = Convert.ToInt32(Request.QueryString["Id"]);
             return Service.GetBlogPostByID(blogPostID);
-        }
-
-        protected void UpdatePost_Click(object sender, EventArgs e)
-        {
-
         }
 
         //protected void ListView2_ItemDataBound(object sender, ListViewItemEventArgs e)

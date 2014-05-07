@@ -12,12 +12,15 @@ namespace WebbsidaFotograf.Model.DAL
 {
     public class ImageDAL
     {
+        #region Properties
         private ImageProps _image;
         private ImageProps ImageProps
         {
             get { return _image ?? (_image = new ImageProps()); }
         }
+        #endregion
 
+        #region Connection
         private static string _connectionString;
 
         static ImageDAL() 
@@ -29,7 +32,11 @@ namespace WebbsidaFotograf.Model.DAL
         {
             return new SqlConnection(_connectionString);
         }
+        #endregion
 
+        /// <summary>
+        /// Lägger till ett bildnamn, beskrivning i databasen
+        /// </summary>
         public static void InsertImageInfo() 
         {
             using (SqlConnection conn = CreateConnection()) 
@@ -59,6 +66,8 @@ namespace WebbsidaFotograf.Model.DAL
             }
         }
 
+
+
         public void SaveImage(ImageProps image) 
         {
             using (SqlConnection conn = CreateConnection())
@@ -85,6 +94,10 @@ namespace WebbsidaFotograf.Model.DAL
             }
         }
 
+        /// <summary>
+        /// Tar bort en bild ur databasen
+        /// </summary>
+        /// <param name="image"></param>
         public void DeleteImage(ImageProps image)
         {
             using (SqlConnection conn = CreateConnection())
@@ -110,6 +123,11 @@ namespace WebbsidaFotograf.Model.DAL
             }
         }
 
+        /// <summary>
+        /// Hämtar en bilds beskrivning från databasen
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
         public string GetDescriptionByImageName(string image) 
         {
             using (SqlConnection conn = CreateConnection())
@@ -165,6 +183,11 @@ namespace WebbsidaFotograf.Model.DAL
              //return null;
         }
 
+
+        /// <summary>
+        /// Hämtar alla bilder och deras info från databasen
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<ImageProps> GetImages()
         {
             using (var conn = CreateConnection())
@@ -204,6 +227,11 @@ namespace WebbsidaFotograf.Model.DAL
             }
         }
 
+        /// <summary>
+        /// Hämtar en specifik bilds taggar från databasen
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
         public string GetTagsByImageName(string image)
         {
             using (SqlConnection conn = CreateConnection())
@@ -259,6 +287,12 @@ namespace WebbsidaFotograf.Model.DAL
             }
             //return null;
         }
+
+        /// <summary>
+        /// Uppdaterar en specifik bilds beskrivning
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="description"></param>
         public void UpdateDescription(string image, string description)
         {
             using (SqlConnection conn = CreateConnection())

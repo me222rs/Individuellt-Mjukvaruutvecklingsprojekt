@@ -7,7 +7,7 @@ namespace WebbsidaFotograf.Model
 {
     public class Blog
     {
-
+        #region Properties
         public int BlogPostID { get; set; }
 
         public string Title { get; set; }
@@ -15,5 +15,6 @@ namespace WebbsidaFotograf.Model
         public string Post { get; set; }
 
         public DateTime Date { get; set; }
+        #endregion
     }
 }

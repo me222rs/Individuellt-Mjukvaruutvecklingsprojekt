@@ -22,7 +22,12 @@ namespace WebbsidaFotograf.Model.DAL
 
         private static string _connectionString;
 
-
+        /// <summary>
+        /// Lägger till en ny bloggpost i databasen
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static string CreateBlogPost(string title, string post)
         {
             using (SqlConnection conn = CreateConnection())
@@ -51,6 +56,10 @@ namespace WebbsidaFotograf.Model.DAL
             }
         }
 
+        /// <summary>
+        /// Hämtar bloggposter från databasen
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Blog> GetBlogPosts()
         {
             using (var connection = CreateConnection())
@@ -95,6 +104,12 @@ namespace WebbsidaFotograf.Model.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Hämtar en specifik bloggpost med hjälp utav ett id
+        /// </summary>
+        /// <param name="postID"></param>
+        /// <returns></returns>
         public Blog GetBlogPostById(int? postID)
         {
             using (SqlConnection connection = CreateConnection())
@@ -138,6 +153,10 @@ namespace WebbsidaFotograf.Model.DAL
 
         }
 
+        /// <summary>
+        /// Tar bort en bloggpost från databasen med hjälp att ett id
+        /// </summary>
+        /// <param name="blog"></param>
         public void DeleteBlogPost(int? blog)
         {
             using (SqlConnection conn = CreateConnection())
