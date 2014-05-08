@@ -21,6 +21,12 @@ namespace WebbsidaFotograf.Model.DAL
             return new SqlConnection(_connectionString);
         }
 
+        private Login _login;
+        private Login Login
+        {
+            get { return _login ?? (_login = new Login()); }
+        }
+
 
         public bool UserLogin(string userName, string password)
         {
@@ -32,7 +38,7 @@ namespace WebbsidaFotograf.Model.DAL
 
                 // Skickar in lösenord och anvnamn i den lagrade proceduren
                 cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
-                cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = password;
+                cmd.Parameters.Add("@Hash", SqlDbType.VarChar).Value = password;
 
                 connection.Open();
 
@@ -47,6 +53,44 @@ namespace WebbsidaFotograf.Model.DAL
                 {
                     // annars true
                     return true;
+                }
+            }
+        }
+
+        public string GetSalt(string userName)
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    //ImageProps imageProps = new ImageProps();
+                    //imageProps.ImageName = image;
+                    SqlCommand cmd = new SqlCommand("appSchema.GetSalt", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@UserName", userName);
+
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var salt = reader.GetOrdinal("Salt");
+
+                            string hej = reader.GetString(salt);
+                            Login.Salt = hej;
+
+                            return hej;
+
+                        }
+                        return null;
+
+                    }
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
                 }
             }
         }

@@ -174,5 +174,10 @@ namespace WebbsidaFotograf.Model
         {
             BlogDAL.UpdateBlogPost(item);
         }
+
+        public string GetSalt(string userName) 
+        {
+            return AdminLogin.GetSalt(userName);
+        }
     }
 }

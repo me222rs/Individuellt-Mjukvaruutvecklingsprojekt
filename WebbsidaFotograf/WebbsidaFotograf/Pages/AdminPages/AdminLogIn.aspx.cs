@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using WebbsidaFotograf.Model;
 using System.Security.Cryptography;
 using System.Text;
-using System.Security.Cryptography;
 using System.IO;
 
 namespace WebbsidaFotograf.Pages.AdminPages
@@ -29,15 +28,41 @@ namespace WebbsidaFotograf.Pages.AdminPages
 
         }
 
+        private static string CreateSalt(int size)
+        {
+            // Generate a cryptographic random number using the cryptographic 
+            // service provider
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            byte[] buff = new byte[size];
+            rng.GetBytes(buff);
+            // Return a Base64 string representation of the random number
+            return Convert.ToBase64String(buff);
+        }  
+
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
+            
             string userName = Login1.UserName;
             string password = Login1.Password;
+            int size = 8;
+            //var salt = CreateSalt(size);
+            var salt = Service.GetSalt(userName);
+
+            var stringDataToHash = String.Format(password + salt);
+
+            HashAlgorithm hashAlg = new SHA256CryptoServiceProvider();
+
+            byte[] byteValue = System.Text.Encoding.UTF8.GetBytes(stringDataToHash);
+
+            byte[] byteHash = hashAlg.ComputeHash(byteValue);
+
+            string base64 = Convert.ToBase64String(byteHash);
+
             //Kolla länken sedan
             //http://stackoverflow.com/questions/4329909/hashing-passwords-with-md5-or-sha-256-c-sharp
 
 
-            bool result = Service.UserLogin(userName, password);
+            bool result = Service.UserLogin(userName, base64);
             if ((result))
             {
                 e.Authenticated = true;

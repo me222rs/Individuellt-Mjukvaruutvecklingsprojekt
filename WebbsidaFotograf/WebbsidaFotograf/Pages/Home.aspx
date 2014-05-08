@@ -7,6 +7,16 @@
     <div id="BlogContent">
     <h2>Blogg</h2>
     <p>Här ska några blogginlägg ligga.</p>
+
+        <asp:LoginView ID="LoginView1" runat="server">
+            <asp:AnonymousTemplate>
+                You are not logged in!
+            </asp:AnonymousTemplate>
+            <LoggedInTemplate>
+                You are logged in!
+            </LoggedInTemplate>
+        </asp:LoginView>
+
         <asp:HyperLink ID="CreateNewBlogPost" runat="server" NavigateUrl="~/Pages/CreateBlogPost.aspx">Skapa nytt blogginlägg</asp:HyperLink>
     <div id="BlogpostDiv">
         <asp:ListView ID="ListView1" runat="server"
@@ -34,7 +44,7 @@
                     <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
                 </table>
             </LayoutTemplate>--%>
-
+            
             <ItemTemplate>
                 <table class="BlogTable">
                 <tr>

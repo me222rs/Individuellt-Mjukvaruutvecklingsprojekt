@@ -85,6 +85,7 @@
     <Compile Include="Model\DAL\ImageDAL.cs" />
     <Compile Include="Model\DAL\TagsDAL.cs" />
     <Compile Include="Model\ImageProps.cs" />
+    <Compile Include="Model\Login.cs" />
     <Compile Include="Model\RoleActions.cs" />
     <Compile Include="Model\Service.cs" />
     <Compile Include="Model\Tags.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Pages\AdminPages\AdminLogIn.aspx.designer.cs">
       <DependentUpon>AdminLogIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminPages\Utility.cs" />
     <Compile Include="Pages\CategoryPages\Animals.aspx.cs">
       <DependentUpon>Animals.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
