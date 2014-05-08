@@ -149,12 +149,15 @@ namespace WebbsidaFotograf.Model.DAL
                         {
                             //var imageName = reader.GetOrdinal("ImageName");
                             var description = reader.GetOrdinal("Description");
+                            //var tags = reader.GetOrdinal("Tags");
                             //ImageProps imageProps = new ImageProps();
                             //return new ImageProps
                             //{
                             //ImageName = reader.GetString(imageName),
-                             string hej = reader.GetString(description);
+                            string hej = reader.GetString(description);
+                            //string tja = reader.GetString(tags);
                             ImageProps.Description = hej;
+                            //ImageProps.Tags = tja;
                             
                             return hej;
                              //return hej;

@@ -23,6 +23,17 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool admin = Convert.ToBoolean(Session["IsAdmin"]);
+            //Session["IsAdmin"] = true;
+            if (admin == true)
+            {
+                PlaceHolder1.Visible = true;
+            }
+            else
+            {
+                PlaceHolder1.Visible = false;
+            }
+
             //Gör så att facebookkommentarerna läggs på en unik url för varje blogginlägg
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?Id=" + Request.QueryString["Id"];
         }

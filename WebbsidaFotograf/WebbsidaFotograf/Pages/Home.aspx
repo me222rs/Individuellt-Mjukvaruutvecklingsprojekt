@@ -16,8 +16,22 @@
                 You are logged in!
             </LoggedInTemplate>
         </asp:LoginView>
+        <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
+            <asp:HyperLink ID="CreateNewBlogPost" runat="server" NavigateUrl="~/Pages/CreateBlogPost.aspx">Skapa nytt blogginlägg</asp:HyperLink>
+        </asp:PlaceHolder>
 
-        <asp:HyperLink ID="CreateNewBlogPost" runat="server" NavigateUrl="~/Pages/CreateBlogPost.aspx">Skapa nytt blogginlägg</asp:HyperLink>
+
+
+<%--        <asp:ScriptManager ID="ScriptManager1" runat="server">
+
+        </asp:ScriptManager>
+
+        <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
+
+        </asp:Timer>
+
+        <asp:Image ID="Image1" runat="server" />--%>
+
     <div id="BlogpostDiv">
         <asp:ListView ID="ListView1" runat="server"
             ItemType="WebbsidaFotograf.Model.Blog"

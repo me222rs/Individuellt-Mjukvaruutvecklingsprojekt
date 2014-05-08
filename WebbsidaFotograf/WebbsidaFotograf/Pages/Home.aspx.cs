@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebbsidaFotograf.Model;
 using WebbsidaFotograf.Pages.AdminPages;
+using System.IO;
 
 namespace WebbsidaFotograf.Pages
 {
@@ -28,11 +29,14 @@ namespace WebbsidaFotograf.Pages
             if (admin == true)
             {
                 loggedIn.Visible = true;
+                PlaceHolder1.Visible = true;
             }
             else 
             {
                 loggedIn.Visible = false;
             }
+
+            
 
 
         }
@@ -69,5 +73,17 @@ namespace WebbsidaFotograf.Pages
                 //var fileinfo = (FileInfo)e.Item.DataItem;
             }
         }
+
+        //protected void Timer1_Tick(object sender, EventArgs e)
+        //{
+        //    //string[] arr = (from u in Directory.GetFiles(Server.MapPath("../Content/GalleryPics")));
+        //    string[] filePaths = Directory.GetFiles(Server.MapPath("../Content/GalleryPics"));
+            
+
+        //    Random random = new Random();
+        //    int randomNumber = random.Next(1, 8);
+
+        //    Image1.ImageUrl = "~/Content/GalleryPics/" + Path.GetFileName(filePaths[randomNumber]) + ".jpg";
+        //}
     }
 }

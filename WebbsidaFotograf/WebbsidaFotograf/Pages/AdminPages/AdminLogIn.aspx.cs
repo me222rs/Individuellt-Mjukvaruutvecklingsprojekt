@@ -39,6 +39,7 @@ namespace WebbsidaFotograf.Pages.AdminPages
             return Convert.ToBase64String(buff);
         }  
 
+
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             

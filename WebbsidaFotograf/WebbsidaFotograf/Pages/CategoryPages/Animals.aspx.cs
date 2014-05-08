@@ -90,6 +90,19 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 string desc = GetDescriptionByImageName(image);
                 string tags = GetTagsByImageName(image);
                 DescriptionLiteral.Text = desc;
+                
+                string[] links = tags.Split(',');
+                foreach (string word in links)
+                {
+                    HyperLink hyp = new HyperLink();
+                    hyp.ID = "hyperLink" + word;
+                    hyp.NavigateUrl = "../Home.aspx";
+                    hyp.Text = word;
+                    
+                    Page.Controls.Add(hyp);
+                }
+                
+
                 ImageTags.Text = tags;
             }
             

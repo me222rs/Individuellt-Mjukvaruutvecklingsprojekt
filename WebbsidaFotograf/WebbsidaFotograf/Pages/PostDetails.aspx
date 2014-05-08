@@ -24,7 +24,7 @@
                     </table>
             </ItemTemplate>
         </asp:ListView>
-        
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
     <asp:FormView ID="UpdatePostFormView" runat="server"         
         ItemType="WebbsidaFotograf.Model.Blog" 
         DefaultMode="Edit" 
@@ -43,5 +43,6 @@
             </tr>
         </EditItemTemplate>
     </asp:FormView>
+    </asp:PlaceHolder>
     <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>
 </asp:Content>

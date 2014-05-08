@@ -26,7 +26,18 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            bool admin = Convert.ToBoolean(Session["IsAdmin"]);
+            //Session["IsAdmin"] = true;
+            if (admin == true)
+            {
+                PlaceHolder1.Visible = true;
+                PlaceHolder2.Visible = false;
+            }
+            else
+            {
+                PlaceHolder1.Visible = false;
+                PlaceHolder2.Visible = true;
+            }
         }
 
         protected void Post_Click(object sender, EventArgs e)
