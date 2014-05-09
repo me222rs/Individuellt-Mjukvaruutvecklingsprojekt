@@ -93,6 +93,12 @@ namespace WebbsidaFotograf.Model
             //fileName = Path.GetRandomFileName();
             var image = System.Drawing.Image.FromStream(stream);
             //var name = Path.GetRandomFileName();
+            //var fileNameWithoutExtention = Path.GetFileNameWithoutExtension(fileName);
+            //var fileNameWithExtention = Path.GetExtension(fileName);
+
+
+            //fileNameWithoutExtention = Path.GetRandomFileName();
+            //fileName = String.Format(fileNameWithoutExtention + fileNameWithExtention);
 
             if (IsValidImage(image))
             {
