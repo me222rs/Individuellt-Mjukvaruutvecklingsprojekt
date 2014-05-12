@@ -32,32 +32,14 @@
 
         <asp:Image ID="Image1" runat="server" />--%>
 
-    <div id="BlogpostDiv">
+
+
+    <%--<div id="BlogpostDiv">
         <asp:ListView ID="ListView1" runat="server"
             ItemType="WebbsidaFotograf.Model.Blog"
             SelectMethod="ListView1_GetData"
             OnItemDataBound="ListView1_ItemDataBound">
 
-<%--            <LayoutTemplate>
-                <table>
-                    <tr>
-                        <td>
-                            ID
-                        </td>
-                        <td>
-                            Titel
-                        </td>
-                        <td>
-                            Post
-                        </td>
-                        <td>
-                            Datum
-                        </td>
-
-                    </tr>
-                    <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
-                </table>
-            </LayoutTemplate>--%>
             
             <ItemTemplate>
                 <table class="BlogTable">
@@ -70,19 +52,77 @@
                         <br />
                         <h5><%#: Item.Date %></h5>
                     </td>
-<%--                    <td>
-                        <%#: Item.Title %>
-                    </td>
-                    <td>
-                        <%#: Item.Post %>
-                    </td>
-                    <td>
-                        <%#: Item.Date %>
-                    </td>--%>
                 </tr>
                     </table>
+
             </ItemTemplate>
+        </asp:ListView>--%>
+
+
+
+        <div>
+
+
+<br />
+
+<br />
+
+
+
+
+
+
+
+
+</div>
+        
+
+        <asp:ListView ID="ListView2" runat="server" OnPagePropertiesChanging="ListView2_PagePropertiesChanging">
+        <LayoutTemplate>
+            <ul>
+                <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+            </ul>
+        </LayoutTemplate>
+        <ItemTemplate>
+            <table class="BlogTable">
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl='<%# Eval("BlogPostID", "~/Pages/PostDetails.aspx?Id={0}") %>'><h2><%#: Eval("Title") %></h2></asp:HyperLink>
+
+                        <%# Eval("Post") %>
+                        <br />
+
+                        <h5><%# Eval("Date") %></h5>
+                    </td>
+                </tr>
+                
+            </table>
+
+        </ItemTemplate>
+        <EmptyDataTemplate>
+            No data
+        </EmptyDataTemplate>
         </asp:ListView>
+
+<asp:DataPager ID="ListViewDataPager1" runat="server" PagedControlID="ListView2" PageSize="3">
+    <Fields>
+        <asp:NumericPagerField ButtonType="Link" />
+    </Fields>
+</asp:DataPager>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 <%--        <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound"
             ItemType="WebbsidaFotograf.Model.Blog" 
