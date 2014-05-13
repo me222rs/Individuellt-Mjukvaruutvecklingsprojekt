@@ -4,7 +4,7 @@
     <asp:Label ID="Label1" runat="server" Text="Titel"></asp:Label>
     <asp:TextBox ID="BlogTitle" runat="server"></asp:TextBox>
     <br />
-    <asp:TextBox ID="BlogContent" runat="server" TextMode="MultiLine" Rows="10" onchange="changeTextBoxValue(this)"></asp:TextBox>
+    <asp:TextBox ID="BlogContent" runat="server" TextMode="MultiLine" Rows="10" onkeypress="AddBrTag(event)"></asp:TextBox>
     <asp:Button ID="Post" runat="server" Text="Posta" OnClick="Post_Click"/>
     </asp:PlaceHolder>
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="True">
