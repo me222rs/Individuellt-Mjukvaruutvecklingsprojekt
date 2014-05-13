@@ -26,6 +26,7 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             bool admin = Convert.ToBoolean(Session["IsAdmin"]);
             //Session["IsAdmin"] = true;
             if (admin == true)
@@ -44,6 +45,7 @@ namespace WebbsidaFotograf.Pages
         {
             string title = BlogTitle.Text;
             string post = BlogContent.Text;
+            //BlogContent.Text.Replace(Environment.NewLine, "<br />");
             Service.CreateBlogPost(title, post);
             Response.Redirect("Home.aspx");
         }

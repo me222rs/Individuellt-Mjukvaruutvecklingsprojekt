@@ -1,6 +1,9 @@
 ﻿body {
 }
 
+#ImageInfos{
+    width: 800px;
+}
 header{
     height:200px;
     background-color:lightgreen;
@@ -45,7 +48,14 @@ p{
     background-color:lightgray;
 }
 #ThumbNails{
-
+    overflow:scroll;
+    width:700px;
+    height:600px;
+    z-index:1000;
+    float:right;
+    position:absolute;
+    top:275px;
+    right:2px;
 }
 #BlogpostDiv{
     width:800px;

@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using WebbsidaFotograf.Model;
+using System.Data;
+using System.Web.UI.HtmlControls;
 
 
 namespace WebbsidaFotograf.Pages.CategoryPages
@@ -13,6 +15,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
     #region Properties
     public partial class Animals : System.Web.UI.Page
     {
+       
+
         private ImageProps _image;
         private ImageProps ImageProps
         {
@@ -53,10 +57,14 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 Session["SuccessMessage"] = value;
             }
         }
+
+
     #endregion
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             bool admin = Convert.ToBoolean(Session["IsAdmin"]);
             if (admin == true)
             {
