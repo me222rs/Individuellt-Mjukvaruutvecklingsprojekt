@@ -26,7 +26,7 @@ function AddBrTag(e) {
         var obj = document.getElementById("<%='BlogContent.ClientID' %>");
         console.log(obj);
 
-        obj.value = obj.value + "\n";
+        obj.value = obj.value + "\r\n";
         console.log(obj.value);
     }
 
