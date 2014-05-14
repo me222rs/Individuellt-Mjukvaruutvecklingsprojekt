@@ -49,6 +49,42 @@ namespace WebbsidaFotograf.Pages {
         protected global::System.Web.UI.WebControls.TextBox BlogContent;
         
         /// <summary>
+        /// HtmlText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HtmlText;
+        
+        /// <summary>
+        /// BoldButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BoldButton;
+        
+        /// <summary>
+        /// ItalicButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ItalicButton;
+        
+        /// <summary>
+        /// ColorDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ColorDropDownList;
+        
+        /// <summary>
         /// Post control.
         /// </summary>
         /// <remarks>

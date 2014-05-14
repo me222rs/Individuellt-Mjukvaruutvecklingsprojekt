@@ -94,6 +94,7 @@ namespace WebbsidaFotograf.Model.DAL
 
                         }
                     }
+                    
                     posts.TrimExcess();
                     return posts;
                 }

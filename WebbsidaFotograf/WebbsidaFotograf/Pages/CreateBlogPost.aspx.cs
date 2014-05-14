@@ -45,11 +45,22 @@ namespace WebbsidaFotograf.Pages
 
         protected void Post_Click(object sender, EventArgs e)
         {
+            string post = BlogContent.Text.Replace("\n", "<br>");
             string title = BlogTitle.Text;
-            string post = BlogContent.Text;
-            //BlogContent.Text.Replace(Environment.NewLine, "<br />");
+            
+            
             Service.CreateBlogPost(title, post);
             Response.Redirect("Home.aspx");
+        }
+
+        protected void BoldButton_Click(object sender, EventArgs e)
+        {
+            BlogContent.Font.Bold = true;
+        }
+
+        protected void ItalicButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
