@@ -8,7 +8,7 @@
     <asp:TextBox ID="BlogContent" runat="server" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)"></asp:TextBox>
     <asp:TextBox ID="HtmlText" runat="server" TextMode="MultiLine" Rows="10" onkeypress="AddBrTag(event)"></asp:TextBox>
         <asp:Button ID="BoldButton" runat="server" Text="Button" OnClientClick="ShowSelection()"/>
-        <asp:Button ID="ItalicButton" runat="server" Text="Button" OnClick="ItalicButton_Click"/>
+        <asp:Button ID="ItalicButton" runat="server" Text="Button" OnClientClick="getSelText(document.getElementById('<%=BlogContent.ClientID%>'))"/>
         <asp:DropDownList ID="ColorDropDownList" runat="server">
             <asp:ListItem>Red</asp:ListItem>
             <asp:ListItem>Green</asp:ListItem>
@@ -43,7 +43,7 @@
             }
     </script>
 
-    <script>
+<%--    <script>
         function ShowSelection() {
             var textComponent = document.getElementById('<%=BlogContent.ClientID%>');
             var selectedText;
@@ -59,8 +59,21 @@
                 var endPos = textComponent.selectionEnd;
                 selectedText = textComponent.value.substring(startPos, endPos)
             }
-            alert("You selected: " + "§§" + selectedText + "§§");
+            selectedText.replace("§§" + selectedText + "§§");
+            
+            //alert("You selected: " + "§§" + selectedText + "§§");
         }
 
-    </script>
+    </script>--%>
+    <script>
+        function getSelText(textarea) {
+            if (document.selection) {
+                alert(document.selection.createRange().text);
+            }
+            else {
+                alert(textarea.value.substring(textarea.selectionstart, textarea.selectionend));
+            }
+        }
+</script>
+
 </asp:Content>
