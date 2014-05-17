@@ -5,7 +5,8 @@
     <asp:TextBox ID="BlogTitle" runat="server"></asp:TextBox>
     <br />
         <%--onkeypress="AddBrTag(event)--%>
-    <asp:TextBox ID="BlogContent" runat="server" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)"></asp:TextBox>
+    <asp:TextBox ID="BlogContent" runat="server" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)" Width="500px" Height="300px"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     <asp:TextBox ID="HtmlText" runat="server" TextMode="MultiLine" Rows="10" onkeypress="AddBrTag(event)"></asp:TextBox>
 <%--        <asp:Button ID="BoldButton" runat="server" Text="Button" OnClientClick="ShowSelection()"/>
         <asp:Button ID="ItalicButton" runat="server" Text="Button" OnClientClick="getSelText(document.getElementById('<%=BlogContent.ClientID%>'))"/>--%>
@@ -39,7 +40,7 @@
         <script>
             function copy_data(val) {
                 var a = document.getElementById('<%=BlogContent.ClientID%>').value
-                document.getElementById('<%=HtmlText.ClientID%>').value = a
+                document.getElementById('<%=Label2.ClientID%>').value = a
             }
     </script>
 
