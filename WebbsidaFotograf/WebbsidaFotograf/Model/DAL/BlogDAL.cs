@@ -136,9 +136,19 @@ namespace WebbsidaFotograf.Model.DAL
 
                             return new Blog
                             {
+                                
                                 BlogPostID = reader.GetInt32(postIDIndex),
                                 Title = reader.GetString(titleIndex),
-                                Post = reader.GetString(postIndex),
+                                Post = reader.GetString(postIndex).
+                                    Replace("<br>", "\n").
+                                    Replace("<b>", "[BOLD]").
+                                    Replace("</b>", "[/BOLD]").
+                                    Replace("<em>", "[ITALIC]").
+                                    Replace("</em>", "[/ITALIC]").
+                                    Replace("<h1>", "[HEADER1]").
+                                    Replace("</h1>", "[/HEADER1]").
+                                    Replace("<h2>", "[HEADER2]").
+                                    Replace("</h2>", "[/HEADER2]"),
                                 Date = reader.GetDateTime(dateIndex),
 
                             };
@@ -194,7 +204,16 @@ namespace WebbsidaFotograf.Model.DAL
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@Title", SqlDbType.VarChar, 50).Value = item.Title;
-                    cmd.Parameters.Add("@Post", SqlDbType.VarChar, 2000).Value = item.Post;
+                    cmd.Parameters.Add("@Post", SqlDbType.VarChar, 2000).Value = item.Post.
+    Replace("\n", "<br>").
+    Replace("[BOLD]", "<b>").
+    Replace("[/BOLD]", "</b>").
+    Replace("[ITALIC]", "<em>").
+    Replace("[/ITALIC]", "</em>").
+    Replace("[HEADER1]", "<h1>").
+    Replace("[/HEADER1]", "</h1>").
+    Replace("[HEADER2]", "<h2>").
+    Replace("[/HEADER2]", "</h2>"); 
 
 
                     cmd.Parameters.Add("@BlogPostID", SqlDbType.Int, 4).Value = item.BlogPostID;

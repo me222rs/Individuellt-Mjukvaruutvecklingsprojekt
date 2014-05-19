@@ -23,6 +23,8 @@ namespace WebbsidaFotograf.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             bool admin = Convert.ToBoolean(Session["IsAdmin"]);
             //Session["IsAdmin"] = true;
             if (admin == true)
@@ -82,7 +84,27 @@ namespace WebbsidaFotograf.Pages
         {
             blogPostID = Convert.ToInt32(Request.QueryString["Id"]);
             return Service.GetBlogPostByID(blogPostID);
+
+            
+            
+            
+        
         }
+
+    //    protected void PostTextBox_Load(object sender, EventArgs e)
+    //    {
+    //        Blog blog = new Blog();
+    //        blog.Post = blog.Post.
+    //Replace("<br>", "\n").
+    //Replace("<b>", "[BOLD]").
+    //Replace("</b>", "[/BOLD]").
+    //Replace("<em>", "[ITALIC]").
+    //Replace("</em>", "[/ITALIC]").
+    //Replace("<h1>", "[HEADER1]").
+    //Replace("</h1>", "[/HEADER1]").
+    //Replace("<h2>", "[HEADER2]").
+    //Replace("</h2>", "[/HEADER2]");
+    //    }
 
         //protected void ListView2_ItemDataBound(object sender, ListViewItemEventArgs e)
         //{

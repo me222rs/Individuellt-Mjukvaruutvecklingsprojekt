@@ -12,7 +12,12 @@ namespace WebbsidaFotograf.Model
 
         public string Title { get; set; }
 
-        public string Post { get; set; }
+        public string Post
+        {
+            get;
+
+            set;
+        }
 
         public DateTime Date { get; set; }
         #endregion

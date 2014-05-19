@@ -7,7 +7,7 @@
     <div id="BlogContent">
     <h2>Blogg</h2>
     <p>Här ska några blogginlägg ligga.</p>
-
+        
         <asp:LoginView ID="LoginView1" runat="server">
             <asp:AnonymousTemplate>
                 You are not logged in!

@@ -7,7 +7,7 @@
         <%--onkeypress="AddBrTag(event)--%>
     <asp:TextBox ID="BlogContent" runat="server" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)" Width="500px" Height="300px"></asp:TextBox>
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-    <asp:TextBox ID="HtmlText" runat="server" TextMode="MultiLine" Rows="10" onkeypress="AddBrTag(event)"></asp:TextBox>
+    <asp:TextBox ID="HtmlText" runat="server" TextMode="MultiLine" Rows="10"></asp:TextBox>
 <%--        <asp:Button ID="BoldButton" runat="server" Text="Button" OnClientClick="ShowSelection()"/>
         <asp:Button ID="ItalicButton" runat="server" Text="Button" OnClientClick="getSelText(document.getElementById('<%=BlogContent.ClientID%>'))"/>--%>
         <asp:DropDownList ID="ColorDropDownList" runat="server">
@@ -22,7 +22,7 @@
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="True">
         <p>ACCESS DENIED</p>
     </asp:PlaceHolder>
-    <script> //Tvungen att lägga scriptet här pga master page
+<%--    <script> //Tvungen att lägga scriptet här pga master page
         function AddBrTag(e) {
             if (e.keyCode == 13) {
                 //alert("HEJ"); //Fungerar
@@ -36,7 +36,7 @@
     }
 
 }
-    </script>
+    </script>--%>
         <script>
             function copy_data(val) {
                 var a = document.getElementById('<%=BlogContent.ClientID%>').value
@@ -45,7 +45,7 @@
     </script>
 
 
-    <script>
+<%--    <script>
         function getSelText(textarea) {
             if (document.selection) {
                 alert(document.selection.createRange().text);
@@ -54,7 +54,7 @@
                 alert(textarea.value.substring(textarea.selectionstart, textarea.selectionend));
             }
         }
-</script>
+</script>--%>
 
     <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />
     <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
