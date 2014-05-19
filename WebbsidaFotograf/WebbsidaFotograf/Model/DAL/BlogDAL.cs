@@ -164,6 +164,49 @@ namespace WebbsidaFotograf.Model.DAL
 
         }
 
+        public Blog GetBlogPostById2(int? postID)
+        {
+            using (SqlConnection connection = CreateConnection())
+            {
+                try
+                {
+
+                    SqlCommand cmd = new SqlCommand("appSchema.GetBlogPostByID", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@BlogPostID", postID);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var postIDIndex = reader.GetOrdinal("BlogPostID");
+                            var titleIndex = reader.GetOrdinal("Title");
+                            var postIndex = reader.GetOrdinal("Post");
+                            var dateIndex = reader.GetOrdinal("Date");
+
+                            return new Blog
+                            {
+
+                                BlogPostID = reader.GetInt32(postIDIndex),
+                                Title = reader.GetString(titleIndex),
+                                Post = reader.GetString(postIndex),
+
+                            };
+                        }
+                    }
+                    return null;
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i data access layer.");
+                }
+            }
+
+        }
+
         /// <summary>
         /// Tar bort en bloggpost från databasen med hjälp att ett id
         /// </summary>

@@ -5,16 +5,19 @@
     <asp:ListView ID="ListView2" runat="server"
             ItemType="WebbsidaFotograf.Model.Blog"
             SelectMethod="ListView2_GetData"
-            UpdateMethod="ListView2_UpdateItem">
+            UpdateMethod="ListView2_UpdateItem" >
 
             <ItemTemplate>
                 <table class="BlogTable">
                 <tr>
                     <td>
                         <h2><%#: Item.Title %></h2>
+
                         <br />
-                        <%#: Item.Post %>
+                        <%# Eval("Post") %>
+                        <%--<%#: Item.Post %>--%>
                         <br />
+                        
                         <h5><%#: Item.Date %></h5>
                         <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click">Ta bort</asp:LinkButton>
                         
@@ -63,7 +66,7 @@
                                     var textbox = document.getElementById('<%= UpdatePostFormView.FindControl("PostTextBox").ClientID %>');
 
                             console.log("textbox = ", textbox);
-        <%--textbox = document.getElementById('<%=PostTextBox.ClientID %>');--%>
+
                             if (document.selection) {
 
                                 textbox.focus();
@@ -82,12 +85,8 @@
                             }
                         }
 
-
     </script>
 
-
-
-        <%--<asp:TextBox ID="PostTextBox" runat="server"></asp:TextBox>--%>
     </asp:PlaceHolder>
         </asp:Panel>
     <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>

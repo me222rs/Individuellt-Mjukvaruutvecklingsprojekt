@@ -21,19 +21,6 @@
         </asp:PlaceHolder>
 
 
-
-<%--        <asp:ScriptManager ID="ScriptManager1" runat="server">
-
-        </asp:ScriptManager>
-
-        <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
-
-        </asp:Timer>
-
-        <asp:Image ID="Image1" runat="server" />--%>
-
-
-
     <%--<div id="BlogpostDiv">
         <asp:ListView ID="ListView1" runat="server"
             ItemType="WebbsidaFotograf.Model.Blog"
@@ -58,21 +45,11 @@
             </ItemTemplate>
         </asp:ListView>--%>
 
-
-
         <div>
 
-
 <br />
 
 <br />
-
-
-
-
-
-
-
 
 </div>
         
@@ -113,38 +90,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
         </div>
-<%--        <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound"
-            ItemType="WebbsidaFotograf.Model.Blog" 
-            SelectMethod="Repeater1_GetData" >
-            <ItemTemplate>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Item.BlogPostID %>'></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Label ID="Label2" runat="server" Text='<%# Item.Title %>'></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Label ID="Label3" runat="server" Text='<%# Item.Post %>'></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Label ID="Label4" runat="server" Text='<%# Item.Date%>'></asp:Label>
-                    </td>
-                </tr>
-            </ItemTemplate>
-        </asp:Repeater>--%>
-    </div>
+    
     <p>Skriv gärna en kommentar och gilla sidan!</p>
     
     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:2257/Pages/Home.aspx">Tweet</a>

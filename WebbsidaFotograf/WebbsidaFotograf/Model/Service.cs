@@ -179,5 +179,10 @@ namespace WebbsidaFotograf.Model
         {
             return AdminLogin.GetSalt(userName);
         }
+
+        public Blog GetBlogPostByID2(int? postID)
+        {
+            return BlogDAL.GetBlogPostById2(postID);
+        }
     }
 }

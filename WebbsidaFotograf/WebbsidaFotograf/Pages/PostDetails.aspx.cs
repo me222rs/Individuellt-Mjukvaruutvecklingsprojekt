@@ -48,7 +48,7 @@ namespace WebbsidaFotograf.Pages
         public Blog ListView2_GetData(int? postID)
         {
             postID = Convert.ToInt32(Request.QueryString["Id"]);
-            return Service.GetBlogPostByID(postID);
+            return Service.GetBlogPostByID2(postID);
         }
 
 
@@ -84,6 +84,7 @@ namespace WebbsidaFotograf.Pages
         {
             blogPostID = Convert.ToInt32(Request.QueryString["Id"]);
             return Service.GetBlogPostByID(blogPostID);
+            
 
             
             
