@@ -14,12 +14,12 @@ header{
     border-radius:2px;
     
 }
+
 nav{
     float:right;
 
 }
 nav a{
-    
     border: solid black 1px;
     padding: 5px;
     background-color:lightgray;
@@ -86,6 +86,7 @@ p{
     right: 500px;
 }
 .BlogTable{
+    font-family:Century;
     padding:5px;
 	width:100%;
 	border:1px solid #3f7f00;
