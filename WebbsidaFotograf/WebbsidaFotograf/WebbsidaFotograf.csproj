@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Icons\12885365265_347a812bb8_o.jpg" />
     <Content Include="Content\ProfilePics\Me.png" />
     <Content Include="Global.asax" />
     <Content Include="Javascript\JavaScript1.js" />
@@ -197,7 +198,6 @@
     <Folder Include="app_infrastructure\" />
     <Folder Include="Content\GalleryPics\" />
     <Folder Include="Content\GalleryThumbs\" />
-    <Folder Include="Content\Icons\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

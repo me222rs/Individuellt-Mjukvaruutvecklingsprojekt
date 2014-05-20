@@ -1,4 +1,8 @@
 ﻿body {
+    width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:white;
 }
 
 #ImageInfos{
@@ -6,12 +10,16 @@
 }
 header{
     height:200px;
-    background-color:lightgreen;
+    background-image:url(../Content/Icons/12885365265_347a812bb8_o.jpg);
+    border-radius:2px;
+    
 }
 nav{
     float:right;
+
 }
 nav a{
+    
     border: solid black 1px;
     padding: 5px;
     background-color:lightgray;
@@ -49,13 +57,16 @@ p{
 }
 #ThumbNails{
     overflow:scroll;
-    width:700px;
+    width:500px;
     height:600px;
     z-index:1000;
     float:right;
     position:absolute;
     top:275px;
-    right:2px;
+    right:250px;
+}
+#BigImage{
+    height:400px;
 }
 #BlogpostDiv{
     width:800px;
@@ -67,7 +78,30 @@ p{
     height:30px;
     color:darkblue;
 }
-.BlogTable {
+#BlogImage{
+    float:right;
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    right: 500px;
+}
+.BlogTable{
+    padding:5px;
+	width:100%;
+	border:1px solid #3f7f00;
+    width:900px;
+    background-color:white;
+    margin:10px;
+    border-radius:5px;
+    
+}
+#BlogContent{
+    border-radius:5px;
+    background-color:lightgray;
+    margin:5px;
+    padding:5px;
+}
+/*.BlogTable {
 	margin:0px;padding:0px;
 	width:100%;
 	box-shadow: 10px 10px 5px #888888;
@@ -166,4 +200,4 @@ p{
 }
 .CSSTableGenerator tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
-}
+}*/
