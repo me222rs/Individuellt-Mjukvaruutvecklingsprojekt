@@ -132,34 +132,36 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         
         protected void Upload_Click(object sender, EventArgs e)
         {
-            if (FileUpload1.HasFile)
+            if(IsValid)
             {
-                //ImageProps imageProps = new ImageProps();
-                
-                
-                string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                var stream = FileUpload1.FileContent;
-                string description = DescriptionTextBox.Text;
-                string tags = TagTextBox.Text;
-                //imageProps.ImageName = fileName;
-                //imageProps.Description = DescriptionTextBox.Text;
-                var image = ImageProps;
-                image.Description = DescriptionTextBox.Text;
-                image.ImageName = fileName;
+                if (FileUpload1.HasFile)
+                {
+                    //ImageProps imageProps = new ImageProps();
 
 
-                Service service = new Service();
-                fileName = ImageProps.SaveImage(stream, fileName, description, tags);
-                //service.SaveImage(image);
-                //string s = TagTextBox.Text;
-                //string[] tags = s.Split(' ');
+                    string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                    var stream = FileUpload1.FileContent;
+                    string description = DescriptionTextBox.Text;
+                    string tags = TagTextBox.Text;
+                    //imageProps.ImageName = fileName;
+                    //imageProps.Description = DescriptionTextBox.Text;
+                    var image = ImageProps;
+                    image.Description = DescriptionTextBox.Text;
+                    image.ImageName = fileName;
+
+
+                    Service service = new Service();
+                    fileName = ImageProps.SaveImage(stream, fileName, description, tags);
+                    //service.SaveImage(image);
+                    //string s = TagTextBox.Text;
+                    //string[] tags = s.Split(' ');
 
 
 
 
-                SuccessMessage = String.Format("Uppladdning av {0} lyckades", fileName);
-                Response.Redirect("Animals.aspx?name=" + fileName);
-
+                    SuccessMessage = String.Format("Uppladdning av {0} lyckades", fileName);
+                    Response.Redirect("Animals.aspx?name=" + fileName);
+                }
             }
 
 
