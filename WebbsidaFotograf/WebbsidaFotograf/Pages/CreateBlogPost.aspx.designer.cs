@@ -40,6 +40,15 @@ namespace WebbsidaFotograf.Pages {
         protected global::System.Web.UI.WebControls.TextBox BlogTitle;
         
         /// <summary>
+        /// BlogTitleRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator BlogTitleRequiredFieldValidator;
+        
+        /// <summary>
         /// BlogContent control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace WebbsidaFotograf.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox BlogContent;
+        
+        /// <summary>
+        /// BlogContentRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator BlogContentRequiredFieldValidator;
         
         /// <summary>
         /// Label2 control.
@@ -65,15 +83,6 @@ namespace WebbsidaFotograf.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox HtmlText;
-        
-        /// <summary>
-        /// ColorDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ColorDropDownList;
         
         /// <summary>
         /// addtag control.

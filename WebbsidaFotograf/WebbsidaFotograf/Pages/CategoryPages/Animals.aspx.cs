@@ -147,8 +147,9 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 image.Description = DescriptionTextBox.Text;
                 image.ImageName = fileName;
 
+
                 Service service = new Service();
-                ImageProps.SaveImage(stream, fileName, description, tags);
+                fileName = ImageProps.SaveImage(stream, fileName, description, tags);
                 //service.SaveImage(image);
                 //string s = TagTextBox.Text;
                 //string[] tags = s.Split(' ');

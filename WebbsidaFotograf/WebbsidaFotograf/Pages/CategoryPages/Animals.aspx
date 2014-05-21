@@ -14,11 +14,12 @@
 
 <br />
     <asp:Label ID="DescriptionLabel" runat="server" Text="Beskrivning"></asp:Label>
-    <asp:TextBox ID="DescriptionTextBox" runat="server"></asp:TextBox>
+    <asp:TextBox ID="DescriptionTextBox" runat="server" MaxLength="200"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="DescriptionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="DescriptionTextBox"></asp:RequiredFieldValidator>
     
 <br />
     <asp:Label ID="TagLabel" runat="server" Text="Lägg till taggar, separera varje tagg med ,"></asp:Label>
-    <asp:TextBox ID="TagTextBox" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TagTextBox" runat="server" MaxLength="200"></asp:TextBox>
 
 
     <p><asp:Label ID="Success" runat="server" Text=""></asp:Label></p>
@@ -68,8 +69,10 @@
                 </tr>
             </ItemTemplate>
         </asp:ListView>--%>
-
-        <asp:Image ID="BigImage" runat="server" Height="400px"/>
+        </p>
+        <div id="bild">
+        <asp:Image ID="BigImage" runat="server"/>
+        </div>
         <br />
         <asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>
         <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="true">
@@ -77,7 +80,7 @@
         </asp:PlaceHolder>
     <br />
 
-    </p>
+    
 
     <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/CategoryPages/Animals.aspx" data-numposts="5" data-colorscheme="light"></div>
     <div id="ThumbNails">

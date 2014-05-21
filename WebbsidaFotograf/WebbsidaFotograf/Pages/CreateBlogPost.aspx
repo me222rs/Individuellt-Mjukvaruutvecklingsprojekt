@@ -2,20 +2,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceholder" runat="server">
     <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
     <asp:Label ID="Label1" runat="server" Text="Titel"></asp:Label>
-    <asp:TextBox ID="BlogTitle" runat="server"></asp:TextBox>
-    <br />
+    <asp:TextBox ID="BlogTitle" runat="server" MaxLength="50"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="BlogTitleRequiredFieldValidator" runat="server" ErrorMessage="DU måste ha en titel!" ControlToValidate="BlogTitle"></asp:RequiredFieldValidator>
+        
+        <br />
 
-    <asp:TextBox ID="BlogContent" runat="server" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)" Width="500px" Height="300px"></asp:TextBox>
+    <asp:TextBox ID="BlogContent" runat="server" MaxLength="2000" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)" Width="500px" Height="300px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="BlogContentRequiredFieldValidator" runat="server" ErrorMessage="Du måste skriva något!" ControlToValidate="BlogContent"></asp:RequiredFieldValidator>
+        
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     <asp:TextBox ID="HtmlText" runat="server" TextMode="MultiLine" Rows="10"></asp:TextBox>
-
-        <asp:DropDownList ID="ColorDropDownList" runat="server">
-            <asp:ListItem>Red</asp:ListItem>
-            <asp:ListItem>Green</asp:ListItem>
-            <asp:ListItem>Black</asp:ListItem>
-        </asp:DropDownList>
         
-        <asp:Button ID="addtag" runat="server" Value="AddTag" OnClientClick="function addTagSel(tag, idelm)"/>
+    <asp:Button ID="addtag" runat="server" Value="AddTag" OnClientClick="function addTagSel(tag, idelm)"/>
     <asp:Button ID="Post" runat="server" Text="Posta" OnClick="Post_Click"/>
     </asp:PlaceHolder>
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="True">
