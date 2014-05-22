@@ -45,6 +45,13 @@ namespace WebbsidaFotograf.Model
                 return _tagsDAL ?? (_tagsDAL = new TagsDAL());
             }
         }
+
+        private static Blog _blog;
+        private static Blog Blog
+        {
+            get { return _blog ?? (_blog = new Blog()); }
+        }
+
         #endregion
         #region Fields
         private static BlogDAL _blogDAL;
@@ -139,9 +146,21 @@ namespace WebbsidaFotograf.Model
         /// <param name="title"></param>
         /// <param name="post"></param>
         /// <returns></returns>
-        public string CreateBlogPost(string title, string post) 
+        public string CreateBlogPost(string title, string post, string tags) 
         {
-            return BlogDAL.CreateBlogPost(title, post);
+            BlogDAL.CreateBlogPost(title, post);
+            
+            //int blogPostID = Blog.BlogPostID;
+
+            string[] links = tags.Split(',');
+
+            foreach (string word in links)
+            {
+                TagsDAL.CreateBlogTags(word);
+            }
+            HttpContext.Current.Session.Remove("BlogPostID");
+           
+            return null;
         }
 
 
@@ -183,6 +202,16 @@ namespace WebbsidaFotograf.Model
         public Blog GetBlogPostByID2(int? postID)
         {
             return BlogDAL.GetBlogPostById2(postID);
+        }
+
+        //public string GetTagsByBlogPostID(int? postID)
+        //{
+        //    return TagsDAL.GetTagsByBlogPostID(postID);
+        //}
+
+        public List<BlogTags> GetTagsByBlogPostID(int? postID)
+        {
+            return TagsDAL.GetTagsByBlogPostID(postID);
         }
     }
 }

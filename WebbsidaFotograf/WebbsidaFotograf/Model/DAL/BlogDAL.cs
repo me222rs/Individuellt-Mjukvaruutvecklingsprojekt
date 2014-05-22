@@ -20,6 +20,12 @@ namespace WebbsidaFotograf.Model.DAL
             return new SqlConnection(_connectionString);
         }
 
+        private static Blog _blog;
+        private static Blog Blog
+        {
+            get { return _blog ?? (_blog = new Blog()); }
+        }
+
         private static string _connectionString;
 
         /// <summary>
@@ -34,17 +40,20 @@ namespace WebbsidaFotograf.Model.DAL
             {
                 try
                 {
-                    Blog blog = new Blog();
+                    //Blog blog = new Blog();
                     SqlCommand cmd = new SqlCommand("appSchema.AddBlogPost", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@Title", SqlDbType.VarChar, 50).Value = title;
                     cmd.Parameters.Add("@Post", SqlDbType.VarChar, 2000).Value = post;
 
+                    cmd.Parameters.Add("@BlogPostID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
-                    
+
+                    HttpContext.Current.Session["BlogPostID"] = (int)cmd.Parameters["@BlogPostID"].Value;
 
                     return null;
                 }

@@ -58,9 +58,9 @@ namespace WebbsidaFotograf.Pages
                     Replace("[HEADER2]", "<h2>").
                     Replace("[/HEADER2]", "</h2>");
                 string title = BlogTitle.Text;
+                string tags = BlogPostTagsTextBox.Text;
 
-
-                Service.CreateBlogPost(title, post);
+                Service.CreateBlogPost(title, post, tags);
                 Response.Redirect("Home.aspx");
             }
         }

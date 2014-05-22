@@ -10,22 +10,19 @@
     <asp:TextBox ID="BlogContent" runat="server" MaxLength="2000" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)" Width="500px" Height="300px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="BlogContentRequiredFieldValidator" runat="server" ErrorMessage="Du måste skriva något!" ControlToValidate="BlogContent"></asp:RequiredFieldValidator>
         
-        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-    <asp:TextBox ID="HtmlText" runat="server" TextMode="MultiLine" Rows="10"></asp:TextBox>
         
-    <asp:Button ID="addtag" runat="server" Value="AddTag" OnClientClick="function addTagSel(tag, idelm)"/>
+    
     <asp:Button ID="Post" runat="server" Text="Posta" OnClick="Post_Click"/>
     </asp:PlaceHolder>
+
+    <asp:Label ID="BlogPostTagsLabel" runat="server" Text="Tagga inlägget, separera varje tagg med ,"></asp:Label>
+    <asp:TextBox ID="BlogPostTagsTextBox" runat="server"></asp:TextBox>
+
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="True">
         <p>ACCESS DENIED</p>
     </asp:PlaceHolder>
 
-        <script>
-            function copy_data(val) {
-                var a = document.getElementById('<%=BlogContent.ClientID%>').value
-                document.getElementById('<%=Label2.ClientID%>').value = a
-            }
-    </script>
+
 
 
     <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />

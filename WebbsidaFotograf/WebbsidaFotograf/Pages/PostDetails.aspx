@@ -5,14 +5,16 @@
     <asp:ListView ID="ListView2" runat="server"
             ItemType="WebbsidaFotograf.Model.Blog"
             SelectMethod="ListView2_GetData"
-            UpdateMethod="ListView2_UpdateItem" >
+            UpdateMethod="ListView2_UpdateItem" 
+            OnItemDataBound="ListView2_ItemDataBound">
 
             <ItemTemplate>
                 <table class="BlogTable">
                 <tr>
                     <td>
                         <h2><%#: Item.Title %></h2>
-
+                        
+                        <asp:Literal ID="TagLiteral" runat="server"></asp:Literal>
                         <br />
                         <%# Eval("Post") %>
                         <%--<%#: Item.Post %>--%>
@@ -27,6 +29,7 @@
                     </table>
             </ItemTemplate>
         </asp:ListView>
+    
     <asp:Panel ID="Panel1" runat="server">
     <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
     <asp:FormView ID="UpdatePostFormView" runat="server"         

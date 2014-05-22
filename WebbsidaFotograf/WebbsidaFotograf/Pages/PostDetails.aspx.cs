@@ -21,6 +21,12 @@ namespace WebbsidaFotograf.Pages
             }
         }
 
+        private static BlogTags _blogTags;
+        private static BlogTags BlogTags
+        {
+            get { return _blogTags ?? (_blogTags = new BlogTags()); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -48,6 +54,10 @@ namespace WebbsidaFotograf.Pages
         public Blog ListView2_GetData(int? postID)
         {
             postID = Convert.ToInt32(Request.QueryString["Id"]);
+            
+            //var tags = Service.GetTagsByBlogPostID(postID);
+
+            //TagLiteral.Text = tags;
             return Service.GetBlogPostByID2(postID);
         }
 
@@ -90,6 +100,29 @@ namespace WebbsidaFotograf.Pages
             
             
         
+        }
+
+        protected void ListView2_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            Blog blog = e.Item.DataItem as Blog;
+            if (blog != null)
+            {
+                BlogTags blogTags = new BlogTags();
+                List<string> tagsArray = new List<string>(25);
+
+                var tag = Service.GetTagsByBlogPostID(blog.BlogPostID);
+
+                var literal = e.Item.FindControl("TagLiteral") as Literal;
+                
+                for (int i = 0; i < tag.Count; i++)
+                {
+                    tagsArray.Add(tag[i].Tag);
+                    literal.Text = string.Join(", ", tagsArray);
+                }
+                
+                
+            }
+            
         }
 
     //    protected void PostTextBox_Load(object sender, EventArgs e)

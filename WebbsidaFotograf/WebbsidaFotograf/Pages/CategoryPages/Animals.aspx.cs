@@ -149,7 +149,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                     image.Description = DescriptionTextBox.Text;
                     image.ImageName = fileName;
 
-
+                    
                     Service service = new Service();
                     fileName = ImageProps.SaveImage(stream, fileName, description, tags);
                     //service.SaveImage(image);
@@ -163,9 +163,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                     Response.Redirect("Animals.aspx?name=" + fileName);
                 }
             }
-
-
         }
+
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)

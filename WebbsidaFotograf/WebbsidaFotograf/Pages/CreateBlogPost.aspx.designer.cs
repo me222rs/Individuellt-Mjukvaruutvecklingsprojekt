@@ -67,33 +67,6 @@ namespace WebbsidaFotograf.Pages {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator BlogContentRequiredFieldValidator;
         
         /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// HtmlText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox HtmlText;
-        
-        /// <summary>
-        /// addtag control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addtag;
-        
-        /// <summary>
         /// Post control.
         /// </summary>
         /// <remarks>
@@ -101,6 +74,24 @@ namespace WebbsidaFotograf.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Post;
+        
+        /// <summary>
+        /// BlogPostTagsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BlogPostTagsLabel;
+        
+        /// <summary>
+        /// BlogPostTagsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox BlogPostTagsTextBox;
         
         /// <summary>
         /// PlaceHolder2 control.

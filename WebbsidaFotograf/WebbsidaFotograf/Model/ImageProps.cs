@@ -122,8 +122,14 @@ namespace WebbsidaFotograf.Model
                 imageProps.Description = description;
                 imageProps.Tags = tags;
                 Service service = new Service();
+
+                var imgPhoto = ScaleImage(image, 400);
+
                 service.SaveImage(imageProps);
-                image.Save(Path.Combine(PhysicalUploadedImagesPath, fileName));
+                imgPhoto.Save(Path.Combine(PhysicalUploadedImagesPath, fileName));
+                
+
+
                 var thumbnail = image.GetThumbnailImage(60, 45, null, System.IntPtr.Zero);
                 thumbnail.Save(Path.Combine(PhysicalUploadedImagesThumbNailPath, fileName));
                 //ImageDAL.InsertImageInfo();
@@ -133,6 +139,22 @@ namespace WebbsidaFotograf.Model
 
             return fileName;
         }
+
+        public static Image ScaleImage(Image image, int maxHeight)
+        {
+            var ratio = (double)maxHeight / image.Height;
+
+            var newWidth = (int)(image.Width * ratio);
+            var newHeight = (int)(image.Height * ratio);
+
+            var newImage = new Bitmap(newWidth, newHeight);
+            using (var g = Graphics.FromImage(newImage))
+            {
+                g.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+            return newImage;
+        }
+
         #endregion
     }
 }
