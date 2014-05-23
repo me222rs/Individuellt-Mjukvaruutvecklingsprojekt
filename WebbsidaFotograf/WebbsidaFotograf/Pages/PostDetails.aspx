@@ -48,7 +48,7 @@
                     <asp:TextBox ID="PostTextBox" runat="server" Text='<%# BindItem.Post %>' TextMode="MultiLine" Rows="5" ></asp:TextBox>
 
                 </td>
-                <asp:TextBox ID="TagsTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TagsTextBox" runat="server" Text=""></asp:TextBox>
                 <asp:LinkButton ID="SaveButton" runat="server" CommandName="Update">Spara</asp:LinkButton>
             </tr>
 
@@ -57,7 +57,7 @@
 
         </EditItemTemplate>
     </asp:FormView>
-
+        <asp:TextBox ID="TagsTextBox" runat="server" Text=""></asp:TextBox>
         <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />
     <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik" runat="server" Text="H1" OnClientClick="insertAtCursorOrSelection('[HEADER1]', '[/HEADER1]'); return false;" CausesValidation="False" />

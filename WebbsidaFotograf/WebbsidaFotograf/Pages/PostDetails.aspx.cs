@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using WebbsidaFotograf.Model;
 using System.Web.ModelBinding;
 
+
 namespace WebbsidaFotograf.Pages
 {
     public partial class PostDetails : System.Web.UI.Page
@@ -87,6 +88,8 @@ namespace WebbsidaFotograf.Pages
             {
                 // Save changes here, e.g. MyDataLayer.SaveChanges();
                 Service.SaveChanges(item);
+                //Här ska en metod ligga som tar bort alla taggar från inlägget och lägger till
+                //nya
             }
         }
 
@@ -101,12 +104,15 @@ namespace WebbsidaFotograf.Pages
                 List<string> tagsArray = new List<string>(25);
 
                 var tag = Service.GetTagsByBlogPostID(blogPostID);
-                var tagsTextBox = FindControl("TagsTextBox") as TextBox;
+                //var tagsTextBox = FindControl("TagsTextBox") as TextBox;
+                //TextBox tagsTextBox = this.Parent.Parent.FindControl("UpdatePostFormView").FindControl("TagsTextBox") as TextBox;
+                //TextBox myTxtBox = (TextBox)FindControlRecursive(formView1, "mytextbox");
 
+                var tagsTextBox = (UpdatePostFormView.FindControl("TagsTextBox") as TextBox);
                 for (int i = 0; i < tag.Count; i++)
                 {
                     tagsArray.Add(tag[i].Tag);
-                    tagsTextBox.Text = string.Join(", ", tagsArray);
+                    TagsTextBox.Text = string.Join(", ", tagsArray);
                 }
             }
             
