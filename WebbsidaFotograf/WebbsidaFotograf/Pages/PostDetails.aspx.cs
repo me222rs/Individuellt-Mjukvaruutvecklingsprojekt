@@ -93,6 +93,24 @@ namespace WebbsidaFotograf.Pages
         public WebbsidaFotograf.Model.Blog BlogPostFormView_GetItem(int? blogPostID)
         {
             blogPostID = Convert.ToInt32(Request.QueryString["Id"]);
+
+            Blog blog = new Blog();
+            if (blog != null)
+            {
+                BlogTags blogTags = new BlogTags();
+                List<string> tagsArray = new List<string>(25);
+
+                var tag = Service.GetTagsByBlogPostID(blogPostID);
+                var tagsTextBox = FindControl("TagsTextBox") as TextBox;
+
+                for (int i = 0; i < tag.Count; i++)
+                {
+                    tagsArray.Add(tag[i].Tag);
+                    tagsTextBox.Text = string.Join(", ", tagsArray);
+                }
+            }
+            
+
             return Service.GetBlogPostByID(blogPostID);
             
 

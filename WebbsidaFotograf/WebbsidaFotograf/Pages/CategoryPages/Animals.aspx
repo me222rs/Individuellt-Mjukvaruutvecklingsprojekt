@@ -33,42 +33,7 @@
         
         <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
         <br />
-         <%--<asp:ListView ID="DescListView" runat="server" 
-            ItemType="WebbsidaFotograf.Model.ImageProps" 
-            SelectMethod="DescListView_GetData">
-            <LayoutTemplate>
-                <div class="descTable">
-                    <table>
-                        <tr>
-                            <td>
-                                ImageID
-                            </td>
-                            <td>
-                                ImageName
-                            </td>
-                            <td>
-                                Description
-                            </td>
-                        </tr>
-                        <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
-                    </table>
-                </div>
-            </LayoutTemplate>
-            <ItemTemplate>
-                <tr>
-                    <td>
-                        <%#: Item.ImageID %>
-                    </td>
-                    <td>
-                        <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# "~/Content/GalleryThumbs/" + Item.ImageName %>' OnClick="Image1_Click"/>  
-                        <%#: Item.ImageName %>
-                    </td>
-                    <td>
-                        <%#: Item.Description %>
-                    </td>
-                </tr>
-            </ItemTemplate>
-        </asp:ListView>--%>
+
         </p>
         <div id="bild">
         <asp:Image ID="BigImage" runat="server"/>
@@ -79,6 +44,9 @@
         <asp:Label ID="ImageTags" runat="server" Visible="true" Text="Här kommer taggarna ligga!"></asp:Label>
         </asp:PlaceHolder>
     <br />
+
+
+
 
     
 

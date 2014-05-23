@@ -48,6 +48,7 @@
                     <asp:TextBox ID="PostTextBox" runat="server" Text='<%# BindItem.Post %>' TextMode="MultiLine" Rows="5" ></asp:TextBox>
 
                 </td>
+                <asp:TextBox ID="TagsTextBox" runat="server"></asp:TextBox>
                 <asp:LinkButton ID="SaveButton" runat="server" CommandName="Update">Spara</asp:LinkButton>
             </tr>
 
