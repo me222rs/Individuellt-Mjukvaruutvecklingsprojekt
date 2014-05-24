@@ -72,17 +72,32 @@ p{
 #ImageInfos{
 
 }
+
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 0px;
+}
+
 #Column1 {
     width:20%;
     float:left;
+    background-color: lightgray;
+    margin-top: 3.5%;
+    margin-left:5%;
 }
 #bild {
     width:100%;
     margin:0px;
 }
 #bild img{
-    padding-left:10%;
-
+    padding-left:4%;
+    padding-top:2.2%;
+    max-width:100%;
 }
 #BigImage{
     /*height:400px;*/
@@ -118,7 +133,8 @@ p{
     border-radius:5px;
     table-layout:fixed;
     overflow:hidden;
-    
+    margin-left: auto;
+    margin-right: auto;
     
 }
 #BlogTable td{
@@ -134,6 +150,7 @@ p{
     background-color:lightgray;
     margin:5px;
     padding:5px;
+    margin-top: 2%;
 }
 /*.BlogTable {
 	margin:0px;padding:0px;
