@@ -13,24 +13,6 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
     public partial class Animals {
         
         /// <summary>
-        /// SearchLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SearchLabel;
-        
-        /// <summary>
-        /// SearchTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchTextBox;
-        
-        /// <summary>
         /// PlaceHolder1 control.
         /// </summary>
         /// <remarks>
@@ -157,15 +139,6 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         protected global::System.Web.UI.WebControls.Literal DescriptionLiteral;
         
         /// <summary>
-        /// BigImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image BigImage;
-        
-        /// <summary>
         /// ShowTags control.
         /// </summary>
         /// <remarks>
@@ -191,6 +164,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ImageTags;
+        
+        /// <summary>
+        /// BigImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image BigImage;
         
         /// <summary>
         /// fbdiv control.

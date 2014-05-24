@@ -72,8 +72,16 @@ p{
 #ImageInfos{
 
 }
+#Column1 {
+    width:20%;
+    float:left;
+}
+#bild {
+    width:100%;
+    margin:0px;
+}
 #bild img{
-    padding-left:20%;
+    padding-left:10%;
 
 }
 #BigImage{
