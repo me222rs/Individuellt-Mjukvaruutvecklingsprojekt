@@ -11,22 +11,26 @@
             <p>Ladda upp en bild i denna kategorin.</p>
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <asp:RequiredFieldValidator ID="UploadValidator" runat="server" ErrorMessage="Du måste välja en bild att ladda upp!" ControlToValidate="FileUpload1" Display="Dynamic"></asp:RequiredFieldValidator>
-            <asp:Button ID="Upload" runat="server" Text="Ladda upp" OnClick="Upload_Click"/>
+            
     
 <br />
             <asp:Label ID="DescriptionLabel" runat="server" Text="Beskrivning"></asp:Label>
+<br />
             <asp:TextBox ID="DescriptionTextBox" runat="server" MaxLength="200"></asp:TextBox>
             <asp:RequiredFieldValidator ID="DescriptionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="DescriptionTextBox"></asp:RequiredFieldValidator>
     
 <br />
             <asp:Label ID="TagLabel" runat="server" Text="Lägg till taggar, separera varje tagg med ,"></asp:Label>
-            <asp:TextBox ID="TagTextBox" runat="server" MaxLength="200"></asp:TextBox>
+<br />            
+                <asp:TextBox ID="TagTextBox" runat="server" MaxLength="200"></asp:TextBox>
 
 
     <p>
         <%-- Visar meddelande --%>
             <asp:Label ID="Success" runat="server" Text=""></asp:Label>
-    </p>
+    </p>    
+             <asp:Button ID="Upload" runat="server" Text="Ladda upp" OnClick="Upload_Click"/>
+<br />
         <%-- Knapp för att radera --%>
             <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
 <br />
@@ -62,11 +66,11 @@
 <br />
 
 <br />
-
+    <div id="facebook">
 
     <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/CategoryPages/Animals.aspx" data-numposts="5" data-colorscheme="light"></div>
 
-
+    </div>
 
     <%-- Kolumn 3 - Tumnaglarna--%>
     <div id="ThumbNails">
