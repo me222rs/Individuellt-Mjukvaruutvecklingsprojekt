@@ -197,8 +197,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app_infrastructure\" />
-    <Folder Include="Content\GalleryPics\" />
     <Folder Include="Content\GalleryThumbs\" />
+    <Folder Include="Content\Gallery\" />
+    <Folder Include="Content\LandscapeThumbs\" />
+    <Folder Include="Content\Landscape\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

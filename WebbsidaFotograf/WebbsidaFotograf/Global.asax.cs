@@ -11,6 +11,10 @@ namespace WebbsidaFotograf
 {
     public class Global : System.Web.HttpApplication
     {
+        void RegisterRoutes(RouteCollection routes)
+        {
+
+        }
 
         protected void Application_Start(object sender, EventArgs e)
         {

@@ -63,8 +63,11 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
+            if (Request.QueryString["Category"] != null)
+            {
+                Session["Category"] = Request.QueryString["Category"];
+            }
+            
             bool admin = Convert.ToBoolean(Session["IsAdmin"]);
             if (admin == true)
             {
@@ -84,7 +87,12 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             }
             ImageProps imageProps = new ImageProps();
             var image = Request.QueryString["name"];
-            BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
+            if (image == null) 
+            {
+                image = "noimage";
+            }
+            //BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
+            BigImage.ImageUrl = "~/Content/" + Session["Category"] + "/" + image;
 
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"];
 
@@ -99,20 +107,22 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 string tags = GetTagsByImageName(image);
                 DescriptionLiteral.Text = desc;
                 
-                string[] links = tags.Split(',');
-                foreach (string word in links)
-                {
-                    HyperLink hyp = new HyperLink();
-                    hyp.ID = "hyperLink" + word;
-                    hyp.NavigateUrl = "../Home.aspx";
-                    hyp.Text = word;
+                //string[] links = tags.Split(',');
+                //foreach (string word in links)
+                //{
+                //    HyperLink hyp = new HyperLink();
+                //    hyp.ID = "hyperLink" + word;
+                //    hyp.NavigateUrl = "../Home.aspx";
+                //    hyp.Text = word;
                     
-                    Page.Controls.Add(hyp);
-                }
+                //    Page.Controls.Add(hyp);
+                //}
                 
 
                 ImageTags.Text = tags;
+                //Response.Redirect("Animals.aspx?Category=" + Session["Category"] + "&name=" + image);
             }
+            
             
         }
         #endregion
@@ -149,9 +159,9 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                     image.Description = DescriptionTextBox.Text;
                     image.ImageName = fileName;
 
-                    
+                    string category = Convert.ToString(Session["Category"]);
                     Service service = new Service();
-                    fileName = ImageProps.SaveImage(stream, fileName, description, tags);
+                    fileName = ImageProps.SaveImage(stream, fileName, description, tags, category);
                     //service.SaveImage(image);
                     //string s = TagTextBox.Text;
                     //string[] tags = s.Split(' ');
@@ -175,15 +185,17 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 
         public IEnumerable<string> Repeater1_GetData()
         {
-            return ImageProps.GetImageNames();
+            var category = Convert.ToString(Session["Category"]);
+            return ImageProps.GetImageNames(category);
         }
 
         protected void Delete_Click(object sender, EventArgs e)
         {
             //"~/Content/GalleryThumbs/" + "Penguins.jpg"
             string filePath = Server.MapPath(BigImage.ImageUrl);
+            string category = Request.QueryString["Category"];
             string name = Request.QueryString["name"];
-            string thumbPath = Server.MapPath("~/Content/GalleryThumbs/" + name);
+            string thumbPath = Server.MapPath("~/Content/" + category + "Thumbs" + "/" + name);
 
             Service service = new Service();
             var image = ImageProps;

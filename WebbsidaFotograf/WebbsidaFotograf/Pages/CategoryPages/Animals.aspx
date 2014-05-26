@@ -76,11 +76,13 @@
                 ItemType="System.String" 
                 SelectMethod="Repeater1_GetData" >
                 <ItemTemplate>
-                        <asp:HyperLink ID="HyperLink1" runat="server"  
-                           ImageUrl='<%# "~/Content/GalleryThumbs/" + Item %>'
-                           NavigateUrl='<%# "?name=" + Item %>'/>
+                        <asp:HyperLink ID="HyperLink1" runat="server"
+                           ImageUrl='<%# "~/Content/" + Session["Category"] + "Thumbs/" + Item %>' 
+                           
+                           NavigateUrl='<%# "?name=" + Item + "&Category=" + Session["Category"]%>' />
                 </ItemTemplate>
             </asp:Repeater>
         </p>
         </div>
 </asp:Content>
+<%--ImageUrl='<%# "~/Content/GalleryThumbs/" + Item %>'--%>

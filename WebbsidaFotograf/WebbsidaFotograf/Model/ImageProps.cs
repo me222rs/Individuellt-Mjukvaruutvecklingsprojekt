@@ -44,8 +44,9 @@ namespace WebbsidaFotograf.Model
         #endregion
 
         #region Get Image Names
-        public static IEnumerable<string> GetImageNames()
+        public static IEnumerable<string> GetImageNames(string category)
         {
+            PhysicalUploadedImagesThumbNailPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\" + category + "Thumbs");
             var fileInfos = new DirectoryInfo(PhysicalUploadedImagesThumbNailPath).GetFiles();
             List<string> imageNames = new List<string>();
             foreach (var fileInfo in fileInfos)
@@ -66,8 +67,8 @@ namespace WebbsidaFotograf.Model
         {
             var invalidChars = new string(Path.GetInvalidFileNameChars());
 
-            PhysicalUploadedImagesPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\GalleryPics");
-            PhysicalUploadedImagesThumbNailPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\GalleryThumbs");
+            //PhysicalUploadedImagesPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\");
+            //PhysicalUploadedImagesThumbNailPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\GalleryThumbs");
             ApprovedExtentions = new Regex(@"^.*\.(gif|jpg|png)$");
 
         }
@@ -88,8 +89,10 @@ namespace WebbsidaFotograf.Model
         }
 
         #region Save Image
-        public static string SaveImage(Stream stream, string fileName, string description, string tags)
+        public static string SaveImage(Stream stream, string fileName, string description, string tags, string category)
         {
+            PhysicalUploadedImagesPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\" + category);
+            PhysicalUploadedImagesThumbNailPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\" + category + "Thumbs");
             //fileName = Path.GetRandomFileName();
             var image = System.Drawing.Image.FromStream(stream);
             //var name = Path.GetRandomFileName();
@@ -126,6 +129,8 @@ namespace WebbsidaFotograf.Model
                 var imgPhoto = ScaleImage(image, 400);
 
                 service.SaveImage(imageProps);
+                
+                //PhysicalUploadedImagesThumbNailPath = Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\" + category);
                 imgPhoto.Save(Path.Combine(PhysicalUploadedImagesPath, fileName));
                 
 
