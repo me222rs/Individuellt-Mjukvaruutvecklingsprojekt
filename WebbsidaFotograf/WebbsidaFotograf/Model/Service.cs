@@ -6,6 +6,8 @@ using System.IO;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using WebbsidaFotograf.Model.DAL;
+using System.ComponentModel.DataAnnotations;
+using WebbsidaFotograf.app_infrastructure;
 
 namespace WebbsidaFotograf.Model
 {
@@ -66,6 +68,15 @@ namespace WebbsidaFotograf.Model
         /// <param name="image"></param>
         public void SaveImage(ImageProps image) 
         {
+            //ICollection<ValidationResult> validationResults;
+            //if (!image.Validate(out validationResults)) // Använder "extension method" för valideringen!
+            //{                                              // Klassen finns under App_Infrastructure.
+            //    // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
+            //    // till samlingen med resultat av valideringen.
+            //    var ex = new ValidationException("Objektet klarade inte valideringen.");
+            //    ex.Data.Add("ValidationResults", validationResults);
+            //    throw ex;
+            //}
             ImageDAL.SaveImage(image);
         }
 
@@ -136,6 +147,9 @@ namespace WebbsidaFotograf.Model
         /// <param name="description"></param>
         public void UpdateDescription(string image, string description)
         {
+
+
+
             ImageDAL.UpdateDescription(image, description);
         }
 
@@ -148,15 +162,29 @@ namespace WebbsidaFotograf.Model
         /// <returns></returns>
         public string CreateBlogPost(string title, string post, string tags) 
         {
+            Blog blog = new Blog();
+            blog.Title = title;
+            blog.Post = post;
+            ICollection<ValidationResult> validationResults;
+            if (!blog.Validate(out validationResults)) // Använder "extension method" för valideringen!
+            {                                              // Klassen finns under App_Infrastructure.
+                // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
+                // till samlingen med resultat av valideringen.
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
+
+
             BlogDAL.CreateBlogPost(title, post);
-            
+            int id = Convert.ToInt32(HttpContext.Current.Session["BlogPostID"]);
             //int blogPostID = Blog.BlogPostID;
 
             string[] links = tags.Split(',');
 
             foreach (string word in links)
             {
-                TagsDAL.CreateBlogTags(word);
+                TagsDAL.CreateBlogTags(word, id);
             }
             HttpContext.Current.Session.Remove("BlogPostID");
            
@@ -184,14 +212,36 @@ namespace WebbsidaFotograf.Model
             return BlogDAL.GetBlogPostById(postID);
         }
 
+        public void DeleteAllTagsByID(int? postID)
+        {
+            TagsDAL.DeleteAllTagsByID(postID);
+        }
 
         /// <summary>
         /// Uppdaterar en bloggpost
         /// </summary>
         /// <param name="item"></param>
-        public void SaveChanges(Blog item) 
+        public void SaveChanges(Blog item, string tags, int? id) 
         {
+            ICollection<ValidationResult> validationResults;
+            if (!item.Validate(out validationResults)) // Använder "extension method" för valideringen!
+            {                                              // Klassen finns under App_Infrastructure.
+                // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
+                // till samlingen med resultat av valideringen.
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
             BlogDAL.UpdateBlogPost(item);
+
+            string[] links = tags.Split(',');
+
+            foreach (string word in links)
+            {
+                TagsDAL.CreateBlogTags(word, id);
+            }
+
+            //TagsDAL.CreateBlogTags(tags);
         }
 
         public string GetSalt(string userName) 

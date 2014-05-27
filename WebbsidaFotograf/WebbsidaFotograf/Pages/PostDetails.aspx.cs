@@ -44,7 +44,7 @@ namespace WebbsidaFotograf.Pages
             }
 
             //Gör så att facebookkommentarerna läggs på en unik url för varje blogginlägg
-            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?Id=" + Request.QueryString["Id"];
+            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/PostDetails.aspx?Id=" + Request.QueryString["Id"];
         }
 
         /// <summary>
@@ -76,6 +76,7 @@ namespace WebbsidaFotograf.Pages
             id = Convert.ToInt32(Request.QueryString["Id"]);
             //WebbsidaFotograf.Model.Blog item = null;
             var item = Service.GetBlogPostByID(id);
+            string tags = TagsTextBox.Text;
             // Load the item here, e.g. item = MyDataLayer.Find(id);
             if (item == null)
             {
@@ -87,7 +88,10 @@ namespace WebbsidaFotograf.Pages
             if (ModelState.IsValid)
             {
                 // Save changes here, e.g. MyDataLayer.SaveChanges();
-                Service.SaveChanges(item);
+                Service.DeleteAllTagsByID(id);
+                Service.SaveChanges(item, tags, id);
+                
+
                 //Här ska en metod ligga som tar bort alla taggar från inlägget och lägger till
                 //nya
             }

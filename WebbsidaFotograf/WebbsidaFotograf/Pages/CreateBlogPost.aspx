@@ -2,12 +2,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceholder" runat="server">
     <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
     <asp:Label ID="Label1" runat="server" Text="Titel"></asp:Label>
-    <asp:TextBox ID="BlogTitle" runat="server" MaxLength="50"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="BlogTitleRequiredFieldValidator" runat="server" ErrorMessage="DU måste ha en titel!" ControlToValidate="BlogTitle"></asp:RequiredFieldValidator>
+    <asp:TextBox ID="BlogTitle" runat="server" MaxLength="40"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="BlogTitleRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en titel!" ControlToValidate="BlogTitle"></asp:RequiredFieldValidator>
         
         <br />
 
-    <asp:TextBox ID="BlogContent" runat="server" MaxLength="2000" TextMode="MultiLine" Rows="10" onkeyup="copy_data(this)" onkeypress="AddBrTag(event)" Width="500px" Height="300px"></asp:TextBox>
+    <asp:TextBox ID="BlogContent" runat="server" MaxLength="2000" TextMode="MultiLine" Rows="10" Width="500px" Height="300px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="BlogContentRequiredFieldValidator" runat="server" ErrorMessage="Du måste skriva något!" ControlToValidate="BlogContent"></asp:RequiredFieldValidator>
         
         
@@ -16,7 +16,7 @@
     </asp:PlaceHolder>
 
     <asp:Label ID="BlogPostTagsLabel" runat="server" Text="Tagga inlägget, separera varje tagg med ,"></asp:Label>
-    <asp:TextBox ID="BlogPostTagsTextBox" runat="server"></asp:TextBox>
+    <asp:TextBox ID="BlogPostTagsTextBox" runat="server" MaxLength="200"></asp:TextBox>
 
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="True">
         <p>ACCESS DENIED</p>
@@ -29,7 +29,6 @@
     <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik" runat="server" Text="H1" OnClientClick="insertAtCursorOrSelection('[HEADER1]', '[/HEADER1]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik2" runat="server" Text="H2" OnClientClick="insertAtCursorOrSelection('[HEADER2]', '[/HEADER2]'); return false;" CausesValidation="False" />
-    <asp:Button ID="Link" runat="server" Text="Länk" OnClientClick="insertAtCursorOrSelection('[LINK]', '[/LINK]'); return false;" CausesValidation="False" />
 <script>
     function insertAtCursorOrSelection(before, after) {
         textbox = document.getElementById('<%=BlogContent.ClientID%>');

@@ -40,11 +40,12 @@
         <%-- Textbox för ny beskrivning  --%>
             <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
             </asp:PlaceHolder>
-
+        <div id="Info">
             <p id="ImageInfos">
+                
                 <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal> 
             </p>
-
+        </div>
 
         <asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="true">

@@ -40,6 +40,32 @@ namespace WebbsidaFotograf.Model.DAL
             get { return _blog ?? (_blog = new Blog()); }
         }
 
+        public static void DeleteAllTagsByID(int? PostId)
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.DeleteAllTagsByID", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@BlogPostId", SqlDbType.Int, 4).Value = PostId;
+
+
+
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fel inträffade i dataåtkomstlagret");
+                }
+            }
+        }
+
+
         public string GetTagsByImageName(string image)
         {
             using (SqlConnection conn = CreateConnection())
@@ -84,7 +110,7 @@ namespace WebbsidaFotograf.Model.DAL
             //return null;
         }
 
-        public void CreateBlogTags(string tags)
+        public void CreateBlogTags(string tags, int? id)
         {
             // Skapar och initierar ett anslutningsobjekt.
             using (SqlConnection conn = CreateConnection())
@@ -99,8 +125,8 @@ namespace WebbsidaFotograf.Model.DAL
                     // Lägger till de paramterar den lagrade proceduren kräver. Använder här det effektiva sätttet att
                     // göra det på - något "svårare" men ASP.NET behöver inte "jobba" så mycket.
 
-                    cmd.Parameters.Add("@Tag", SqlDbType.VarChar, 200).Value = tags;
-                    cmd.Parameters.Add("@BlogPostID", SqlDbType.Int).Value = HttpContext.Current.Session["BlogPostID"];
+                    cmd.Parameters.Add("@Tag", SqlDbType.VarChar, 50).Value = tags;
+                    cmd.Parameters.Add("@BlogPostID", SqlDbType.Int).Value = id;
 
 
                     // Öppnar anslutningen till databasen.

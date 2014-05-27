@@ -83,6 +83,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app_infrastructure\ValidationExtensions.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -203,11 +204,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app_infrastructure\" />
     <Folder Include="Content\GalleryThumbs\" />
     <Folder Include="Content\Gallery\" />
     <Folder Include="Content\LandscapeThumbs\" />
     <Folder Include="Content\Landscape\" />
+    <Folder Include="Content\MacroThumbs\" />
+    <Folder Include="Content\Macro\" />
+    <Folder Include="Content\PortraitThumbs\" />
+    <Folder Include="Content\Portrait\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -14,12 +14,12 @@
                     <td>
                         <h2><%#: Item.Title %></h2>
                         
-                        <asp:Literal ID="TagLiteral" runat="server"></asp:Literal>
+                        
                         <br />
                         <%# Eval("Post") %>
                         <%--<%#: Item.Post %>--%>
                         <br />
-                        
+                        <h5><asp:Label ID="Label1" runat="server" Text="Taggar: "></asp:Label><asp:Literal ID="TagLiteral" runat="server"></asp:Literal></h5>
                         <h5><%#: Item.Date %></h5>
                         <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click">Ta bort</asp:LinkButton>
                         
@@ -39,30 +39,29 @@
         DataKeyNames="BlogPostID" 
         SelectMethod="BlogPostFormView_GetItem">
         <EditItemTemplate>
-            <tr>
-                <td>
-                    <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
-                    <asp:TextBox ID="EditTitleTextBox" runat="server" Text='<%# BindItem.Title %>'></asp:TextBox>
-                </td>
-                <td>
-                    <asp:TextBox ID="PostTextBox" runat="server" Text='<%# BindItem.Post %>' TextMode="MultiLine" Rows="5" ></asp:TextBox>
-
-                </td>
-                <asp:TextBox ID="TagsTextBox" runat="server" Text=""></asp:TextBox>
+            
+                    
+                    <asp:TextBox ID="EditTitleTextBox" runat="server" Text='<%# BindItem.Title %>' MaxLength="40"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="EditTitleTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en titel!" ControlToValidate="EditTitleTextBox" Display="Static"></asp:RequiredFieldValidator>
+       <br />
+                    <asp:TextBox ID="PostTextBox" runat="server" Text='<%# BindItem.Post %>' TextMode="MultiLine" Rows="5" Width="500px" Height="300px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="PostTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en post!" ControlToValidate="PostTextBox"></asp:RequiredFieldValidator>
+        <br />
                 <asp:LinkButton ID="SaveButton" runat="server" CommandName="Update">Spara</asp:LinkButton>
-            </tr>
+                
+           
 
             
 
 
         </EditItemTemplate>
     </asp:FormView>
-        <asp:TextBox ID="TagsTextBox" runat="server" Text=""></asp:TextBox>
+        <asp:TextBox ID="TagsTextBox" runat="server" Text="" MaxLength="200"></asp:TextBox>
         <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />
     <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik" runat="server" Text="H1" OnClientClick="insertAtCursorOrSelection('[HEADER1]', '[/HEADER1]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik2" runat="server" Text="H2" OnClientClick="insertAtCursorOrSelection('[HEADER2]', '[/HEADER2]'); return false;" CausesValidation="False" />
-    <asp:Button ID="Link" runat="server" Text="Länk" OnClientClick="insertAtCursorOrSelection('[LINK]', '[/LINK]'); return false;" CausesValidation="False" />
+    
 
                             <script>
                                 function insertAtCursorOrSelection(before, after) {

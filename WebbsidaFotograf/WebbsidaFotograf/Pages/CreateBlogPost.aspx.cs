@@ -30,7 +30,7 @@ namespace WebbsidaFotograf.Pages
 
 
             bool admin = Convert.ToBoolean(Session["IsAdmin"]);
-            //Session["IsAdmin"] = true;
+
             if (admin == true)
             {
                 PlaceHolder1.Visible = true;
@@ -45,7 +45,8 @@ namespace WebbsidaFotograf.Pages
 
         protected void Post_Click(object sender, EventArgs e)
         {
-            if (IsValid)
+
+            if (ModelState.IsValid)
             {
                 string post = BlogContent.Text.
                     Replace("\n", "<br>").

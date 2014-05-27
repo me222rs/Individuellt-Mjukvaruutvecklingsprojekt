@@ -8,6 +8,7 @@ using System.IO;
 using WebbsidaFotograf.Model;
 using System.Data;
 using System.Web.UI.HtmlControls;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace WebbsidaFotograf.Pages.CategoryPages
@@ -87,14 +88,14 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             }
             ImageProps imageProps = new ImageProps();
             var image = Request.QueryString["name"];
-            if (image == null) 
+            if (image == "hej") 
             {
-                image = "noimage";
+                BigImage.ImageUrl = "~/Content/ProfilePics/Me.png";
             }
             //BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
             BigImage.ImageUrl = "~/Content/" + Session["Category"] + "/" + image;
 
-            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"];
+            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"] + "&Category=" + Request.QueryString["Category"];
 
             ImageProps.ImageName = image;
             if (image == null)
@@ -106,21 +107,9 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 string desc = GetDescriptionByImageName(image);
                 string tags = GetTagsByImageName(image);
                 DescriptionLiteral.Text = desc;
-                
-                //string[] links = tags.Split(',');
-                //foreach (string word in links)
-                //{
-                //    HyperLink hyp = new HyperLink();
-                //    hyp.ID = "hyperLink" + word;
-                //    hyp.NavigateUrl = "../Home.aspx";
-                //    hyp.Text = word;
-                    
-                //    Page.Controls.Add(hyp);
-                //}
-                
 
                 ImageTags.Text = tags;
-                //Response.Redirect("Animals.aspx?Category=" + Session["Category"] + "&name=" + image);
+                
             }
             
             
@@ -161,6 +150,17 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 
                     string category = Convert.ToString(Session["Category"]);
                     Service service = new Service();
+
+                    //ICollection<ValidationResult> validationResults;
+                    //if (!fileName.Validate(out validationResults)) // Använder "extension method" för valideringen!
+                    //{                                              // Klassen finns under App_Infrastructure.
+                    //    // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
+                    //    // till samlingen med resultat av valideringen.
+                    //    var ex = new ValidationException("Objektet klarade inte valideringen.");
+                    //    ex.Data.Add("ValidationResults", validationResults);
+                    //    throw ex;
+                    //}
+
                     fileName = ImageProps.SaveImage(stream, fileName, description, tags, category);
                     //service.SaveImage(image);
                     //string s = TagTextBox.Text;
@@ -247,18 +247,5 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             Service.UpdateDescription(image, description);
             Response.Redirect(Request.RawUrl);
         }
-
-        //protected void Image1_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    var image = Request.QueryString["name"];
-        //    BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
-        //}
-
-        //protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
-        //{
-
-        //}
-
-
     }
 }
