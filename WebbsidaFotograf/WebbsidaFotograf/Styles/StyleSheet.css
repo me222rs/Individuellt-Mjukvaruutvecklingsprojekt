@@ -169,9 +169,11 @@ p{
     width:13%;
     height:565px;
     float:right;
-    position:absolute;
+    margin-right: -9%;
+    margin-top: 2.2%;
+    /*position:absolute;
     top:275px;
-    right:15%;
+    right:15%;*/
     border-radius:5px;
 }
 
@@ -207,7 +209,7 @@ list-style-type: disc;
     padding-left:4%;
     padding-top:2.2%;
     max-width:100%;
-    /*width: 39.7%;*/
+    width: 39.7%;
 
 }
 #BigImage{

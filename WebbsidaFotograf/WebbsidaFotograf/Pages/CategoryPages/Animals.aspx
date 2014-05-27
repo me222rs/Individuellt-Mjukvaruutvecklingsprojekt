@@ -54,7 +54,22 @@
     </div>
         
 <br />
-
+            <%-- Kolumn 3 - Tumnaglarna--%>
+    <div id="ThumbNails">
+            
+        <p>
+            <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound" 
+                ItemType="System.String" 
+                SelectMethod="Repeater1_GetData" >
+                <ItemTemplate>
+                        <asp:HyperLink ID="HyperLink1" runat="server"
+                           ImageUrl='<%# "~/Content/" + Session["Category"] + "Thumbs/" + Item %>' 
+                           
+                           NavigateUrl='<%# "?name=" + Item + "&Category=" + Session["Category"]%>' />
+                </ItemTemplate>
+            </asp:Repeater>
+        </p>
+        </div>
        
     <%-- Kolumn 2 - Den stora bilden och kommentarer--%>
         
@@ -73,21 +88,6 @@
 
     </div>
 
-    <%-- Kolumn 3 - Tumnaglarna--%>
-    <div id="ThumbNails">
-            
-        <p>
-            <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound" 
-                ItemType="System.String" 
-                SelectMethod="Repeater1_GetData" >
-                <ItemTemplate>
-                        <asp:HyperLink ID="HyperLink1" runat="server"
-                           ImageUrl='<%# "~/Content/" + Session["Category"] + "Thumbs/" + Item %>' 
-                           
-                           NavigateUrl='<%# "?name=" + Item + "&Category=" + Session["Category"]%>' />
-                </ItemTemplate>
-            </asp:Repeater>
-        </p>
-        </div>
+
 </asp:Content>
 <%--ImageUrl='<%# "~/Content/GalleryThumbs/" + Item %>'--%>
