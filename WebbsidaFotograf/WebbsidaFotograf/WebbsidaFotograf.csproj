@@ -65,6 +65,8 @@
     <Content Include="Content\Icons\header5.png" />
     <Content Include="Content\Icons\header6.png" />
     <Content Include="Content\Icons\header7.png" />
+    <Content Include="Content\Icons\Untitled-2.png" />
+    <Content Include="Content\Icons\Untitled-3.png" />
     <Content Include="Content\ProfilePics\Me.png" />
     <Content Include="Global.asax" />
     <Content Include="Javascript\JavaScript1.js" />

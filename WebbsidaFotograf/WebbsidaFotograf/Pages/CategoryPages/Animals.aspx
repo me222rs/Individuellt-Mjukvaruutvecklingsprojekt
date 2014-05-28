@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Animals.aspx.cs" Inherits="WebbsidaFotograf.Pages.CategoryPages.Animals" MasterPageFile="~/Pages/Shared/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-
+    <div id="GalleryContent">
 
     <%-- Kolumn 1 - Uppladdning, beskrivning och taggar--%>
     <div id="Column1">
@@ -52,12 +52,12 @@
                     
                 </asp:PlaceHolder>
             </asp:PlaceHolder>
-        <div id="Info">
+<%--        <div id="Info">
             <p id="ImageInfos">
                 
                 <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal> 
             </p>
-        </div>
+        </div>--%>
 
         <asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="true">
@@ -90,18 +90,24 @@
 
         <div id="bild">
             <asp:Image ID="BigImage" runat="server"/>
+            <br/>
+        <div id="Description">
+            <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
+        </div>
         </div>
     </asp:Panel>
 
 <br />
 
 <br />
+
+
     <div id="facebook">
 
     <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/CategoryPages/Animals.aspx" data-numposts="5" data-colorscheme="light"></div>
 
     </div>
 
-
+    </div>
 </asp:Content>
 <%--ImageUrl='<%# "~/Content/GalleryThumbs/" + Item %>'--%>
