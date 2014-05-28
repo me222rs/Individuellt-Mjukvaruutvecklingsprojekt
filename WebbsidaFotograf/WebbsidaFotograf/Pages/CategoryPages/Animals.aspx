@@ -40,9 +40,16 @@
                     
 <br />
         <%-- Textbox för ny beskrivning  --%>
+                    <asp:Label ID="Label1" runat="server" Text="Label">Beskrivning</asp:Label>
+                    <br />
                     <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine" Rows="5"></asp:TextBox>
                     <br />
+                    <asp:Label ID="Label2" runat="server" Text="Label">Taggar</asp:Label>
+                    <br />
+                    <asp:TextBox ID="UpdateTagsTextBox" runat="server"></asp:TextBox>
+                    <br />
                     <asp:LinkButton ID="UpdateDescription" runat="server" OnClick="UpdateDescription_Click" CausesValidation="false">Uppdatera Beskrivning</asp:LinkButton>
+                    
                 </asp:PlaceHolder>
             </asp:PlaceHolder>
         <div id="Info">
@@ -79,10 +86,12 @@
     <%-- Kolumn 2 - Den stora bilden och kommentarer--%>
         
         <%-- Den stora bilden --%>
+    <asp:Panel runat="server" ID="Panel2" HorizontalAlign="Center">
+
         <div id="bild">
             <asp:Image ID="BigImage" runat="server"/>
         </div>
-
+    </asp:Panel>
 
 <br />
 

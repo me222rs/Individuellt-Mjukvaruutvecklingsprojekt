@@ -237,10 +237,10 @@ list-style-type: disc;
     margin:0px;
 }
 #bild img{
-    padding-left:4%;
+    /*padding-left:4%;*/
     padding-top:2.2%;
-    max-width:100%;
-    width: 39.7%;
+    max-width:45%;
+    /*width: 39.7%;*/
 
 }
 #BigImage{

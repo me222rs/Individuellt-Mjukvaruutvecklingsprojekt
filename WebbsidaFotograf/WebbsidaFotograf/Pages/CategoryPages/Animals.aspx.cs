@@ -259,6 +259,9 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         protected void Update_Click(object sender, EventArgs e)
         {
             UpdatePlaceHolder.Visible = true;
+            var name = Request.QueryString["name"];
+            UpdateDescriptionTextBox.Text = GetDescriptionByImageName(name);
+            UpdateTagsTextBox.Text = Service.GetTagsByImageName(name);
         }
     }
 }
