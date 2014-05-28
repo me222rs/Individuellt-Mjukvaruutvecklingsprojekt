@@ -40,6 +40,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UploadValidator;
         
         /// <summary>
+        /// FileUpload1RegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator FileUpload1RegularExpressionValidator;
+        
+        /// <summary>
         /// DescriptionLabel control.
         /// </summary>
         /// <remarks>
@@ -112,13 +121,22 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
-        /// UpdateDescription control.
+        /// Update control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton UpdateDescription;
+        protected global::System.Web.UI.WebControls.LinkButton Update;
+        
+        /// <summary>
+        /// UpdatePlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder UpdatePlaceHolder;
         
         /// <summary>
         /// UpdateDescriptionTextBox control.
@@ -128,6 +146,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox UpdateDescriptionTextBox;
+        
+        /// <summary>
+        /// UpdateDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton UpdateDescription;
         
         /// <summary>
         /// DescriptionLiteral control.

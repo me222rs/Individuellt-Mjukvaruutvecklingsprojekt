@@ -11,12 +11,12 @@
             <p>Ladda upp en bild i denna kategorin.</p>
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <asp:RequiredFieldValidator ID="UploadValidator" runat="server" ErrorMessage="Du måste välja en bild att ladda upp!" ControlToValidate="FileUpload1" Display="Dynamic"></asp:RequiredFieldValidator>
-            
+            <asp:RegularExpressionValidator ID="FileUpload1RegularExpressionValidator" runat="server" ErrorMessage="Måste vara av filformatet jpg, png eller gif" ControlToValidate="FileUpload1" ValidationExpression="^.*\.(gif|jpg|png)$"></asp:RegularExpressionValidator>
     
 <br />
             <asp:Label ID="DescriptionLabel" runat="server" Text="Beskrivning"></asp:Label>
 <br />
-            <asp:TextBox ID="DescriptionTextBox" runat="server" MaxLength="200"></asp:TextBox>
+            <asp:TextBox ID="DescriptionTextBox" runat="server" MaxLength="200" TextMode="MultiLine" Rows="5"></asp:TextBox>
             <asp:RequiredFieldValidator ID="DescriptionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="DescriptionTextBox"></asp:RequiredFieldValidator>
     
 <br />
@@ -35,10 +35,15 @@
             <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
 <br />
         <%-- Knapp för att uppdatera beskrivning --%>
-            <asp:LinkButton ID="UpdateDescription" runat="server" OnClick="UpdateDescription_Click" CausesValidation="false">Uppdatera Beskrivning</asp:LinkButton>
+            <asp:LinkButton ID="Update" runat="server" OnClick="Update_Click" CausesValidation="false">Uppdatera</asp:LinkButton>
+                <asp:PlaceHolder ID="UpdatePlaceHolder" runat="server" Visible="false">
+                    
 <br />
         <%-- Textbox för ny beskrivning  --%>
-            <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine" Rows="5"></asp:TextBox>
+                    <br />
+                    <asp:LinkButton ID="UpdateDescription" runat="server" OnClick="UpdateDescription_Click" CausesValidation="false">Uppdatera Beskrivning</asp:LinkButton>
+                </asp:PlaceHolder>
             </asp:PlaceHolder>
         <div id="Info">
             <p id="ImageInfos">

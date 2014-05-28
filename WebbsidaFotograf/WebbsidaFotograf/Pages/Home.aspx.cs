@@ -22,7 +22,7 @@ namespace WebbsidaFotograf.Pages
         }
 
 
-
+        //Paging av bloggposter så att sidan inte blir för lång
         protected void ListView2_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
             ListViewDataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);

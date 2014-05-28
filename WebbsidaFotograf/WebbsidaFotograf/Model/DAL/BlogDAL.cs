@@ -202,6 +202,7 @@ namespace WebbsidaFotograf.Model.DAL
                                 BlogPostID = reader.GetInt32(postIDIndex),
                                 Title = reader.GetString(titleIndex),
                                 Post = reader.GetString(postIndex),
+                                Date = reader.GetDateTime(dateIndex),
 
                             };
                         }

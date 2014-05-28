@@ -44,6 +44,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             }
         }
 
+        //Rättmeddelanden
         private string SuccessMessage
         {
             get
@@ -64,6 +65,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
+            var category = "";
+            //Hämtar ut vilken kategori man har klickat sig in på
             if (Request.QueryString["Category"] != null)
             {
                 Session["Category"] = Request.QueryString["Category"];
@@ -172,6 +175,11 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                     SuccessMessage = String.Format("Uppladdning av {0} lyckades", fileName);
                     Response.Redirect("Animals.aspx?name=" + fileName);
                 }
+
+                else 
+                {
+                    throw new ApplicationException();
+                }
             }
         }
 
@@ -246,6 +254,11 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             var description = UpdateDescriptionTextBox.Text;
             Service.UpdateDescription(image, description);
             Response.Redirect(Request.RawUrl);
+        }
+
+        protected void Update_Click(object sender, EventArgs e)
+        {
+            UpdatePlaceHolder.Visible = true;
         }
     }
 }
