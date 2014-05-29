@@ -49,15 +49,15 @@ namespace WebbsidaFotograf.Pages
             if (ModelState.IsValid)
             {
                 string post = BlogContent.Text.
-                    Replace("\n", "<br>").
-                    Replace("[BOLD]", "<b>").
-                    Replace("[/BOLD]", "</b>").
-                    Replace("[ITALIC]", "<em>").
-                    Replace("[/ITALIC]", "</em>").
-                    Replace("[HEADER1]", "<h1>").
-                    Replace("[/HEADER1]", "</h1>").
-                    Replace("[HEADER2]", "<h2>").
-                    Replace("[/HEADER2]", "</h2>");
+                Replace("\n", "<br>").
+                Replace("[BOLD]", "<b>").
+                Replace("[/BOLD]", "</b>").
+                Replace("[ITALIC]", "<em>").
+                Replace("[/ITALIC]", "</em>").
+                Replace("[HEADER1]", "<h1>").
+                Replace("[/HEADER1]", "</h1>").
+                Replace("[HEADER2]", "<h2>").
+                Replace("[/HEADER2]", "</h2>");
                 string title = BlogTitle.Text;
                 string tags = BlogPostTagsTextBox.Text;
 

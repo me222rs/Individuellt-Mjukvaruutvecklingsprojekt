@@ -69,6 +69,7 @@
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl='<%# Eval("BlogPostID", "~/Pages/PostDetails.aspx?Id={0}") %>'><h2><%#: Eval("Title") %></h2></asp:HyperLink>
                         <%--<asp:Image ID="BlogImage" runat="server" width="300px" Height="200px"/>--%>
                         <%# Eval("Post") %>
+
                         <br />
 
                         <h5><%# Eval("Date") %></h5>

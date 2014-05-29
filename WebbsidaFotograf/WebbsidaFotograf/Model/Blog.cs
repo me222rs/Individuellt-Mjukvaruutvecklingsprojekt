@@ -18,7 +18,7 @@ namespace WebbsidaFotograf.Model
         public string Title { get; set; }
 
         [Required(ErrorMessage = "En post måste anges.")]
-        [StringLength(30, ErrorMessage = "Posten kan bestå av som mest 2000 tecken.")]
+        [StringLength(2000, ErrorMessage = "Posten kan bestå av som mest 2000 tecken.")]
         public string Post { get; set; }
 
 

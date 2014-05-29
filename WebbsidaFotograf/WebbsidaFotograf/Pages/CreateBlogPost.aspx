@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="CreateBlogPost.aspx.cs" Inherits="WebbsidaFotograf.Pages.CreateBlogPost" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceholder" runat="server">
+
     <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
     <asp:Label ID="Label1" runat="server" Text="Titel"></asp:Label>
     <asp:TextBox ID="BlogTitle" runat="server" MaxLength="40"></asp:TextBox>
@@ -9,7 +11,6 @@
 
     <asp:TextBox ID="BlogContent" runat="server" MaxLength="2000" TextMode="MultiLine" Rows="10" Width="500px" Height="300px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="BlogContentRequiredFieldValidator" runat="server" ErrorMessage="Du måste skriva något!" ControlToValidate="BlogContent"></asp:RequiredFieldValidator>
-        
         
     
     <asp:Button ID="Post" runat="server" Text="Posta" OnClick="Post_Click"/>

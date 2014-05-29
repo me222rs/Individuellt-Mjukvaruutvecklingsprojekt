@@ -42,11 +42,13 @@
         <%-- Textbox för ny beskrivning  --%>
                     <asp:Label ID="Label1" runat="server" Text="Label">Beskrivning</asp:Label>
                     <br />
-                    <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine" Rows="5"></asp:TextBox>
+                    <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine" Rows="5" MaxLength="200"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Du måste ha en beskrivning!" ControlToValidate="UpdateDescriptionTextBox"></asp:RequiredFieldValidator>
                     <br />
                     <asp:Label ID="Label2" runat="server" Text="Label">Taggar</asp:Label>
                     <br />
                     <asp:TextBox ID="UpdateTagsTextBox" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Du måste ange minst en tagg!" ControlToValidate="UpdateTagsTextBox"></asp:RequiredFieldValidator>
                     <br />
                     <asp:LinkButton ID="UpdateDescription" runat="server" OnClick="UpdateDescription_Click" CausesValidation="false">Uppdatera Beskrivning</asp:LinkButton>
                     

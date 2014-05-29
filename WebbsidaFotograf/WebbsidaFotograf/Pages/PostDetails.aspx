@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="PostDetails.aspx.cs" Inherits="WebbsidaFotograf.Pages.PostDetails" %>
 
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceholder" runat="server">
 
     <asp:ListView ID="ListView2" runat="server"
@@ -40,7 +42,7 @@
         SelectMethod="BlogPostFormView_GetItem">
         <EditItemTemplate>
             
-                    
+           
                     <asp:TextBox ID="EditTitleTextBox" runat="server" Text='<%# BindItem.Title %>' MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="EditTitleTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en titel!" ControlToValidate="EditTitleTextBox" Display="Static"></asp:RequiredFieldValidator>
        <br />
