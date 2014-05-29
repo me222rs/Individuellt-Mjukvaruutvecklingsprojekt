@@ -10,14 +10,15 @@
     <%-- Uppladdning --%>
             <p>Ladda upp en bild i denna kategorin.</p>
             <asp:FileUpload ID="FileUpload1" runat="server" />
-            <asp:RequiredFieldValidator ID="UploadValidator" runat="server" ErrorMessage="Du måste välja en bild att ladda upp!" ControlToValidate="FileUpload1" Display="Dynamic"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="UploadValidator" runat="server" ErrorMessage="Du måste välja en bild att ladda upp!" ForeColor="Red" ControlToValidate="FileUpload1" Display="Dynamic"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="FileUpload1RegularExpressionValidator" runat="server" ErrorMessage="Måste vara av filformatet jpg, png eller gif" ControlToValidate="FileUpload1" ValidationExpression="^.*\.(gif|jpg|png)$"></asp:RegularExpressionValidator>
     
 <br />
             <asp:Label ID="DescriptionLabel" runat="server" Text="Beskrivning"></asp:Label>
 <br />
             <asp:TextBox ID="DescriptionTextBox" runat="server" MaxLength="200" TextMode="MultiLine" Rows="5"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="DescriptionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="DescriptionTextBox"></asp:RequiredFieldValidator>
+<br />
+            <asp:RequiredFieldValidator ID="DescriptionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ge en beskrivning!" ForeColor="Red" ControlToValidate="DescriptionTextBox"></asp:RequiredFieldValidator>
     
 <br />
             <asp:Label ID="TagLabel" runat="server" Text="Lägg till taggar, separera varje tagg med ,"></asp:Label>
@@ -43,7 +44,8 @@
                     <asp:Label ID="Label1" runat="server" Text="Label">Beskrivning</asp:Label>
                     <br />
                     <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine" Rows="5" MaxLength="200"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Du måste ha en beskrivning!" ControlToValidate="UpdateDescriptionTextBox"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="Du måste ha en beskrivning!" ControlToValidate="UpdateDescriptionTextBox"></asp:RequiredFieldValidator>
                     <br />
                     <asp:Label ID="Label2" runat="server" Text="Label">Taggar</asp:Label>
                     <br />

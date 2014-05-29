@@ -14,7 +14,7 @@
 
 
     <header>
-        <h1>Header - Put image here!</h1>
+        <asp:Image ID="Image1" runat="server" ImageUrl="../../Content/Icons/Logo2.png"/>
     </header>
     <form id="form1" runat="server">
         <nav>
