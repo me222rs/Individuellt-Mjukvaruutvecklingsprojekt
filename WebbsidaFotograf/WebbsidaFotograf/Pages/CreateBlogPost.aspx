@@ -30,6 +30,7 @@
     <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik" runat="server" Text="H1" OnClientClick="insertAtCursorOrSelection('[HEADER1]', '[/HEADER1]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik2" runat="server" Text="H2" OnClientClick="insertAtCursorOrSelection('[HEADER2]', '[/HEADER2]'); return false;" CausesValidation="False" />
+     <asp:Button ID="Button1" runat="server" Text="H2" OnClientClick="insertAtCursorOrSelection('[IMG]', '[/IMG]'); return false;" CausesValidation="False" />
 <script>
     function insertAtCursorOrSelection(before, after) {
         textbox = document.getElementById('<%=BlogContent.ClientID%>');

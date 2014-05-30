@@ -157,7 +157,9 @@ namespace WebbsidaFotograf.Model.DAL
                                     Replace("<h1>", "[HEADER1]").
                                     Replace("</h1>", "[/HEADER1]").
                                     Replace("<h2>", "[HEADER2]").
-                                    Replace("</h2>", "[/HEADER2]"),
+                                    Replace("</h2>", "[/HEADER2]").
+                                    Replace("<img>", "[IMG]").
+                                    Replace("</img>", "[/IMG]"),
                                 Date = reader.GetDateTime(dateIndex),
 
                             };
@@ -266,7 +268,9 @@ namespace WebbsidaFotograf.Model.DAL
     Replace("[HEADER1]", "<h1>").
     Replace("[/HEADER1]", "</h1>").
     Replace("[HEADER2]", "<h2>").
-    Replace("[/HEADER2]", "</h2>"); 
+    Replace("[/HEADER2]", "</h2>").
+    Replace("[IMG]", "<img>").
+    Replace("[/IMG]", "</img>"); 
 
 
                     cmd.Parameters.Add("@BlogPostID", SqlDbType.Int, 4).Value = item.BlogPostID;

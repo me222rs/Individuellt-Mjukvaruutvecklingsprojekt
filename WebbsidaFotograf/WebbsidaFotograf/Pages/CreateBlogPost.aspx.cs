@@ -57,7 +57,9 @@ namespace WebbsidaFotograf.Pages
                 Replace("[HEADER1]", "<h1>").
                 Replace("[/HEADER1]", "</h1>").
                 Replace("[HEADER2]", "<h2>").
-                Replace("[/HEADER2]", "</h2>");
+                Replace("[/HEADER2]", "</h2>").
+                Replace("[IMG]", "<img>").
+                Replace("[/IMG]", "</img>");
                 string title = BlogTitle.Text;
                 string tags = BlogPostTagsTextBox.Text;
 
