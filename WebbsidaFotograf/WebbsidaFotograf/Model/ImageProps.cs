@@ -6,6 +6,7 @@ using System.IO;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using WebbsidaFotograf.Model.DAL;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebbsidaFotograf.Model
 {
@@ -15,6 +16,8 @@ namespace WebbsidaFotograf.Model
 
         public string ImageName { get; set; }
 
+        [Required(ErrorMessage = "En beskrivning måste anges.")]
+        [StringLength(200, ErrorMessage = "Beskrivningen kan bestå av som mest 200 tecken.")]
         public string Description { get; set; }
 
         public string Tags { get; set; }

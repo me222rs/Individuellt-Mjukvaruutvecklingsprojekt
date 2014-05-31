@@ -15,5 +15,12 @@ namespace WebbsidaFotograf.app_infrastructure
             validationResults = new List<ValidationResult>();
             return Validator.TryValidateObject(instance, validationContext, validationResults, true);
         }
+
+        public static bool ValidateImg(this ImageProps instance, out ICollection<ValidationResult> validationResults)
+        {
+            var validationContext = new ValidationContext(instance);
+            validationResults = new List<ValidationResult>();
+            return Validator.TryValidateObject(instance, validationContext, validationResults, true);
+        }
     }
 }

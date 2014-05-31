@@ -68,15 +68,15 @@ namespace WebbsidaFotograf.Model
         /// <param name="image"></param>
         public void SaveImage(ImageProps image) 
         {
-            //ICollection<ValidationResult> validationResults;
-            //if (!image.Validate(out validationResults)) // Använder "extension method" för valideringen!
-            //{                                              // Klassen finns under App_Infrastructure.
-            //    // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
-            //    // till samlingen med resultat av valideringen.
-            //    var ex = new ValidationException("Objektet klarade inte valideringen.");
-            //    ex.Data.Add("ValidationResults", validationResults);
-            //    throw ex;
-            //}
+            ICollection<ValidationResult> validationResults;
+            if (!image.ValidateImg(out validationResults)) // Använder "extension method" för valideringen!
+            {                                              // Klassen finns under App_Infrastructure.
+                // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
+                // till samlingen med resultat av valideringen.
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
             ImageDAL.SaveImage(image);
         }
 
