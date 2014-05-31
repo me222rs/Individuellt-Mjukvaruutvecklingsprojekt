@@ -148,6 +148,10 @@ namespace WebbsidaFotograf.Model
             return fileName;
         }
 
+        //********************************************************************************************************
+        //Använt mig av koden på denna sidan
+        //http://stackoverflow.com/questions/10329010/c-sharp-how-to-resize-image-proportionately-with-max-height
+        //********************************************************************************************************
         public static Image ScaleImage(Image image, int maxHeight)
         {
             var ratio = (double)maxHeight / image.Height;
