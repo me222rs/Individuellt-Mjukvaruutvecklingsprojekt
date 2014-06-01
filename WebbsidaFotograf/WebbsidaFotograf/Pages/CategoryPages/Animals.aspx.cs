@@ -76,10 +76,12 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             if (admin == true)
             {
                 PlaceHolder1.Visible = true;
+                Column1PlaceHolder.Visible = true;
             }
             else
             {
                 PlaceHolder1.Visible = false;
+                Column1PlaceHolder.Visible = false;
             }
 
             

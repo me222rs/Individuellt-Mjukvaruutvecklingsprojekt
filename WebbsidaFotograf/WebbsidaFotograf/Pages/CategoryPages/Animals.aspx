@@ -4,6 +4,7 @@
     <div id="GalleryContent">
 
     <%-- Kolumn 1 - Uppladdning, beskrivning och taggar--%>
+    <asp:PlaceHolder ID="Column1PlaceHolder" runat="server" Visible="false">
     <div id="Column1">
             <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
 
@@ -70,6 +71,7 @@
     </div>
         
 <br />
+        </asp:PlaceHolder>
             <%-- Kolumn 3 - Tumnaglarna--%>
     <div id="ThumbNails">
             
