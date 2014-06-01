@@ -38,7 +38,7 @@ namespace WebbsidaFotograf.Pages
             smtp.EnableSsl = true;
             System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
             NetworkCred.UserName = "mikael.edberg92@gmail.com";
-            NetworkCred.Password = "skriver inte mitt lösen här"; //Committade nästan mitt lösenord :P
+            NetworkCred.Password = ""; //Committade nästan mitt lösenord :P
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Port = 587;

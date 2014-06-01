@@ -22,6 +22,15 @@ namespace WebbsidaFotograf.Pages {
         protected global::System.Web.UI.WebControls.TextBox Amne;
         
         /// <summary>
+        /// SubjectRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator SubjectRequiredFieldValidator;
+        
+        /// <summary>
         /// Namn control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace WebbsidaFotograf.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Namn;
+        
+        /// <summary>
+        /// NameRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NameRequiredFieldValidator;
         
         /// <summary>
         /// Epost control.
@@ -40,6 +58,24 @@ namespace WebbsidaFotograf.Pages {
         protected global::System.Web.UI.WebControls.TextBox Epost;
         
         /// <summary>
+        /// EmailRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailRequiredFieldValidator;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// Meddelande control.
         /// </summary>
         /// <remarks>
@@ -47,6 +83,15 @@ namespace WebbsidaFotograf.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Meddelande;
+        
+        /// <summary>
+        /// MessageRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator MessageRequiredFieldValidator;
         
         /// <summary>
         /// SendButton control.
