@@ -67,42 +67,6 @@ namespace WebbsidaFotograf.Pages {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator BlogContentRequiredFieldValidator;
         
         /// <summary>
-        /// Post control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Post;
-        
-        /// <summary>
-        /// BlogPostTagsLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label BlogPostTagsLabel;
-        
-        /// <summary>
-        /// BlogPostTagsTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BlogPostTagsTextBox;
-        
-        /// <summary>
-        /// PlaceHolder2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder2;
-        
-        /// <summary>
         /// Fetstil control.
         /// </summary>
         /// <remarks>
@@ -146,5 +110,41 @@ namespace WebbsidaFotograf.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// BlogPostTagsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BlogPostTagsLabel;
+        
+        /// <summary>
+        /// BlogPostTagsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox BlogPostTagsTextBox;
+        
+        /// <summary>
+        /// Post control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Post;
+        
+        /// <summary>
+        /// PlaceHolder2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder2;
     }
 }

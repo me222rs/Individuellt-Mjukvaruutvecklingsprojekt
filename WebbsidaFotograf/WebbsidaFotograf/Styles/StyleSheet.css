@@ -38,7 +38,7 @@ q:before, q:after {
 	content: none;
 }
 table {
-	border-collapse: collapse;
+	/*border-collapse: collapse;*/
 	border-spacing: 0;
 }
 table td{
@@ -49,6 +49,8 @@ table a{
     text-decoration:solid;
     
 }
+
+
 
 
 /*--------------------------------------------*/
@@ -133,7 +135,7 @@ header{
     /*height:200px;
     background-image:url(../Content/Icons/12885365265_347a812bb8_o.jpg);
     border-radius:5px;*/
-    height:235px;
+    height:220px;
     background-image:url(../Content/Icons/Untitled-3.png);
     background-repeat:no-repeat;
     border-radius:5px;
@@ -189,7 +191,7 @@ h1, h2, h3{
     color:black;
 }
 p{
-    color:gray;
+    color:black;
 }
 
 
@@ -222,6 +224,7 @@ p{
     margin-top: 2.2%;
     border-radius: 5px;
     box-shadow: 10px 10px 5px #888888;
+    text-align: center;
 }
 
 #ThumbNails img {
@@ -240,8 +243,63 @@ p{
 }
 
 #facebook {
-    padding-left: 30.5%;
-    padding-top: 10%;
+    /*padding-left: 30.5%;
+    padding-top: 10%;*/
+
+
+    margin-top:7%;
+text-align: center;
+border-top: solid gray 1px;
+padding-top: 1%;
+width: 70%;
+margin-left: auto;
+margin-right: auto;
+}
+#facebookBlog{
+    margin-top: 30%;
+text-align: center;
+border-top: solid gray 1px;
+padding-top: 1%;
+width: 70%;
+margin-left: auto;
+margin-right: auto;
+}
+#BlogButtons{
+    padding-left: 15%;
+}
+
+#ContactContent{
+    background-color: lightgray;
+border-radius: 5px;
+padding: 5px;
+}
+
+#PostDetailsContent{
+    background-color: lightgray;
+padding: 5px;
+margin-left: 0px;
+margin-right: 0px;
+border-radius: 5px;
+}
+
+#AboutContent{
+    background-color: lightgray;
+border-radius: 5px;
+padding: 5px;
+}
+
+#CreateBlogPostContent{
+    background-color: lightgray;
+padding: 5px;
+border-radius: 5px;
+}
+
+#EditPostDetails {
+padding-left: 13.5%;
+width: 45%;
+margin-right: 0%;
+float: left;
+/* margin-bottom: 50%; */
 }
 
 ul, menu, dir {
@@ -267,7 +325,7 @@ list-style-type: disc;
     float: left;
     background-color: #586784;
     margin-top: 3.2%;
-    margin-left: 12%;
+    margin-left: 11%;
     border-radius: 5px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -289,6 +347,7 @@ list-style-type: disc;
     width:100%;
     margin:0px;
     background-color: lightgray;
+    border-radius:5px;
 }
 #bild img{
     /*padding-left:4%;*/
@@ -306,7 +365,21 @@ list-style-type: disc;
     margin-right: auto;*/
 }
 #Description {
-    padding-top: 2%;
+    /*padding-top: 2%;*/
+    /*padding-right: 27.5%;*/
+    padding-top: 1%;
+/* padding-right: 27.5%; */
+background-color: lightgray;
+padding-bottom: 1%;
+margin-top: 1%;
+width: 40%;
+margin-left: auto;
+margin-right: auto;
+border-radius: 5px;
+box-shadow: 4px 5px 5px gray;
+border: solid 1px gray;
+word-wrap: break-word;
+padding: 10px;
 }
 #BlogpostDiv{
     width:800px;
@@ -336,6 +409,8 @@ list-style-type: disc;
     background-color:white;
     margin:10px;
     border-radius:5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     table-layout:fixed;
     overflow:hidden;
     margin-left: auto;
@@ -354,7 +429,7 @@ list-style-type: disc;
 #BlogContent{
     border-radius:5px;
     background-color:lightgray;
-    margin:5px;
+    margin:0px;
     padding:5px;
     margin-top: 0px;
 }

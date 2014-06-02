@@ -64,10 +64,10 @@
             </p>
         </div>--%>
 
-        <asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>
-    <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="true">
+        <%--<asp:LinkButton ID="ShowTags" runat="server" CausesValidation="True" OnClick="ShowTags_Click">Visa taggar</asp:LinkButton>--%>
+<%--    <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="true">
         <asp:Label ID="ImageTags" runat="server" Visible="true" Text="Här kommer taggarna ligga!"></asp:Label>
-        </asp:PlaceHolder>
+        </asp:PlaceHolder>--%>
     </div>
         
 <br />
@@ -97,9 +97,16 @@
         <div id="bild">
             <asp:Image ID="BigImage" runat="server"/>
             <br/>
-        <div id="Description">
-            <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
+        
         </div>
+        <div id="Description">
+            <p>
+            <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
+            </p>
+            <p>
+                <asp:Label ID="Label3" runat="server" Text="Taggar:" Font-Bold="true"></asp:Label>
+                <asp:Label ID="ImageTags" runat="server" Visible="true" Text="Här kommer taggarna ligga!" Font-Italic="true" Font-Size="Small"></asp:Label>
+            </p>
         </div>
     </asp:Panel>
 

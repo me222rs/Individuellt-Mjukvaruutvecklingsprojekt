@@ -153,6 +153,11 @@ namespace WebbsidaFotograf.Pages
             
         }
 
+        protected void Edit_Click(object sender, EventArgs e)
+        {
+            EditPost.Visible = true;
+        }
+
     //    protected void PostTextBox_Load(object sender, EventArgs e)
     //    {
     //        Blog blog = new Blog();

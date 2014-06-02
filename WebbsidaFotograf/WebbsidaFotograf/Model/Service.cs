@@ -145,12 +145,12 @@ namespace WebbsidaFotograf.Model
         /// </summary>
         /// <param name="image"></param>
         /// <param name="description"></param>
-        public void UpdateDescription(string image, string description)
+        public void UpdateDescription(string image, string description, string tags)
         {
 
 
 
-            ImageDAL.UpdateDescription(image, description);
+            ImageDAL.UpdateDescription(image, description, tags);
         }
 
 

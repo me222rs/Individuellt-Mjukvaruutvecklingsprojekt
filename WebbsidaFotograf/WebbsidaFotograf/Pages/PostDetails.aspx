@@ -3,7 +3,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceholder" runat="server">
-
+    <div id="PostDetailsContent">
     <asp:ListView ID="ListView2" runat="server"
             ItemType="WebbsidaFotograf.Model.Blog"
             SelectMethod="ListView2_GetData"
@@ -23,7 +23,7 @@
                         <br />
                         <h5><asp:Label ID="Label1" runat="server" Text="Taggar: "></asp:Label><asp:Literal ID="TagLiteral" runat="server"></asp:Literal></h5>
                         <h5><%#: Item.Date %></h5>
-                        <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click">Ta bort</asp:LinkButton>
+                        
                         
                     </td>
                     
@@ -31,9 +31,18 @@
                     </table>
             </ItemTemplate>
         </asp:ListView>
-    
+
+
     <asp:Panel ID="Panel1" runat="server">
     <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
+            <div id="BlogButtons">
+        <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click">Ta bort</asp:LinkButton>
+        <br />
+        <asp:LinkButton ID="Edit" runat="server" OnClick="Edit_Click">Redigera</asp:LinkButton>
+    </div>
+        <asp:PlaceHolder ID="EditPost" runat="server"  Visible="false">
+    
+            <div id="EditPostDetails">
     <asp:FormView ID="UpdatePostFormView" runat="server"         
         ItemType="WebbsidaFotograf.Model.Blog" 
         DefaultMode="Edit" 
@@ -58,6 +67,8 @@
 
         </EditItemTemplate>
     </asp:FormView>
+                </div>
+                <div id="TagsPostDetails">
         <asp:TextBox ID="TagsTextBox" runat="server" Text="" MaxLength="200"></asp:TextBox>
         <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />
     <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
@@ -91,8 +102,14 @@
                         }
 
     </script>
-
+                    </div>
+    
+    </asp:PlaceHolder>
     </asp:PlaceHolder>
         </asp:Panel>
-    <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>
+
+    <div id="facebookBlog">
+        <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>
+    </div>
+        </div>
 </asp:Content>

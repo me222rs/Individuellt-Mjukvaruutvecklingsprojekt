@@ -1,10 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="WebbsidaFotograf.Pages.About" MasterPageFile="~/Pages/Shared/Site.Master"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-    <div>
-        <aside>
-            <p>Slideshow</p>
-        </aside>
+    <div id="AboutContent">
             <div class="AboutText">
             <h2>Vem är jag?</h2>
                 <asp:Image ID="ProfilePicture" runat="server" width="200px" ImageUrl="../Content/ProfilePics/Me.png"/>

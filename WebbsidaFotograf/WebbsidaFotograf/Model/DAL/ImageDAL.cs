@@ -296,7 +296,7 @@ namespace WebbsidaFotograf.Model.DAL
         /// </summary>
         /// <param name="image"></param>
         /// <param name="description"></param>
-        public void UpdateDescription(string image, string description)
+        public void UpdateDescription(string image, string description, string tags)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -307,6 +307,7 @@ namespace WebbsidaFotograf.Model.DAL
 
                     cmd.Parameters.AddWithValue("@ImageName", image);
                     cmd.Parameters.AddWithValue("@Description", description);
+                    cmd.Parameters.AddWithValue("@Tags", tags);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

@@ -70,6 +70,7 @@
     <Content Include="Content\Icons\Untitled-3.png" />
     <Content Include="Content\ProfilePics\Me.png" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Internal Error.html" />
     <Content Include="Javascript\JavaScript1.js" />
     <Content Include="Pages\About.aspx" />
     <Content Include="Pages\AdminPages\AdminLogIn.aspx" />
@@ -199,6 +200,7 @@
   <ItemGroup>
     <Content Include="Pages\Shared\Site.Master" />
     <Content Include="Pages\Shared\SiteCategory.Master" />
+    <None Include="Properties\PublishProfiles\MyProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

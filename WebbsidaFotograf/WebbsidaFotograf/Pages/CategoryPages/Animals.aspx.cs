@@ -77,6 +77,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             {
                 PlaceHolder1.Visible = true;
                 Column1PlaceHolder.Visible = true;
+                //ThumbNails.Style.Add("padding-left", "15.5%");
             }
             else
             {
@@ -93,16 +94,20 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             }
             ImageProps imageProps = new ImageProps();
             var image = Request.QueryString["name"];
-            if (image == "hej") 
-            {
-                BigImage.ImageUrl = "~/Content/ProfilePics/Me.png";
-            }
+
+            
             //BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
             BigImage.ImageUrl = "~/Content/" + Session["Category"] + "/" + image;
 
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"] + "&Category=" + Request.QueryString["Category"];
-
+            
             ImageProps.ImageName = image;
+
+            if (image == "hej")
+            {
+                BigImage.ImageUrl = "~/Content/Icons/Logo2.png";
+            }
+
             if (image == null)
             {
 
@@ -136,7 +141,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         
         protected void Upload_Click(object sender, EventArgs e)
         {
-            if(IsValid)
+            if(ModelState.IsValid)
             {
                 if (FileUpload1.HasFile)
                 {
@@ -233,28 +238,29 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             return Service.GetImages();
         }
 
-        protected void ShowTags_Click(object sender, EventArgs e)
-        {
-            if (PlaceHolder2.Visible == false)
-            {
-                //Tags.Visible = true;
-                PlaceHolder2.Visible = true;
-                var image = Request.QueryString["name"];
-                Service.GetTagsByImageName(image);
-                ImageTags.Text = Tags.TagName;
-            }
+        //protected void ShowTags_Click(object sender, EventArgs e)
+        //{
+        //    if (PlaceHolder2.Visible == false)
+        //    {
+        //        //Tags.Visible = true;
+        //        PlaceHolder2.Visible = true;
+        //        var image = Request.QueryString["name"];
+        //        Service.GetTagsByImageName(image);
+        //        ImageTags.Text = Tags.TagName;
+        //    }
 
-            else
-            {
-                ImageTags.Visible = false;
-            }
-        }
+        //    else
+        //    {
+        //        ImageTags.Visible = false;
+        //    }
+        //}
 
         protected void UpdateDescription_Click(object sender, EventArgs e)
         {
             var image = Request.QueryString["name"];
             var description = UpdateDescriptionTextBox.Text;
-            Service.UpdateDescription(image, description);
+            var tags = UpdateTagsTextBox.Text;
+            Service.UpdateDescription(image, description, tags);
             Response.Redirect(Request.RawUrl);
         }
 
