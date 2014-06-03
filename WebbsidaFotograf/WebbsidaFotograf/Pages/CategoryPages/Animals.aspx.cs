@@ -81,6 +81,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             }
             else
             {
+                HtmlLink link = Page.Master.FindControl("Css") as HtmlLink;
+                link.Href = "~/Styles/StyleSheet2.css";
                 PlaceHolder1.Visible = false;
                 Column1PlaceHolder.Visible = false;
             }

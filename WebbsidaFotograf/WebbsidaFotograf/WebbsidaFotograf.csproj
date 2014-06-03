@@ -85,6 +85,7 @@
     <Content Include="Pages\PostDetails.aspx" />
     <Content Include="Pages\UpdatePost.aspx" />
     <Content Include="Styles\StyleSheet.css" />
+    <Content Include="Styles\StyleSheet2.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
