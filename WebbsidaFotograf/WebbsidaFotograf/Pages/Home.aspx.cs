@@ -48,11 +48,15 @@ namespace WebbsidaFotograf.Pages
             //Session["IsAdmin"] = true;
             if (admin == true)
             {
+                HyperLink1.Visible = false;
+                Button1.Visible = true;
                 loggedIn.Visible = true;
                 PlaceHolder1.Visible = true;
             }
             else 
             {
+                HyperLink1.Visible = true;
+                Button1.Visible = false;
                 loggedIn.Visible = false;
             }
 

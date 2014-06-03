@@ -99,6 +99,7 @@
             <br/>
         
         </div>
+        <asp:PlaceHolder ID="DescPlaceHolder" runat="server">
         <div id="Description">
             <p>
             <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
@@ -108,6 +109,7 @@
                 <asp:Label ID="ImageTags" runat="server" Visible="true" Text="Här kommer taggarna ligga!" Font-Italic="true" Font-Size="Small"></asp:Label>
             </p>
         </div>
+            </asp:PlaceHolder>
     </asp:Panel>
 
 <br />

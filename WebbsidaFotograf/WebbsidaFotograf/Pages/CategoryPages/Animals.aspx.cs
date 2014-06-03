@@ -102,10 +102,14 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"] + "&Category=" + Request.QueryString["Category"];
             
             ImageProps.ImageName = image;
+            
 
-            if (image == "hej")
+            //Här finns namnen på de olika kategorierna
+            var categories = new List<string>(){"Djur", "Landskap", "Macro", "Porträtt"};
+            if (categories.Contains(image))
             {
-                BigImage.ImageUrl = "~/Content/Icons/Logo2.png";
+                BigImage.ImageUrl = "~/Content/CategoryImage/" + image + ".png";
+                //DescPlaceHolder.Visible = false;
             }
 
             if (image == null)
@@ -114,6 +118,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             }
             else
             {
+                //DescPlaceHolder.Visible = true;
                 string desc = GetDescriptionByImageName(image);
                 string tags = GetTagsByImageName(image);
                 DescriptionLiteral.Text = desc;
@@ -160,16 +165,6 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 
                     string category = Convert.ToString(Session["Category"]);
                     Service service = new Service();
-
-                    //ICollection<ValidationResult> validationResults;
-                    //if (!fileName.Validate(out validationResults)) // Använder "extension method" för valideringen!
-                    //{                                              // Klassen finns under App_Infrastructure.
-                    //    // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
-                    //    // till samlingen med resultat av valideringen.
-                    //    var ex = new ValidationException("Objektet klarade inte valideringen.");
-                    //    ex.Data.Add("ValidationResults", validationResults);
-                    //    throw ex;
-                    //}
 
                     fileName = ImageProps.SaveImage(stream, fileName, description, tags, category);
                     //service.SaveImage(image);
@@ -223,8 +218,8 @@ namespace WebbsidaFotograf.Pages.CategoryPages
                 File.Delete(filePath);
                 File.Delete(thumbPath);
             }
-            SuccessMessage = String.Format("Borttagningen av {0} lyckades", name);
-            Response.Redirect("Animals.aspx");
+            SuccessMessage = String.Format("Borttagningen av denna bilden lyckades");
+            Response.Redirect("Animals.aspx?name=" + Request.QueryString["name"] + "&Category=" + Session["Category"]);
         }
 
         // The return type can be changed to IEnumerable, however to support
@@ -237,23 +232,6 @@ namespace WebbsidaFotograf.Pages.CategoryPages
         {
             return Service.GetImages();
         }
-
-        //protected void ShowTags_Click(object sender, EventArgs e)
-        //{
-        //    if (PlaceHolder2.Visible == false)
-        //    {
-        //        //Tags.Visible = true;
-        //        PlaceHolder2.Visible = true;
-        //        var image = Request.QueryString["name"];
-        //        Service.GetTagsByImageName(image);
-        //        ImageTags.Text = Tags.TagName;
-        //    }
-
-        //    else
-        //    {
-        //        ImageTags.Visible = false;
-        //    }
-        //}
 
         protected void UpdateDescription_Click(object sender, EventArgs e)
         {

@@ -238,6 +238,15 @@ namespace WebbsidaFotograf.Pages.CategoryPages {
         protected global::System.Web.UI.WebControls.Image BigImage;
         
         /// <summary>
+        /// DescPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder DescPlaceHolder;
+        
+        /// <summary>
         /// DescriptionLiteral control.
         /// </summary>
         /// <remarks>

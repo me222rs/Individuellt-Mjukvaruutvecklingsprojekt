@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\CategoryImage\Djur.png" />
     <Content Include="Content\Icons\12885365265_347a812bb8_o.jpg" />
     <Content Include="Content\Icons\header.png" />
     <Content Include="Content\Icons\header2.png" />
@@ -84,7 +85,9 @@
     <Content Include="Pages\PostDetails.aspx" />
     <Content Include="Pages\UpdatePost.aspx" />
     <Content Include="Styles\StyleSheet.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app_infrastructure\ValidationExtensions.cs" />
