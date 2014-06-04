@@ -174,7 +174,8 @@ aside{
 }
 footer{
     text-align:center;
-    background-color:lightgreen;
+    background-color:lightgray;
+    border-radius:5px;
     height:50px;
     text-decoration-style:wavy;
 }
@@ -194,6 +195,9 @@ p{
     color:black;
 }
 
+#TagsPostDetails{
+    
+}
 
 
 .CategoryLink{

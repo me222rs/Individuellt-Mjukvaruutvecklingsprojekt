@@ -69,12 +69,16 @@
     </asp:FormView>
                 </div>
                 <div id="TagsPostDetails">
+                    <asp:Label ID="Label2" runat="server" Text="Tagga inlägget, separera taggarna med ,"></asp:Label>
         <asp:TextBox ID="TagsTextBox" runat="server" Text="" MaxLength="200"></asp:TextBox>
+                </div>
+
+            <div id="Buttons">
         <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />
     <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik" runat="server" Text="H1" OnClientClick="insertAtCursorOrSelection('[HEADER1]', '[/HEADER1]'); return false;" CausesValidation="False" />
     <asp:Button ID="Rubrik2" runat="server" Text="H2" OnClientClick="insertAtCursorOrSelection('[HEADER2]', '[/HEADER2]'); return false;" CausesValidation="False" />
-    
+            
 
                             <script>
                                 function insertAtCursorOrSelection(before, after) {
@@ -102,7 +106,7 @@
                         }
 
     </script>
-                    </div>
+            </div>        
     
     </asp:PlaceHolder>
     </asp:PlaceHolder>
