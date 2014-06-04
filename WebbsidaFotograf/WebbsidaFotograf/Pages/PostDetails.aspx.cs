@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebbsidaFotograf.Model;
 using System.Web.ModelBinding;
+using System.Web.UI.HtmlControls;
 
 
 namespace WebbsidaFotograf.Pages
@@ -40,6 +41,8 @@ namespace WebbsidaFotograf.Pages
             }
             else
             {
+                HtmlLink link = Page.Master.FindControl("Css") as HtmlLink;
+                link.Href = "~/Styles/StyleSheet2.css";
                 PlaceHolder1.Visible = false;
             }
 

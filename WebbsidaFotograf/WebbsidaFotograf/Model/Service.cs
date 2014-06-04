@@ -145,12 +145,22 @@ namespace WebbsidaFotograf.Model
         /// </summary>
         /// <param name="image"></param>
         /// <param name="description"></param>
-        public void UpdateDescription(string image, string description, string tags)
+        public void UpdateDescription(ImageProps image)
         {
+            //ImageProps img = new ImageProps();
+
+            ICollection<ValidationResult> validationResults;
+            if (!image.ValidateImg(out validationResults)) // Använder "extension method" för valideringen!
+            {                                              // Klassen finns under App_Infrastructure.
+                // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
+                // till samlingen med resultat av valideringen.
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
 
 
-
-            ImageDAL.UpdateDescription(image, description, tags);
+            ImageDAL.UpdateDescription(image);
         }
 
 
@@ -244,6 +254,7 @@ namespace WebbsidaFotograf.Model
             //TagsDAL.CreateBlogTags(tags);
         }
 
+        
         public string GetSalt(string userName) 
         {
             return AdminLogin.GetSalt(userName);

@@ -237,10 +237,17 @@ namespace WebbsidaFotograf.Pages.CategoryPages
 
         protected void UpdateDescription_Click(object sender, EventArgs e)
         {
-            var image = Request.QueryString["name"];
-            var description = UpdateDescriptionTextBox.Text;
-            var tags = UpdateTagsTextBox.Text;
-            Service.UpdateDescription(image, description, tags);
+            ImageProps imageProps = new ImageProps();
+            //var image = Request.QueryString["name"];
+            imageProps.ImageName = Request.QueryString["name"];
+
+            //var description = UpdateDescriptionTextBox.Text;
+            imageProps.Description = UpdateDescriptionTextBox.Text;
+
+            //var tags = UpdateTagsTextBox.Text;
+            imageProps.Tags = UpdateTagsTextBox.Text;
+
+            Service.UpdateDescription(imageProps);
             Response.Redirect(Request.RawUrl);
         }
 

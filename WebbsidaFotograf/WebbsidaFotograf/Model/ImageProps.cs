@@ -20,6 +20,7 @@ namespace WebbsidaFotograf.Model
         [StringLength(200, ErrorMessage = "Beskrivningen kan bestå av som mest 200 tecken.")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "En beskrivning måste anges.")]
         public string Tags { get; set; }
 
         private Service Service 

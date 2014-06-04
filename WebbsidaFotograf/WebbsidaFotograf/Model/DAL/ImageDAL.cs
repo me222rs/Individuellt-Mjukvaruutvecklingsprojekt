@@ -296,7 +296,7 @@ namespace WebbsidaFotograf.Model.DAL
         /// </summary>
         /// <param name="image"></param>
         /// <param name="description"></param>
-        public void UpdateDescription(string image, string description, string tags)
+        public void UpdateDescription(ImageProps image)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -305,9 +305,9 @@ namespace WebbsidaFotograf.Model.DAL
                     SqlCommand cmd = new SqlCommand("appSchema.UpdateDescription", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@ImageName", image);
-                    cmd.Parameters.AddWithValue("@Description", description);
-                    cmd.Parameters.AddWithValue("@Tags", tags);
+                    cmd.Parameters.AddWithValue("@ImageName", image.ImageName);
+                    cmd.Parameters.AddWithValue("@Description", image.Description);
+                    cmd.Parameters.AddWithValue("@Tags", image.Tags);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

@@ -205,19 +205,13 @@ p{
     padding: 5px;
     background-color:lightgray;
 }
-#ThumbNails{
-    /*padding:1%;
-    background-color:lightgrey;
-    overflow-x: hidden;
-    overflow:scroll;
-    width:13%;
-    height:565px;
-    float:right;
-    margin-right: 12%;
-    margin-top: 2.2%;
-    border-radius:5px;*/
 
-    padding: 1%;
+#Column1 p{
+    margin:0;
+}
+#ThumbNails{
+
+    /*padding: 1%;
     background-color: #586784;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -228,7 +222,20 @@ p{
     margin-top: 2.2%;
     border-radius: 5px;
     box-shadow: 10px 10px 5px #888888;
-    text-align: center;
+    text-align: center;*/
+
+    padding: 1%;
+background-color: #586784;
+overflow-y: scroll;
+overflow-x: hidden;
+width: 13.6%;
+height: 517px;
+float: right;
+margin-right: 12%;
+margin-top: 2.2%;
+border-radius: 5px;
+box-shadow: 10px 10px 5px #888888;
+text-align: center;
 }
 
 #ThumbNails img {
@@ -317,14 +324,7 @@ list-style-type: disc;
 }
 
 #Column1 {
-    /*height:600px;
-    width:20%;
-    float:left;
-    background-color: lightgray;
-    margin-top: 3.5%;
-    margin-left:5%;
-    border-radius:5px;*/
-    height: 344px;
+    /*height: 344px;
     width: 15%;
     float: left;
     background-color: #586784;
@@ -334,7 +334,19 @@ list-style-type: disc;
     overflow-y: scroll;
     overflow-x: hidden;
     box-shadow: 10px 10px 5px #888888;
-    padding:1%;
+    padding:1%;*/
+
+    height: 516px;
+width: 15%;
+float: left;
+background-color: #586784;
+margin-top: 3.4%;
+margin-left: 11%;
+border-radius: 5px;
+/* overflow-y: scroll; */
+/* overflow-x: hidden; */
+box-shadow: 10px 10px 5px #888888;
+padding: 1%;
 }
 #GalleryContent {
     background-color: lightgray;
