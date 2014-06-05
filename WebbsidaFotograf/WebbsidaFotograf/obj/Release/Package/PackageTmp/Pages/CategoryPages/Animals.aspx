@@ -12,19 +12,19 @@
             <p>Ladda upp en bild i denna kategorin.</p>
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <asp:RequiredFieldValidator ID="UploadValidator" runat="server" ErrorMessage="Du måste välja en bild att ladda upp!" ForeColor="Red" ControlToValidate="FileUpload1" Display="Dynamic"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="FileUpload1RegularExpressionValidator" runat="server" ErrorMessage="Måste vara av filformatet jpg, png eller gif" ControlToValidate="FileUpload1" ValidationExpression="^.*\.(gif|jpg|png)$"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="FileUpload1RegularExpressionValidator" runat="server" ErrorMessage="Måste vara av filformatet jpg, png eller gif" ControlToValidate="FileUpload1" ValidationExpression="^.*\.(gif|jpg|png)$" Display="Dynamic"></asp:RegularExpressionValidator>
     
 <br />
             <asp:Label ID="DescriptionLabel" runat="server" Text="Beskrivning"></asp:Label>
 <br />
             <asp:TextBox ID="DescriptionTextBox" runat="server" MaxLength="200" TextMode="MultiLine" Rows="5"></asp:TextBox>
 <br />
-            <asp:RequiredFieldValidator ID="DescriptionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ge en beskrivning!" ForeColor="Red" ControlToValidate="DescriptionTextBox"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="DescriptionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ge en beskrivning!" ForeColor="Red" ControlToValidate="DescriptionTextBox" Display="Dynamic"></asp:RequiredFieldValidator>
     
 <br />
             <asp:Label ID="TagLabel" runat="server" Text="Lägg till taggar, separera varje tagg med ,"></asp:Label>
 <br />            
-                <asp:TextBox ID="TagTextBox" runat="server" MaxLength="200"></asp:TextBox>
+            <asp:TextBox ID="TagTextBox" runat="server" MaxLength="200"></asp:TextBox>
 
 
     <p>
@@ -38,7 +38,7 @@
 <br />
         <%-- Knapp för att uppdatera beskrivning --%>
             <asp:LinkButton ID="Update" runat="server" OnClick="Update_Click" CausesValidation="false">Uppdatera</asp:LinkButton>
-                <asp:PlaceHolder ID="UpdatePlaceHolder" runat="server" Visible="false">
+            <asp:PlaceHolder ID="UpdatePlaceHolder" runat="server" Visible="false">
                     
 <br />
         <%-- Textbox för ny beskrivning  --%>
@@ -97,6 +97,9 @@
         <div id="bild">
             <asp:Image ID="BigImage" runat="server"/>
             <br/>
+        
+        </div>
+        <asp:PlaceHolder ID="DescPlaceHolder" runat="server">
         <div id="Description">
             <p>
             <asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal>
@@ -106,7 +109,7 @@
                 <asp:Label ID="ImageTags" runat="server" Visible="true" Text="Här kommer taggarna ligga!" Font-Italic="true" Font-Size="Small"></asp:Label>
             </p>
         </div>
-        </div>
+            </asp:PlaceHolder>
     </asp:Panel>
 
 <br />
@@ -116,8 +119,8 @@
 
     <div id="facebook">
 
-    <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/CategoryPages/Animals.aspx" data-numposts="5" data-colorscheme="light"></div>
-
+        <div id="fbdiv" class="fb-comments" runat="server" data-href="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/CategoryPages/Animals.aspx" data-numposts="5" data-colorscheme="light"></div>
+        
     </div>
 
     </div>

@@ -101,7 +101,7 @@ namespace WebbsidaFotograf.Pages.CategoryPages
             //BigImage.ImageUrl = "~/Content/GalleryPics/" + image;
             BigImage.ImageUrl = "~/Content/" + Session["Category"] + "/" + image;
 
-            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"] + "&Category=" + Request.QueryString["Category"];
+            fbdiv.Attributes["data-href"] = "http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/CategoryPages/Animals.aspx?name=" + Request.QueryString["name"] + "&Category=" + Request.QueryString["Category"];
             
             ImageProps.ImageName = image;
             

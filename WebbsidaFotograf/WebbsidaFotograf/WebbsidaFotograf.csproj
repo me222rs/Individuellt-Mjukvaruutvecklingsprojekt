@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CategoryImage\Djur.png" />
+    <Content Include="Content\CategoryImage\Landskap.png" />
+    <Content Include="Content\CategoryImage\Macro.png" />
+    <Content Include="Content\CategoryImage\Porträtt.png" />
     <Content Include="Content\Icons\12885365265_347a812bb8_o.jpg" />
     <Content Include="Content\Icons\header.png" />
     <Content Include="Content\Icons\header2.png" />

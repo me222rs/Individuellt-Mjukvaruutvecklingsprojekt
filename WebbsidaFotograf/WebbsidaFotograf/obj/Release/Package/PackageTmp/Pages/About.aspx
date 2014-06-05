@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="WebbsidaFotograf.Pages.About" MasterPageFile="~/Pages/Shared/Site.Master"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-    <div>
+    <div id="AboutContent">
             <div class="AboutText">
             <h2>Vem är jag?</h2>
                 <asp:Image ID="ProfilePicture" runat="server" width="200px" ImageUrl="../Content/ProfilePics/Me.png"/>
@@ -24,6 +24,6 @@
                 använder den mest till landskap.
             </p>
         </div>
-        <div class="fb-like" data-href="http://localhost:2257/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div class="fb-like" data-href="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </div>
 </asp:Content>

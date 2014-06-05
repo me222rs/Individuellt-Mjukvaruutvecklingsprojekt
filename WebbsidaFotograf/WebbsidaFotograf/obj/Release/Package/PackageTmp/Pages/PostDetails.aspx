@@ -31,52 +31,51 @@
                     </table>
             </ItemTemplate>
         </asp:ListView>
-    <div id="BlogButtons">
+
+
+    <asp:Panel ID="Panel1" runat="server">
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
+            <div id="BlogButtons">
         <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click">Ta bort</asp:LinkButton>
         <br />
         <asp:LinkButton ID="Edit" runat="server" OnClick="Edit_Click">Redigera</asp:LinkButton>
     </div>
-
-    <asp:Panel ID="Panel1" runat="server">
-    <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
-
         <asp:PlaceHolder ID="EditPost" runat="server"  Visible="false">
     
-            <div id="EditPostDetails">
-    <asp:FormView ID="UpdatePostFormView" runat="server"         
-        ItemType="WebbsidaFotograf.Model.Blog" 
-        DefaultMode="Edit" 
-        UpdateMethod="BlogPostFormView_UpdateItem" 
-        DataKeyNames="BlogPostID" 
-        SelectMethod="BlogPostFormView_GetItem">
+    <div id="EditPostDetails">
+        <asp:FormView ID="UpdatePostFormView" runat="server"         
+            ItemType="WebbsidaFotograf.Model.Blog" 
+            DefaultMode="Edit" 
+            UpdateMethod="BlogPostFormView_UpdateItem" 
+            DataKeyNames="BlogPostID" 
+            SelectMethod="BlogPostFormView_GetItem">
         <EditItemTemplate>
-            
-           
-                    <asp:TextBox ID="EditTitleTextBox" runat="server" Text='<%# BindItem.Title %>' MaxLength="40"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="EditTitleTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en titel!" ControlToValidate="EditTitleTextBox" Display="Static"></asp:RequiredFieldValidator>
-       <br />
-                    <asp:TextBox ID="PostTextBox" runat="server" Text='<%# BindItem.Post %>' TextMode="MultiLine" Rows="5" Width="500px" Height="300px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="PostTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en post!" ControlToValidate="PostTextBox"></asp:RequiredFieldValidator>
-        <br />
-                <asp:LinkButton ID="SaveButton" runat="server" CommandName="Update">Spara</asp:LinkButton>
+            <asp:TextBox ID="EditTitleTextBox" runat="server" Text='<%# BindItem.Title %>' MaxLength="40"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="EditTitleTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en titel!" ControlToValidate="EditTitleTextBox" Display="Static"></asp:RequiredFieldValidator>
+<br />
+            <asp:TextBox ID="PostTextBox" runat="server" Text='<%# BindItem.Post %>' TextMode="MultiLine" Rows="5" Width="500px" Height="300px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="PostTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Du måste ha en post!" ControlToValidate="PostTextBox"></asp:RequiredFieldValidator>
+<br />
+            <asp:LinkButton ID="SaveButton" runat="server" CommandName="Update">Spara</asp:LinkButton>
                 
-           
-
-            
-
-
         </EditItemTemplate>
-    </asp:FormView>
-                </div>
-                <div id="TagsPostDetails">
-        <asp:TextBox ID="TagsTextBox" runat="server" Text="" MaxLength="200"></asp:TextBox>
-        <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />
-    <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
-    <asp:Button ID="Rubrik" runat="server" Text="H1" OnClientClick="insertAtCursorOrSelection('[HEADER1]', '[/HEADER1]'); return false;" CausesValidation="False" />
-    <asp:Button ID="Rubrik2" runat="server" Text="H2" OnClientClick="insertAtCursorOrSelection('[HEADER2]', '[/HEADER2]'); return false;" CausesValidation="False" />
-    
+        </asp:FormView>
+    </div>
 
-                            <script>
+    <div id="TagsPostDetails">
+        <asp:Label ID="Label2" runat="server" Text="Tagga inlägget, separera taggarna med ,"></asp:Label>
+        <asp:TextBox ID="TagsTextBox" runat="server" Text="" MaxLength="200"></asp:TextBox>
+    </div>
+
+    <div id="Buttons">
+        <asp:Button ID="Fetstil" runat="server" Text="FetStil" OnClientClick="insertAtCursorOrSelection('[BOLD]', '[/BOLD]'); return false;" CausesValidation="False" />
+        <asp:Button ID="Kursiv" runat="server" Text="Kursiv" OnClientClick="insertAtCursorOrSelection('[ITALIC]', '[/ITALIC]'); return false;" CausesValidation="False" />
+        <asp:Button ID="Rubrik" runat="server" Text="H1" OnClientClick="insertAtCursorOrSelection('[HEADER1]', '[/HEADER1]'); return false;" CausesValidation="False" />
+        <asp:Button ID="Rubrik2" runat="server" Text="H2" OnClientClick="insertAtCursorOrSelection('[HEADER2]', '[/HEADER2]'); return false;" CausesValidation="False" />
+            
+        <%-- Javascriptet måste ligga här för att det ska fungera. document.getElementById fungerar inte att lägga i en separat scriptfil
+             om man använder en master page. --%>
+        <script>
                                 function insertAtCursorOrSelection(before, after) {
                                     console.log(textbox);
                                     var textbox = document.getElementById('<%= UpdatePostFormView.FindControl("PostTextBox").ClientID %>');
@@ -101,15 +100,16 @@
                             }
                         }
 
-    </script>
-                    </div>
+        </script>
+            </div>        
     
     </asp:PlaceHolder>
     </asp:PlaceHolder>
-        </asp:Panel>
+    </asp:Panel>
 
     <div id="facebookBlog">
-        <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>
+        <div id="fbdiv" class="fb-comments" runat="server" data-href="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>
+        
     </div>
         </div>
 </asp:Content>

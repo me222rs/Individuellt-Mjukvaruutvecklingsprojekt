@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="~/Styles/StyleSheet.css" rel="stylesheet" />
+    <link id="Css" href="~/Styles/StyleSheet.css" rel="stylesheet"/>
     <asp:ContentPlaceHolder ID="head" runat="server"> 
         
-        <%--<meta property="fb:app_admin" content="{YOUR_APPLICATION_ID}"/>--%>
+        
     </asp:ContentPlaceHolder>
 </head>
 <body>

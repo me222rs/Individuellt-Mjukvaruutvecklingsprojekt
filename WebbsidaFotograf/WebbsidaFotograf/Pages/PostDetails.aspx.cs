@@ -47,7 +47,7 @@ namespace WebbsidaFotograf.Pages
             }
 
             //Gör så att facebookkommentarerna läggs på en unik url för varje blogginlägg
-            fbdiv.Attributes["data-href"] = "http://localhost:2257/Pages/PostDetails.aspx?Id=" + Request.QueryString["Id"];
+            fbdiv.Attributes["data-href"] = "http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/PostDetails.aspx?Id=" + Request.QueryString["Id"];
         }
 
         /// <summary>
@@ -161,24 +161,5 @@ namespace WebbsidaFotograf.Pages
             EditPost.Visible = true;
         }
 
-    //    protected void PostTextBox_Load(object sender, EventArgs e)
-    //    {
-    //        Blog blog = new Blog();
-    //        blog.Post = blog.Post.
-    //Replace("<br>", "\n").
-    //Replace("<b>", "[BOLD]").
-    //Replace("</b>", "[/BOLD]").
-    //Replace("<em>", "[ITALIC]").
-    //Replace("</em>", "[/ITALIC]").
-    //Replace("<h1>", "[HEADER1]").
-    //Replace("</h1>", "[/HEADER1]").
-    //Replace("<h2>", "[HEADER2]").
-    //Replace("</h2>", "[/HEADER2]");
-    //    }
-
-        //protected void ListView2_ItemDataBound(object sender, ListViewItemEventArgs e)
-        //{
-
-        //}
     }
 }

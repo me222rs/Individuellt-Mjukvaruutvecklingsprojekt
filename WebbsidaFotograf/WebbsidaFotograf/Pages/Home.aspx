@@ -64,10 +64,14 @@
         </div>
     
     <p>Skriv gärna en kommentar och gilla sidan!</p>
-    
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:2257/Pages/Home.aspx">Tweet</a>
-    <div class="fb-like" data-href="http://localhost:2257/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    <%-- Facebook kommentarer fungerar inte på skolans server kupan eftersom facebook inte kan komma åt vpn200, localhost fungerar. 
+         För att ta bort kommentarer så får man via facebooks utvecklarsida ange sin adress, localhost och kupan fungerar inte.        
+        --%>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/Home.aspx">Tweet</a>
+    <div class="fb-like" data-href="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/Home.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <div>
-        <div class="fb-comments" data-href="http://localhost:2257/Pages/Home.aspx" data-numposts="5" data-colorscheme="light"></div>
+        <div class="fb-comments" data-href="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/Home.aspx" data-numposts="5" data-colorscheme="light"></div>
+        
     </div>
+    
 </asp:Content>

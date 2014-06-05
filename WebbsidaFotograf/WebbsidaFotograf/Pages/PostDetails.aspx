@@ -108,7 +108,8 @@
     </asp:Panel>
 
     <div id="facebookBlog">
-        <div id="fbdiv" class="fb-comments" runat="server" data-href="http://localhost:2257/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>
+        <div id="fbdiv" class="fb-comments" runat="server" data-href="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/PostDetails.aspx?Id=" data-numposts="5" data-colorscheme="light"></div>
+        
     </div>
         </div>
 </asp:Content>

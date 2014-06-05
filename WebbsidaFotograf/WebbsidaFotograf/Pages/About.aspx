@@ -24,6 +24,6 @@
                 använder den mest till landskap.
             </p>
         </div>
-        <div class="fb-like" data-href="http://localhost:2257/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div class="fb-like" data-href="http://vhost9.lnu.se:20081/1dv406/me222rs/Pages/About.aspx" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </div>
 </asp:Content>
