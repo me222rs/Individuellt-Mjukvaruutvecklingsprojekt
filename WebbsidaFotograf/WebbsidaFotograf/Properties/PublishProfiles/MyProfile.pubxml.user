@@ -6,116 +6,116 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>Y:\</_PublishTargetUrl>
+    <_PublishTargetUrl>Z:\</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/WebbsidaFotograf.dll">
-      <publishTime>06/05/2014 16:02:06</publishTime>
+      <publishTime>06/06/2014 12:18:31</publishTime>
     </File>
     <File Include="Content/CategoryImage/Djur.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:10</publishTime>
     </File>
     <File Include="Content/CategoryImage/Landskap.png">
-      <publishTime>06/05/2014 10:57:41</publishTime>
+      <publishTime>06/06/2014 09:56:10</publishTime>
     </File>
     <File Include="Content/CategoryImage/Macro.png">
-      <publishTime>06/05/2014 11:06:10</publishTime>
+      <publishTime>06/06/2014 09:56:10</publishTime>
     </File>
     <File Include="Content/CategoryImage/Porträtt.png">
-      <publishTime>06/05/2014 11:06:04</publishTime>
+      <publishTime>06/06/2014 09:56:10</publishTime>
     </File>
     <File Include="Content/Icons/12885365265_347a812bb8_o.jpg">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/header.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/header2.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/header3.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/header4.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/header5.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/header6.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/header7.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/Logo2.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/Untitled-2.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/Icons/Untitled-3.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Content/ProfilePics/Me.png">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Javascript/JavaScript1.js">
-      <publishTime>06/05/2014 15:51:22</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/About.aspx">
-      <publishTime>06/05/2014 15:37:37</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/AdminPages/AdminLogIn.aspx">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/CategoryPages/Animals.aspx">
-      <publishTime>06/05/2014 15:28:43</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/CategoryPages/Landscape.aspx">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/CategoryPages/Other.aspx">
-      <publishTime>06/05/2014 10:03:59</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/Contact.aspx">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/CreateBlogPost.aspx">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/Gallery.aspx">
-      <publishTime>06/05/2014 11:15:02</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/Home.aspx">
-      <publishTime>06/05/2014 15:57:54</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/Internal Error.html">
-      <publishTime>06/05/2014 10:03:59</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/PostDetails.aspx">
-      <publishTime>06/05/2014 15:35:36</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/Shared/Site.Master">
-      <publishTime>06/05/2014 15:53:36</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/Shared/SiteCategory.Master">
-      <publishTime>06/05/2014 10:03:59</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Pages/UpdatePost.aspx">
-      <publishTime>06/05/2014 16:01:29</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
     <File Include="Styles/StyleSheet.css">
-      <publishTime>06/05/2014 11:16:27</publishTime>
+      <publishTime>06/06/2014 10:30:21</publishTime>
     </File>
     <File Include="Styles/StyleSheet2.css">
-      <publishTime>06/05/2014 10:03:58</publishTime>
+      <publishTime>06/06/2014 12:13:41</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/05/2014 10:46:34</publishTime>
+      <publishTime>06/06/2014 09:56:11</publishTime>
     </File>
   </ItemGroup>
 </Project>

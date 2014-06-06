@@ -11,9 +11,40 @@ namespace WebbsidaFotograf.Pages
 {
     public partial class Contact : System.Web.UI.Page
     {
+
+        public bool HasMessage
+        {
+            get
+            {
+                return Session["SuccessMessage"] != null;
+            }
+        }
+
+        //Rättmeddelanden
+        private string SuccessMessage
+        {
+            get
+            {
+
+                var message = Session["SuccessMessage"] as string;
+                Session.Remove("SuccessMessage");
+                return message;
+            }
+            set
+            {
+                Session["SuccessMessage"] = value;
+            }
+        }
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HasMessage)
+            {
+                Success.Visible = true;
+                Success.Text = SuccessMessage;
+            }
         }
 
         protected void SendButton_Click(object sender, EventArgs e)
@@ -23,6 +54,8 @@ namespace WebbsidaFotograf.Pages
             //http://www.aspsnippets.com/Articles/How-to-create-Contact-Us-Page-in-ASPNet.aspx
             //**********************************************************************************
 
+            //Här får du fylla i din egen epost adress för att testa.
+            //Detta fungerar inte på skolans server kupan eftersom google antagligen inte kan komma åt vpn200
             //Adress som mailet ska skickas ifrån + adressen det ska skickas till
             MailMessage mm = new MailMessage("mikael.edberg92@gmail.com", "mikael.edberg92@gmail.com");
             mm.Subject = Amne.Text;
@@ -37,13 +70,16 @@ namespace WebbsidaFotograf.Pages
             smtp.Host = "smtp.gmail.com";
             smtp.EnableSsl = true;
             System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
+            //användarnamn och lösen till adressen det ska skickas ifrån.
             NetworkCred.UserName = "mikael.edberg92@gmail.com";
-            NetworkCred.Password = ""; //Committade nästan mitt lösenord :P
+            NetworkCred.Password = "supermicke"; //Committade nästan mitt lösenord :P
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Port = 587;
             smtp.Send(mm);
-            Success.Text = "Email Sent SucessFully.";
+            SuccessMessage = String.Format("Meddelandet skickades");
+            Response.Redirect("Contact.aspx");
+            //Success.Text = "Email Sent SucessFully.";
         }
     }
 }
