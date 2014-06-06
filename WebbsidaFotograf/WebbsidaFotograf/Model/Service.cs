@@ -173,8 +173,10 @@ namespace WebbsidaFotograf.Model
         public string CreateBlogPost(string title, string post, string tags) 
         {
             Blog blog = new Blog();
+            BlogTags blogTags = new BlogTags();
             blog.Title = title;
             blog.Post = post;
+            blogTags.Tag = tags;
             ICollection<ValidationResult> validationResults;
             if (!blog.Validate(out validationResults)) // Använder "extension method" för valideringen!
             {                                              // Klassen finns under App_Infrastructure.
@@ -182,6 +184,16 @@ namespace WebbsidaFotograf.Model
                 // till samlingen med resultat av valideringen.
                 var ex = new ValidationException("Objektet klarade inte valideringen.");
                 ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
+
+            ICollection<ValidationResult> validationResultsTags;
+            if (!blogTags.ValidateTags(out validationResultsTags)) // Använder "extension method" för valideringen!
+            {                                              // Klassen finns under App_Infrastructure.
+                // ...kastas ett undantag med ett allmänt felmeddelande samt en referens 
+                // till samlingen med resultat av valideringen.
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResultsTags);
                 throw ex;
             }
 
@@ -194,6 +206,9 @@ namespace WebbsidaFotograf.Model
 
             foreach (string word in links)
             {
+
+
+
                 TagsDAL.CreateBlogTags(word, id);
             }
             HttpContext.Current.Session.Remove("BlogPostID");

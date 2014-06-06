@@ -230,7 +230,7 @@ background-color: white;
     border-radius: 5px;
     box-shadow: 10px 10px 5px #888888;
     text-align: center;*/
-
+    overflow-x: hidden;
     padding: 1%;
 background-color: #586784;
 overflow-y: scroll;
@@ -342,7 +342,7 @@ list-style-type: disc;
     overflow-x: hidden;
     box-shadow: 10px 10px 5px #888888;
     padding:1%;*/
-
+    overflow-x: hidden;
     height: 516px;
 width: 15%;
 float: left;

@@ -125,7 +125,7 @@ namespace WebbsidaFotograf.Model.DAL
                     // Lägger till de paramterar den lagrade proceduren kräver. Använder här det effektiva sätttet att
                     // göra det på - något "svårare" men ASP.NET behöver inte "jobba" så mycket.
 
-                    cmd.Parameters.Add("@Tag", SqlDbType.VarChar, 50).Value = tags;
+                    cmd.Parameters.Add("@Tag", SqlDbType.VarChar, 200).Value = tags;
                     cmd.Parameters.Add("@BlogPostID", SqlDbType.Int).Value = id;
 
 
