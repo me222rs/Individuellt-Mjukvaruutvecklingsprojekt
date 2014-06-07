@@ -102,7 +102,14 @@ nav a:hover {
 	top:1px;
 }
 
-
+#LoginContent {
+    background-color: lightgray;
+margin-left: auto;
+margin-right: auto;
+width: 300px;
+padding: 5px;
+border-radius: 5px;
+}
 
 body {
     width:80%;

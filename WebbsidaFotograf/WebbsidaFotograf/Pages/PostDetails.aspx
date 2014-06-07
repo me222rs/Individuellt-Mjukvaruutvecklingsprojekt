@@ -36,7 +36,7 @@
     <asp:Panel ID="Panel1" runat="server">
     <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
             <div id="BlogButtons">
-        <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click">Ta bort</asp:LinkButton>
+        <asp:LinkButton ID="DeletePost" runat="server" OnClick="Delete_Click" OnClientClick="return confirm('Vill du ta bort posten?')">Ta bort</asp:LinkButton>
         <br />
         <asp:LinkButton ID="Edit" runat="server" OnClick="Edit_Click">Redigera</asp:LinkButton>
     </div>

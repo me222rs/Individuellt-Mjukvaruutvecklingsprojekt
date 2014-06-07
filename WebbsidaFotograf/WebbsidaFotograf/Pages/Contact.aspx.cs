@@ -72,7 +72,7 @@ namespace WebbsidaFotograf.Pages
             System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
             //användarnamn och lösen till adressen det ska skickas ifrån.
             NetworkCred.UserName = "mikael.edberg92@gmail.com";
-            NetworkCred.Password = ""; //Committade nästan mitt lösenord :P
+            NetworkCred.Password = "supermicke112"; //Committade nästan mitt lösenord :P
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Port = 587;

@@ -34,7 +34,7 @@
              <asp:Button ID="Upload" runat="server" Text="Ladda upp" OnClick="Upload_Click"/>
 <br />
         <%-- Knapp för att radera --%>
-            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" CausesValidation="False">Radera</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Delete_Click" OnClientClick="return confirm('Vill du ta bort bilden?')" CausesValidation="False">Radera</asp:LinkButton>
 <br />
         <%-- Knapp för att uppdatera beskrivning --%>
             <asp:LinkButton ID="Update" runat="server" OnClick="Update_Click" CausesValidation="false">Uppdatera</asp:LinkButton>
