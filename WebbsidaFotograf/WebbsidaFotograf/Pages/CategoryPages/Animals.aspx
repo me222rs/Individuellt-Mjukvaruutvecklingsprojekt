@@ -25,7 +25,8 @@
             <asp:Label ID="TagLabel" runat="server" Text="Lägg till taggar, separera varje tagg med ,"></asp:Label>
 <br />            
             <asp:TextBox ID="TagTextBox" runat="server" MaxLength="200"></asp:TextBox>
-
+                <br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Du måste ange minst en tagg." ControlToValidate="TagTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
 
     <p>
         <%-- Visar meddelande --%>
@@ -44,16 +45,17 @@
         <%-- Textbox för ny beskrivning  --%>
                     <asp:Label ID="Label1" runat="server" Text="Label">Beskrivning</asp:Label>
                     <br />
-                    <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine" Rows="5" MaxLength="200"></asp:TextBox>
+                    <asp:TextBox ID="UpdateDescriptionTextBox" runat="server" TextMode="MultiLine" Rows="5" MaxLength="200" ValidationGroup="2"></asp:TextBox>
                     <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="Du måste ha en beskrivning!" ControlToValidate="UpdateDescriptionTextBox"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="Du måste ha en beskrivning!" ControlToValidate="UpdateDescriptionTextBox" ValidationGroup="2"></asp:RequiredFieldValidator>
                     <br />
                     <asp:Label ID="Label2" runat="server" Text="Label">Taggar</asp:Label>
                     <br />
                     <asp:TextBox ID="UpdateTagsTextBox" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Du måste ange minst en tagg!" ControlToValidate="UpdateTagsTextBox"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:LinkButton ID="UpdateDescription" runat="server" OnClick="UpdateDescription_Click" CausesValidation="false">Uppdatera Beskrivning</asp:LinkButton>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Du måste ange minst en tagg!" ControlToValidate="UpdateTagsTextBox" ValidationGroup="2" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:LinkButton ID="UpdateDescription" runat="server" OnClick="UpdateDescription_Click" CausesValidation="true" ValidationGroup="2">Uppdatera Beskrivning</asp:LinkButton>
                     
                 </asp:PlaceHolder>
             </asp:PlaceHolder>
